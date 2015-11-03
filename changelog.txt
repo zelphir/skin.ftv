@@ -1,3 +1,9 @@
+2.2.12
+
+Fixed text cutting off in text viewer and system info
+Renamed language string folders
+Added 'Hide unwatched episode thumbs' to Next Up script
+
 2.2.11
 
 Fixed 'Next Up' countdown

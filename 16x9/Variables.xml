@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="NextUpThumb">
+		<value condition="!IsEmpty(Control.GetLabel(3008)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + IntegerGreaterThan(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3008)]</value>
+		<value condition="!IsEmpty(Control.GetLabel(3005)) + [IsEmpty(Control.GetLabel(3008)) | [Skin.HasSetting(HideUnwatchedThumbs) + !IntegerGreaterThan(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3005)]</value>
+		<value condition="!IsEmpty(Control.GetLabel(3005))">$INFO[Control.GetLabel(3005)]</value>
+		<value>views/episode_fallback.png</value>
+	</variable>
+	<variable name="StillWatchingThumb">
+		<value condition="!IsEmpty(Control.GetLabel(4002)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + IntegerGreaterThan(Control.GetLabel(4018),0)]]">$INFO[Control.GetLabel(4002)]</value>
+		<value condition="!IsEmpty(Control.GetLabel(4007)) + [IsEmpty(Control.GetLabel(4002)) | [Skin.HasSetting(HideUnwatchedThumbs) + !IntegerGreaterThan(Control.GetLabel(4018),0)]]">$INFO[Control.GetLabel(4007)]</value>
+		<value condition="!IsEmpty(Control.GetLabel(4007))">$INFO[Control.GetLabel(4007)]</value>
+		<value>views/episode_fallback.png</value>
+	</variable>
+	<variable name="AutoUpdate">
+		<value condition="SubString(Skin.String(AutoUpdate),off)">Enable Auto-Update</value>
+		<value>Disable Auto-Update</value>
+	</variable>
 	<variable name="WidgetLabel-1">
 		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-1)]</value>
 		<value condition="StringCompare(Window(home).Property(SubMenu),2)">$INFO[Skin.String(2-WidgetLabel-1)]</value>

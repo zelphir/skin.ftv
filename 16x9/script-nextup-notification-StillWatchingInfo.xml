@@ -10,6 +10,9 @@
 		<control type="image" id="4001">
 			<visible>false</visible>
 		</control>
+		<control type="image" id="4002">
+			<visible>false</visible>
+		</control>
 		<control type="label" id="4003">
 			<visible>false</visible>
 		</control>
@@ -32,6 +35,9 @@
 			<visible>false</visible>
 		</control>
 		<control type="label" id="4011">
+			<visible>false</visible>
+		</control>
+		<control type="label" id="4018">
 			<visible>false</visible>
 		</control>
 		<!-- Main group -->
@@ -119,11 +125,20 @@
 				<texture>views/episode_fallback.png</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
-			<control type="image" id="4002">
+			<control type="image">
 				<top>56</top>
 				<width>370</width>
 				<height>277</height>
 				<aspectratio>scale</aspectratio>
+				<texture>$VAR[StillWatchingThumb]</texture>
+			</control>
+			<control type="image">
+				<top>56</top>
+				<width>370</width>
+				<height>277</height>
+				<aspectratio align="center">scale</aspectratio>
+				<texture>views/episode_fallback.png</texture>
+				<visible>Skin.HasSetting(HideUnwatchedThumbs) + !IntegerGreaterThan(Control.GetLabel(4018),0)</visible>
 			</control>
 			<control type="image">
 				<top>56</top>

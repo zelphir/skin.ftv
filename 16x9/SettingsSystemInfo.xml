@@ -482,7 +482,7 @@
 				<left>501</left>
 				<top>22</top>
 				<width>889</width>
-				<height>438</height>
+				<height>434</height>
 				<font>Med24CR</font>
 				<aligny>top</aligny>
 				<label>$INFO[System.FriendlyName,$LOCALIZE[31158]: ,[CR]]$INFO[System.ProfileName,$LOCALIZE[31154]: ,[CR]]$INFO[System.BuildVersion,$LOCALIZE[31155]: ,[CR]]$INFO[System.FreeSpace,Storage $LOCALIZE[31156]: , / ]$INFO[System.TotalSpace,,[CR]]$LOCALIZE[31157]: $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)] $INFO[System.Time(hh:mm:ss xx)]</label>
