@@ -860,3 +860,19 @@ msgstr ""
 msgctxt "#31205"
 msgid "Refresh Information"
 msgstr ""
+
+msgctxt "#31206"
+msgid "Enable Auto-Update"
+msgstr ""
+
+msgctxt "#31207"
+msgid "Disable Auto-Update"
+msgstr ""
+
+msgctxt "#31208"
+msgid "Enable Higher Levels"
+msgstr ""
+
+msgctxt "#31209"
+msgid "Disable Higher Levels"
+msgstr ""

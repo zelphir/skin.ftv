@@ -2,6 +2,7 @@
 <window>
 	<!-- addoninformation -->
 	<defaultcontrol always="true">9001</defaultcontrol>
+	<onload condition="!SubString(Control.GetLabel(13),*) | IsEmpty(Skin.String(AutoUpdate))">Skin.SetString(AutoUpdate,off)</onload>
 	<onunload>ClearProperty(AddonDetails,home)</onunload>
 	<onunload>SetFocus(55)</onunload>
 	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
@@ -26,6 +27,11 @@
 			<height>528</height>
 			<showonepage>false</showonepage>
 			<orientation>vertical</orientation>
+		</control>
+		<!-- Hidden Button -->
+		<control id="13" type="radiobutton">
+			<include>HiddenControl</include>
+			<visible>Control.IsEnabled(13)</visible>
 		</control>
 		<!-- Background -->
 		<include>BackgroundImage</include>
@@ -197,7 +203,7 @@
 						<label>-</label>
 						<onfocus>Right</onfocus>
 						<include>NoTextures</include>
-						<visible>!Control.HasFocus(12) + !Control.HasFocus(9) + !Control.HasFocus(6) + !Control.HasFocus(7) + !Control.HasFocus(8) + !Control.HasFocus(10)</visible>
+						<visible>!Control.HasFocus(12) + !Control.HasFocus(9) + !Control.HasFocus(20) + !Control.HasFocus(6) + !Control.HasFocus(7) + !Control.HasFocus(8) + !Control.HasFocus(10)</visible>
 					</control>
 					<!-- Update Addon Button -->
 					<control id="8" type="button">
@@ -214,6 +220,26 @@
 						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
 						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
 						<visible>Control.IsEnabled(8)</visible>
+					</control>
+					<!-- Auto-update Addon Button -->
+					<control id="20" type="button">
+						<width min="104" max="204">auto</width>
+						<wrapmultiline>true</wrapmultiline>
+						<height>116</height>
+						<onup>Close</onup>
+						<ondown condition="Control.IsVisible(50)">50</ondown>
+						<onclick>SetFocus(13)</onclick>
+						<onclick>Select</onclick>
+						<onclick>SetFocus(20)</onclick>
+						<onclick condition="SubString(Skin.String(AutoUpdate),off)">Skin.SetString(AutoUpdate,on)</onclick>
+						<onclick condition="SubString(Skin.String(AutoUpdate),on)">Skin.SetString(AutoUpdate,off)</onclick>
+						<font>Med24</font>
+						<label>$VAR[AutoUpdate]</label>
+						<textoffsetx>28</textoffsetx>
+						<textcolor>ffdadada</textcolor>
+						<focusedcolor>ff222222</focusedcolor>
+						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
+						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
 					</control>
 					<!-- Launch Addon Button -->
 					<control id="12" type="button">

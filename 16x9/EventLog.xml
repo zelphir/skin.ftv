@@ -1,20 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<!-- programs -->
+	<!-- eventlog -->
 	<menucontrol>5000</menucontrol>
 	<backgroundcolor>0xff12161b</backgroundcolor>
-	<defaultcontrol always="true">55</defaultcontrol>
-	<onload condition="Window.Previous(home) + system.getbool(filelists.showparentdiritems)">Control.Move($VAR[ContainerID],1)</onload>
-	<onunload condition="Window.Next(home)">Control.Move($VAR[ContainerID],$INFO[Container.CurrentItem,-])</onunload>
-	<onunload condition="Window.Next(home) + !system.getbool(filelists.showparentdiritems)">Control.Move($VAR[ContainerID],1)</onunload>
-	<views>56,55,57</views>
+	<defaultcontrol always="true">570</defaultcontrol>
+	<onload condition="!SubString(Control.GetLabel(22),*) | IsEmpty(Skin.String(HigherLevels))">Skin.SetString(HigherLevels,off)</onload>
+	<onload condition="Window.Previous(home) + system.getbool(filelists.showparentdiritems)">Control.Move(570,1)</onload>
+	<onunload condition="Window.Next(home)">Control.Move(570,$INFO[Container.CurrentItem,-])</onunload>
+	<onunload condition="Window.Next(home) + !system.getbool(filelists.showparentdiritems)">Control.Move(570,1)</onunload>
+	<views>570</views>
 	<controls>
-		<!-- Fanart -->
-		<include condition="Skin.HasSetting(EnableFanart)">Fanart</include>
-		<!-- Views -->
-		<include>Viewtype55</include>
-		<include>Viewtype56</include>
-		<include>Viewtype57</include>
+		<!-- Hidden Button -->
+		<control id="22" type="radiobutton">
+			<include>HiddenControl</include>
+			<visible>Control.IsEnabled(22)</visible>
+		</control>
+		<!-- List -->
+		<control id="570" type="fixedlist">
+			<left>-238</left>
+			<top>242</top>
+			<width>2200</width>
+			<height>576</height>
+			<onup>Back</onup>
+			<ondown>1001</ondown>
+			<onleft>Back</onleft>
+			<onright>noop</onright>
+			<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
+			<preloaditems>2</preloaditems>
+			<focusposition>1</focusposition>
+			<viewtype label="">list</viewtype>
+			<orientation>horizontal</orientation>
+			<defaultcontrol always="true">0</defaultcontrol>
+			<scrolltime easing="inout" tween="sine">300</scrolltime>
+			<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
+				<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
+				<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
+			</animation>
+			<itemlayout height="576" width="436">
+				<control type="group">
+					<animation center="250,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<aspectratio align="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<left>-48</left>
+						<centertop>288</centertop>
+						<width>576</width>
+						<height>576</height>
+						<texture border="66,66,51,51">views/shadow_nf.png</texture>
+					</control>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<texture border="2">views/season_overlay.png</texture>
+						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+					</control>
+					<control type="label">
+						<left>18</left>
+						<top>447</top>
+						<width>446</width>
+						<height>42</height>
+						<font>Bold44</font>
+						<scroll>false</scroll>
+						<textcolor>ffffffff</textcolor>
+						<shadowcolor>88000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<texture>views/OverlayNF.png</texture>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout height="576" width="436">
+				<control type="group">
+					<animation center="250,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
+					<animation center="250,288" condition="Container(570).OnNext | Container(570).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
+					<animation center="250,288" condition="Control.HasFocus(4000)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<aspectratio align="center">scale</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="image">
+						<left>-48</left>
+						<centertop>288</centertop>
+						<width>576</width>
+						<height>576</height>
+						<texture border="51">views/shadow_fo.png</texture>
+						<animation center="auto" condition="Control.HasFocus(570) | Container(570).OnNext | Container(570).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
+						<animation center="auto" condition="Container(570).OnNext | Container(570).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
+					</control>
+					<control type="image">
+						<left>-48</left>
+						<centertop>288</centertop>
+						<width>576</width>
+						<height>576</height>
+						<texture border="66,66,51,51">views/shadow_nf.png</texture>
+						<animation center="auto" condition="Control.HasFocus(570)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
+						<animation center="auto" condition="Control.HasFocus(570)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
+					</control>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<texture border="2">views/season_overlay.png</texture>
+						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+					</control>
+					<control type="label">
+						<left>18</left>
+						<top>447</top>
+						<width>446</width>
+						<height>42</height>
+						<font>Bold44</font>
+						<scroll>false</scroll>
+						<textcolor>ffffffff</textcolor>
+						<shadowcolor>88000000</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<visible>!StringCompare(ListItem.Label,..)</visible>
+					</control>
+					<control type="image">
+						<top>48</top>
+						<width>480</width>
+						<height>480</height>
+						<texture>views/OverlayNF.png</texture>
+						<animation center="auto" condition="Control.HasFocus(570)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
+						<animation center="auto" condition="Control.HasFocus(570)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
 		<control type="group">
 			<animation delay="400" effect="fade" end="100" start="0" time="200">WindowOpen</animation>
 			<!-- Heading / Current item / Total items -->
@@ -32,7 +157,7 @@
 					<font>Med48</font>
 					<aligny>bottom</aligny>
 					<textcolor>ffdadada</textcolor>
-					<label>$LOCALIZE[31105]  </label>
+					<label>$LOCALIZE[14111]  </label>
 				</control>
 				<control type="label">
 					<top>15</top>
@@ -116,18 +241,49 @@
 						<label>-</label>
 						<onfocus>Right</onfocus>
 						<include>NoTextures</include>
-						<visible>!Control.HasFocus(1002) + !Control.HasFocus(1003)</visible>
+						<visible>!Control.HasFocus(21) + !Control.HasFocus(30) + !Control.HasFocus(20)</visible>
 					</control>
-					<control id="1002" type="button">
+					<control id="21" type="button">
 						<width min="104" max="204">auto</width>
 						<wrapmultiline>true</wrapmultiline>
 						<height>100</height>
 						<onup>55</onup>
 						<ondown>3000</ondown>
-						<onclick>SetFocus(55)</onclick>
-						<onclick>Info</onclick>
 						<font>Med24</font>
-						<label>[CAPITALIZE]$LOCALIZE[24000][CR]$LOCALIZE[19033][/CAPITALIZE]</label>
+						<label>-</label>
+						<textoffsetx>28</textoffsetx>
+						<textcolor>ffdadada</textcolor>
+						<focusedcolor>ff222222</focusedcolor>
+						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
+						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
+					</control>
+					<control id="30" type="button">
+						<width min="184" max="264">auto</width>
+						<wrapmultiline>true</wrapmultiline>
+						<height>100</height>
+						<onup>55</onup>
+						<ondown>3000</ondown>
+						<onclick>SetFocus(22)</onclick>
+						<onclick>Select</onclick>
+						<onclick>SetFocus(30)</onclick>
+						<onclick condition="SubString(Skin.String(HigherLevels),off)">Skin.SetString(HigherLevels,on)</onclick>
+						<onclick condition="SubString(Skin.String(HigherLevels),on)">Skin.SetString(HigherLevels,off)</onclick>
+						<font>Med24</font>
+						<label>$VAR[HigherLevels]</label>
+						<textoffsetx>28</textoffsetx>
+						<textcolor>ffdadada</textcolor>
+						<focusedcolor>ff222222</focusedcolor>
+						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
+						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
+					</control>
+					<control id="20" type="button">
+						<width min="104" max="204">auto</width>
+						<wrapmultiline>true</wrapmultiline>
+						<height>100</height>
+						<onup>55</onup>
+						<ondown>3000</ondown>
+						<font>Med24</font>
+						<label>192</label>
 						<textoffsetx>28</textoffsetx>
 						<textcolor>ffdadada</textcolor>
 						<focusedcolor>ff222222</focusedcolor>
@@ -160,7 +316,7 @@
 					<pagecontrol>96</pagecontrol>
 					<autoscroll>false</autoscroll>
 					<textcolor>ffbcbcbc</textcolor>
-					<label>[B]$INFO[ListItem.Label][/B] [LIGHT]$INFO[ListItem.Label2][/LIGHT]</label>
+					<label>[B]$INFO[ListItem.Label2][/B] [LIGHT]$INFO[ListItem.Property(Event.Description)][/LIGHT]</label>
 				</control>
 				<control id="96" type="scrollbar">
 					<top>105</top>
@@ -179,7 +335,7 @@
 					<ondown>noop</ondown>
 					<onleft>55</onleft>
 					<onright>55</onright>
-					<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='"$INFO[ListItem.Label2]"')</onclick>
+					<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='"$INFO[ListItem.Property(Event.Description)]"')</onclick>
 					<visible>Control.IsVisible(96)</visible>
 					<texturefocus>views/more_fo.png</texturefocus>
 					<texturenofocus>views/more_nf.png</texturenofocus>
@@ -233,77 +389,9 @@
 					<width>-8</width>
 					<height>0</height>
 					<label>-</label>
-					<onfocus condition="!IsEmpty(Container.PluginName)">SetFocus(5022)</onfocus>
-					<onfocus condition="IsEmpty(Container.PluginName) + Control.IsEnabled(3)">SetFocus(5004)</onfocus>
-					<onfocus condition="IsEmpty(Container.PluginName) + !Control.IsEnabled(3) + Control.IsEnabled(4)">SetFocus(4)</onfocus>
-					<onfocus condition="IsEmpty(Container.PluginName) + !Control.IsEnabled(3) + !Control.IsEnabled(4) + Container.CanFilter + !Container.CanFilterAdvanced">SetFocus(19)</onfocus>
-					<onfocus condition="IsEmpty(Container.PluginName) + !Control.IsEnabled(3) + !Control.IsEnabled(4) + Container.CanFilterAdvanced">SetFocus(5011)</onfocus>
+					<onfocus>SetFocus(4)</onfocus>
 					<include>NoTextures</include>
-					<visible>!Control.HasFocus(5004) + !Control.HasFocus(4) + !Control.HasFocus(19) + !Control.HasFocus(5011) + !Control.HasFocus(5013)</visible>
-				</control>
-				<control type="image" id="5020">
-					<width>640</width>
-					<height>60</height>
-					<texture border="2">dialogs/OptionsBackgroundHeading.png</texture>
-					<visible>!IsEmpty(Container.PluginName)</visible>
-				</control>
-				<control type="label" id="5021">
-					<left>40</left>
-					<top>-60</top>
-					<width>560</width>
-					<height>60</height>
-					<font>Bold30</font>
-					<textcolor>ffdadada</textcolor>
-					<label>$LOCALIZE[582]:</label>
-					<visible>!IsEmpty(Container.PluginName)</visible>
-				</control>
-				<control type="button" id="5022">
-					<height>110</height>
-					<width>640</width>
-					<textoffsetx>40</textoffsetx>
-					<textwidth>560</textwidth>
-					<aligny>center</aligny>
-					<font>Light30Spaced</font>
-					<label>$INFO[Container.Viewmode]</label>
-					<onback>55</onback>
-					<onclick>Container.NextViewMode</onclick>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<texturefocus border="3">dialogs/OptionsBackgroundButtonFO.png</texturefocus>
-					<texturenofocus border="3">dialogs/OptionsBackgroundButtonNF.png</texturenofocus>
-					<visible>!IsEmpty(Container.PluginName)</visible>
-				</control>
-				<control type="image" id="5002">
-					<width>640</width>
-					<height>60</height>
-					<texture border="2">dialogs/OptionsBackgroundHeading.png</texture>
-					<visible>Control.IsEnabled(3)</visible>
-				</control>
-				<control type="label" id="5003">
-					<left>40</left>
-					<top>-60</top>
-					<width>560</width>
-					<height>60</height>
-					<font>Bold30</font>
-					<textcolor>ffdadada</textcolor>
-					<label>$LOCALIZE[31092]:</label>
-					<visible>Control.IsEnabled(3)</visible>
-				</control>
-				<control type="button" id="5004">
-					<height>110</height>
-					<width>640</width>
-					<textoffsetx>40</textoffsetx>
-					<textwidth>560</textwidth>
-					<aligny>center</aligny>
-					<font>Light30Spaced</font>
-					<label>$INFO[Container.SortMethod]</label>
-					<onback>55</onback>
-					<onclick>Container.NextSortMethod</onclick>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<texturefocus border="3">dialogs/OptionsBackgroundButtonFO.png</texturefocus>
-					<texturenofocus border="3">dialogs/OptionsBackgroundButtonNF.png</texturenofocus>
-					<visible>Control.IsEnabled(3)</visible>
+					<visible>!Control.HasFocus(4) + !Control.HasFocus(5013)</visible>
 				</control>
 				<control type="image" id="5005">
 					<width>640</width>
@@ -339,73 +427,6 @@
 					<alttexturenofocus border="3">dialogs/OptionsBackgroundButtonNF.png</alttexturenofocus>
 					<usealttexture>Container.SortDirection(Descending)</usealttexture>
 					<visible>Control.IsEnabled(4)</visible>
-				</control>
-				<control type="image" id="5007">
-					<width>640</width>
-					<height>60</height>
-					<texture border="2">dialogs/OptionsBackgroundHeading.png</texture>
-					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-				</control>
-				<control type="label" id="5008">
-					<left>40</left>
-					<top>-60</top>
-					<width>560</width>
-					<height>60</height>
-					<font>Bold30</font>
-					<textcolor>ffdadada</textcolor>
-					<label>$LOCALIZE[31093]:</label>
-					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-				</control>
-				<control type="edit" id="19">
-					<height>110</height>
-					<width>640</width>
-					<textoffsetx>40</textoffsetx>
-					<textwidth>560</textwidth>
-					<aligny>center</aligny>
-					<font>Light30Spaced</font>
-					<onback>55</onback>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<texturefocus border="3">dialogs/OptionsBackgroundButtonFO.png</texturefocus>
-					<texturenofocus border="3">dialogs/OptionsBackgroundButtonNF.png</texturenofocus>
-					<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-				</control>
-				<control type="image" id="5009">
-					<width>640</width>
-					<height>60</height>
-					<texture border="2">dialogs/OptionsBackgroundHeading.png</texture>
-					<visible>Container.CanFilterAdvanced</visible>
-				</control>
-				<control type="label" id="5010">
-					<left>40</left>
-					<top>-60</top>
-					<width>560</width>
-					<height>60</height>
-					<font>Bold30</font>
-					<textcolor>ffdadada</textcolor>
-					<label>$LOCALIZE[587]:</label>
-					<visible>Container.CanFilterAdvanced</visible>
-				</control>
-				<control type="radiobutton" id="5011">
-					<height>110</height>
-					<width>640</width>
-					<textoffsetx>40</textoffsetx>
-					<textwidth>560</textwidth>
-					<aligny>center</aligny>
-					<font>Light30Spaced</font>
-					<label>$VAR[FilterButton]</label>
-					<onback>55</onback>
-					<onclick>SetFocus(55)</onclick>
-					<onclick>Filter</onclick>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<texturefocus border="3">dialogs/OptionsBackgroundButtonFO.png</texturefocus>
-					<texturenofocus border="3">dialogs/OptionsBackgroundButtonNF.png</texturenofocus>
-					<textureradioonfocus>-</textureradioonfocus>
-					<textureradioonnofocus>-</textureradioonnofocus>
-					<textureradioofffocus>-</textureradioofffocus>
-					<textureradiooffnofocus>-</textureradiooffnofocus>
-					<visible>Container.CanFilterAdvanced</visible>
 				</control>
 				<control type="image" id="5012">
 					<width>640</width>

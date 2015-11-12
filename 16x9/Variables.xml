@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="HigherLevels">
+		<value condition="SubString(Skin.String(HigherLevels),off)">$LOCALIZE[31208]</value>
+		<value>$LOCALIZE[31209]</value>
+	</variable>
 	<variable name="NextUpThumb">
 		<value condition="!IsEmpty(Control.GetLabel(3008)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + IntegerGreaterThan(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3008)]</value>
 		<value condition="!IsEmpty(Control.GetLabel(3005)) + [IsEmpty(Control.GetLabel(3008)) | [Skin.HasSetting(HideUnwatchedThumbs) + !IntegerGreaterThan(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3005)]</value>
@@ -13,8 +17,8 @@
 		<value>views/episode_fallback.png</value>
 	</variable>
 	<variable name="AutoUpdate">
-		<value condition="SubString(Skin.String(AutoUpdate),off)">Enable Auto-Update</value>
-		<value>Disable Auto-Update</value>
+		<value condition="SubString(Skin.String(AutoUpdate),off)">$LOCALIZE[31206]</value>
+		<value>$LOCALIZE[31207]</value>
 	</variable>
 	<variable name="WidgetLabel-1">
 		<value condition="StringCompare(Window(home).Property(SubMenu),1)">$INFO[Skin.String(1-WidgetLabel-1)]</value>

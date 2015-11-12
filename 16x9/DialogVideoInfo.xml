@@ -1291,5 +1291,13 @@
 				</control>
 			</control>
 		</control>
+		<control type="label">
+			<width>auto</width>
+			<height>29</height>
+			<align>left</align>
+			<font>Light24</font>
+			<textcolor>ffbcbcbc</textcolor>
+			<label>$INFO[Window(home).Property(TVShowID)]</label>
+		</control>
 	</controls>
 </window>
