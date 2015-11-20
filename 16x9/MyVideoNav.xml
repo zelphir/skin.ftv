@@ -144,9 +144,10 @@
 				<visible>Container.Content(seasons)</visible>
 				<control type="image">
 					<top>2</top>
-					<width>137</width>
+					<width>147</width>
 					<height>24</height>
 					<texture>$VAR[SeasonStarRating]</texture>
+					<aspectratio align="left">keep</aspectratio>
 					<visible>!IsEmpty(Window(home).Property(TVShowRating))</visible>
 				</control>
 				<control type="label">
@@ -189,20 +190,11 @@
 				<visible>Container.Content(episodes) + !SubString(Container.FolderPath,recentlyaddedepisodes)</visible>
 				<control type="image">
 					<top>2</top>
-					<width>137</width>
+					<width>147</width>
 					<height>24</height>
 					<texture>$VAR[StarRating]</texture>
-					<visible>!IsEmpty(ListItem.Rating)</visible>
-				</control>
-				<control type="label">
-					<top>-8</top>
-					<width>auto</width>
-					<height>38</height>
-					<font>Med32Num</font>
-					<aligny>bottom</aligny>
-					<textcolor>ff707070</textcolor>
-					<label>$INFO[ListItem.Votes,(,)]</label>
-					<visible>!IsEmpty(ListItem.Votes) + IntegerGreaterThan(ListItem.Votes,0)</visible>
+					<aspectratio align="left">keep</aspectratio>
+					<visible>!IsEmpty(ListItem.UserRating)</visible>
 				</control>
 				<control type="image">
 					<top>3</top>
@@ -406,19 +398,11 @@
 					</control>
 					<control type="image">
 						<top>2</top>
-						<width>137</width>
+						<width>147</width>
 						<height>24</height>
 						<texture>$VAR[StarRating]</texture>
-						<visible>!IsEmpty(ListItem.Rating)</visible>
-					</control>
-					<control type="label">
-						<width>auto</width>
-						<height>24</height>
-						<font>Med24Num</font>
-						<aligny>bottom</aligny>
-						<textcolor>ff707070</textcolor>
-						<label>$INFO[ListItem.Votes,(,)[COLOR 00ffffff]/[/COLOR]]</label>
-						<visible>!IsEmpty(ListItem.Votes) + IntegerGreaterThan(ListItem.Votes,0)</visible>
+						<aspectratio align="left">keep</aspectratio>
+						<visible>!IsEmpty(ListItem.UserRating)</visible>
 					</control>
 					<control type="image">
 						<top>3</top>

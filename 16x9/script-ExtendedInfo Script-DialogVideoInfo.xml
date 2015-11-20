@@ -172,23 +172,6 @@
 				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 				<animation delay="200" effect="fade" end="100" start="0" time="80">Visible</animation>
 				<control type="image">
-					<top>2</top>
-					<width>137</width>
-					<height>24</height>
-					<texture>$VAR[StarRating]</texture>
-					<visible>!IsEmpty(Window.Property(movie.rating))</visible>
-				</control>
-				<control type="label">
-					<top>-4</top>
-					<width>auto</width>
-					<height>24</height>
-					<font>Med30</font>
-					<aligny>bottom</aligny>
-					<textcolor>ff717171</textcolor>
-					<label>$INFO[Window.Property(movie.votes),(,) ]</label>
-					<visible>!IsEmpty(Window.Property(movie.votes)) + IntegerGreaterThan(Window.Property(movie.votes),0)</visible>
-				</control>
-				<control type="image">
 					<top>4</top>
 					<width>48</width>
 					<height>23</height>

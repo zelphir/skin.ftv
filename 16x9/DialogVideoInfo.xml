@@ -211,27 +211,19 @@
 				<animation delay="200" effect="fade" end="100" start="0" time="80">Visible</animation>
 				<control type="image">
 					<top>2</top>
-					<width>137</width>
+					<width>147</width>
 					<height>24</height>
 					<texture>$VAR[StarRating]</texture>
-					<visible>!IsEmpty(ListItem.Rating)</visible>
+					<aspectratio align="left">keep</aspectratio>
+					<visible>!IsEmpty(ListItem.UserRating)</visible>
 				</control>
 				<control type="image">
 					<top>2</top>
-					<width>137</width>
+					<width>147</width>
 					<height>24</height>
 					<texture>$VAR[SeasonStarRating]</texture>
-					<visible>!IsEmpty(Window(home).Property(TVShowRating)) + IsEmpty(ListItem.Rating)</visible>
-				</control>
-				<control type="label">
-					<top>-4</top>
-					<width>auto</width>
-					<height>24</height>
-					<font>Med30</font>
-					<aligny>bottom</aligny>
-					<textcolor>ff717171</textcolor>
-					<label>$INFO[ListItem.Votes,(,) ]</label>
-					<visible>!IsEmpty(ListItem.Votes) + IntegerGreaterThan(ListItem.Votes,0)</visible>
+					<aspectratio align="left">keep</aspectratio>
+					<visible>!IsEmpty(Window(home).Property(TVShowRating)) + IsEmpty(ListItem.Rating) + !Container.Content(episodes)</visible>
 				</control>
 				<control type="image">
 					<top>4</top>
@@ -538,7 +530,7 @@
 					<ondown condition="Control.IsVisible(5000)">5000</ondown>
 					<ondown condition="Control.IsVisible(50)">50</ondown>
 					<font>Med24</font>
-					<label>[CAPITALIZE]$LOCALIZE[38023][/CAPITALIZE]</label>
+					<label>[CAPITALIZE]$LOCALIZE[31194][/CAPITALIZE]</label>
 					<textoffsetx>28</textoffsetx>
 					<textcolor>ffdadada</textcolor>
 					<focusedcolor>ff222222</focusedcolor>
@@ -1290,14 +1282,6 @@
 					<visible>Control.HasFocus(50)</visible>
 				</control>
 			</control>
-		</control>
-		<control type="label">
-			<width>auto</width>
-			<height>29</height>
-			<align>left</align>
-			<font>Light24</font>
-			<textcolor>ffbcbcbc</textcolor>
-			<label>$INFO[Window(home).Property(TVShowID)]</label>
 		</control>
 	</controls>
 </window>

@@ -181,13 +181,6 @@
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="image">
-					<top>2</top>
-					<width>137</width>
-					<height>24</height>
-					<texture>$VAR[SearchStarRating]</texture>
-					<visible>!IsEmpty(Container(100).ListItem.Property(StarRating))</visible>
-				</control>
-				<control type="image">
 					<top>4</top>
 					<width>48</width>
 					<height>23</height>
@@ -409,18 +402,6 @@
 				<control type="label">
 					<height>6</height>
 					<font>-</font>
-				</control>
-				<!-- Star rating -->
-				<control type="group">
-					<height>36</height>
-					<orientation>horizontal</orientation>
-					<usecontrolcoords>true</usecontrolcoords>
-					<visible>!IsEmpty(Container(100).ListItem.Property(StarRating))</visible>
-					<control type="image">
-						<width>137</width>
-						<height>24</height>
-						<texture>$INFO[Container(100).ListItem.Property(StarRating)]</texture>
-					</control>
 				</control>
 			</control>
 			<control type="grouplist">

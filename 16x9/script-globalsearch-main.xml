@@ -183,12 +183,6 @@
 							<usecontrolcoords>true</usecontrolcoords>
 							<include>VisibleDelayFadeAnimation</include>
 							<control type="image">
-								<top>2</top>
-								<width>137</width>
-								<height>24</height>
-								<texture>$VAR[SearchStarRating]</texture>
-							</control>
-							<control type="image">
 								<top>3</top>
 								<width>47</width>
 								<height>23</height>

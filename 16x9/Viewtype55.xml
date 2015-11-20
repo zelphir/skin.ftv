@@ -96,7 +96,7 @@
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowTitle,$INFO[ListItem.TVShowTitle],home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowVotes,$INFO[ListItem.Votes],home)</onfocus>
-						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowRating,$INFO[ListItem.Rating],home)</onfocus>
+						<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowRating,$INFO[ListItem.UserRating],home)</onfocus>
 						<onfocus condition="!IsEmpty(Window(home).Property(ButtonFocus))">ClearProperty(ButtonFocus,home)</onfocus>
 					</control>
 					<control type="group">

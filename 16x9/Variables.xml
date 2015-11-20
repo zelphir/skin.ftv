@@ -284,14 +284,6 @@
 		<value condition="Control.HasFocus(211)">$INFO[Container(211).NumItems]</value>
 		<value condition="Control.HasFocus(221)">$INFO[Container(221).NumItems]</value>
 	</variable>
-	<variable name="SearchStarRating">
-		<value condition="Window.IsVisible(script-globalsearch-infodialog.xml)">rating/$INFO[Container(100).ListItem.Property(StarRating)]</value>
-		<value condition="Control.HasFocus(111)">rating/$INFO[Container(111).ListItem.Property(StarRating)]</value>
-		<value condition="Control.HasFocus(121)">rating/$INFO[Container(121).ListItem.Property(StarRating)]</value>
-		<value condition="Control.HasFocus(141)">rating/$INFO[Container(141).ListItem.Property(StarRating)]</value>
-		<value condition="Control.HasFocus(171)">rating/$INFO[Container(171).ListItem.Property(StarRating)]</value>
-		<value condition="Control.HasFocus(181)">rating/$INFO[Container(181).ListItem.Property(StarRating)]</value>
-	</variable>
 	<variable name="SearchDuration">
 		<value condition="StringCompare(Container(100).ListItem.Property(Duration),1)">1 $LOCALIZE[31004]</value>
 		<value condition="StringCompare(Container(100).ListItem.Property(Duration),2)">2 $LOCALIZE[31147]</value>
@@ -739,16 +731,16 @@
 		<value>views/movie_fallback.png</value>
 	</variable>
 	<variable name="StarRating">
-		<value condition="IntegerGreaterThan(ListItem.Rating,9)">rating/rating10.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,8)">rating/rating9.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,7)">rating/rating8.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,6)">rating/rating7.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,5)">rating/rating6.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,4)">rating/rating5.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,3)">rating/rating4.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,2)">rating/rating3.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,1)">rating/rating2.png</value>
-		<value condition="IntegerGreaterThan(ListItem.Rating,0)">rating/rating1.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,9)">rating/rating10.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,8)">rating/rating9.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,7)">rating/rating8.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,6)">rating/rating7.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,5)">rating/rating6.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,4)">rating/rating5.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,3)">rating/rating4.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,2)">rating/rating3.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,1)">rating/rating2.png</value>
+		<value condition="IntegerGreaterThan(ListItem.UserRating,0)">rating/rating1.png</value>
 		<value>rating/rating0.png</value>
 	</variable>
 	<variable name="SeasonStarRating">

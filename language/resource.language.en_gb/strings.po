@@ -814,7 +814,7 @@ msgid "Your Video Add-ons"
 msgstr ""
 
 msgctxt "#31194"
-msgid ""
+msgid "Personal Rating"
 msgstr ""
 
 msgctxt "#31195"

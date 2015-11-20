@@ -290,18 +290,18 @@
 				<include>VisibleFadeAnimation</include>
 				<visible>!Player.Paused + !Player.Forwarding + !Player.Rewinding + [Player.Seeking | Player.DisplayAfterSeek]</visible>
 				<control type="image">
-					<left>104</left>
-					<bottom>128</bottom>
-					<width>65</width>
-					<height>71</height>
+					<left>97</left>
+					<bottom>123</bottom>
+					<width>80</width>
+					<height>80</height>
 					<texture>osd/step_forward.png</texture>
 					<visible>[!IsEmpty(Player.SeekOffset) + !SubString(Player.SeekOffset,-)] | [!IsEmpty(Player.SeekStepSize) + !SubString(Player.SeekStepSize,-)]</visible>
 				</control>
 				<control type="image">
-					<left>104</left>
-					<bottom>128</bottom>
-					<width>65</width>
-					<height>71</height>
+					<left>97</left>
+					<bottom>123</bottom>
+					<width>80</width>
+					<height>80</height>
 					<texture>osd/step_back.png</texture>
 					<visible>[!IsEmpty(Player.SeekOffset) + SubString(Player.SeekOffset,-)] | [!IsEmpty(Player.SeekStepSize) + SubString(Player.SeekStepSize,-)]</visible>
 				</control>
