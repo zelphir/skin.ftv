@@ -899,6 +899,10 @@
 		<value condition="Window.IsVisible(videossettings)">settings/icon_service.png</value>
 		<value condition="Window.IsVisible(musicsettings)">settings/icon_more.png</value>
 	</variable>
+	<variable name="AiredDate">
+		<value condition="!StringCompare(System.Language,English">[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$INFO[ListItem.Premiered]</value>
+		<value>[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$VAR[AiredDate_Day] $VAR[AiredDate_Month] $VAR[AiredDate_YearStart]$VAR[AiredDate_YearEnd]</value>
+	</variable>
 	<variable name="AiredDate_Day">
 		<value condition="SubString(ListItem.Premiered,01/,left)">1</value>
 		<value condition="SubString(ListItem.Premiered,02/,left)">2</value>

@@ -1,3 +1,7 @@
+2.2.15
+
+Use long premiered date format for English language only
+
 2.2.14
 
 Star Ratings now used for User Ratings

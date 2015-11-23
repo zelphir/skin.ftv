@@ -6,10 +6,13 @@
 	<onload>Control.Move(5000,1)</onload>
 	<onload>Control.Move(50,$INFO[Container(50).CurrentItem,-])</onload>
 	<onload>Control.Move(50,1)</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(0).Label)">SetProperty(Actor1,$INFO[Container(50).ListItemNoWrap(0).Label],home)</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(1).Label)">SetProperty(Actor2,$INFO[Container(50).ListItemNoWrap(1).Label],home)</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(2).Label)">SetProperty(Actor3,$INFO[Container(50).ListItemNoWrap(2).Label],home)</onload>
+	<onload>SetProperty(Actor1,$INFO[Container(50).ListItemNoWrap(0).Label],home)</onload>
+	<onload>SetProperty(Actor2,$INFO[Container(50).ListItemNoWrap(1).Label],home)</onload>
+	<onload>SetProperty(Actor3,$INFO[Container(50).ListItemNoWrap(2).Label],home)</onload>
 	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
+	<onunload>ClearProperty(Actor1,home)</onunload>
+	<onunload>ClearProperty(Actor2,home)</onunload>
+	<onunload>ClearProperty(Actor3,home)</onunload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>SetFocus(50)</onunload>
 	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>

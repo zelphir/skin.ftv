@@ -405,9 +405,9 @@
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<property name="list">MusicFiles</property>
+			<onclick>ActivateWindow(Music,Files,Return)</onclick>
+			<property name="path">ActivateWindow(Music,Files,Return)</property>
+			<property name="list">Files</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
@@ -421,8 +421,8 @@
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
 			<visible>[Library.HasContent(Music)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
-			<onclick>ActivateWindow(MusicLibrary,MusicLibrary,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,MusicLibrary,return)</property>
+			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
+			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
@@ -436,8 +436,8 @@
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
-			<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,Addons,return)</property>
+			<onclick>ActivateWindow(Music,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
@@ -500,6 +500,22 @@
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<property name="group">settings</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUM[4]</property>
+			<label>$LOCALIZE[14111]</label>
+			<label2>$ADDON[script.skinshortcuts 32034]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">14111</property>
+			<property name="defaultID">14111</property>
+			<visible>[system.getbool(eventlog.enabled)] + StringCompare(Container(9000).ListItem.Property(submenuVisibility),settings)</visible>
+			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
+			<property name="path">ActivateWindow(EventLog,events://,return)</property>
+			<property name="list">events://</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1154,9 +1170,9 @@
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<property name="list">MusicFiles</property>
+			<onclick>ActivateWindow(Music,Files,Return)</onclick>
+			<property name="path">ActivateWindow(Music,Files,Return)</property>
+			<property name="list">Files</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
@@ -1170,8 +1186,8 @@
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
 			<visible>Library.HasContent(Music)</visible>
-			<onclick>ActivateWindow(MusicLibrary,MusicLibrary,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,MusicLibrary,return)</property>
+			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
+			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
@@ -1185,8 +1201,8 @@
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
-			<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,Addons,return)</property>
+			<onclick>ActivateWindow(Music,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
@@ -1202,9 +1218,9 @@
 			<thumb />
 			<property name="labelID">744</property>
 			<property name="defaultID">744</property>
-			<onclick>ActivateWindow(MusicFiles)</onclick>
-			<property name="path">ActivateWindow(MusicFiles)</property>
-			<property name="list">MusicFiles</property>
+			<onclick>ActivateWindow(Music,Files,Return)</onclick>
+			<property name="path">ActivateWindow(Music,Files,Return)</property>
+			<property name="list">Files</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
@@ -1218,8 +1234,8 @@
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
 			<visible>[Library.HasContent(Music)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
-			<onclick>ActivateWindow(MusicLibrary,MusicLibrary,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,MusicLibrary,return)</property>
+			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
+			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">music</property>
@@ -1233,8 +1249,8 @@
 			<thumb />
 			<property name="labelID">1038</property>
 			<property name="defaultID">1038</property>
-			<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
-			<property name="path">ActivateWindow(MusicLibrary,Addons,return)</property>
+			<onclick>ActivateWindow(Music,Addons,return)</onclick>
+			<property name="path">ActivateWindow(Music,Addons,return)</property>
 			<property name="list">Addons</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
@@ -1325,6 +1341,22 @@
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
+		<item id="4">
+			<property name="id">$NUM[4]</property>
+			<label>$LOCALIZE[14111]</label>
+			<label2>$ADDON[script.skinshortcuts 32034]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">14111</property>
+			<property name="defaultID">14111</property>
+			<visible>system.getbool(eventlog.enabled)</visible>
+			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
+			<property name="path">ActivateWindow(EventLog,events://,return)</property>
+			<property name="list">events://</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<property name="group">settings</property>
+			<property name="isSubmenu">True</property>
+		</item>
 	</include>
 	<include name="skinshortcuts-group-alt-settings">
 		<item id="1">
@@ -1369,6 +1401,22 @@
 			<property name="path">ActivateWindow(SystemInfo)</property>
 			<property name="list">SystemInfo</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<property name="group">settings</property>
+			<property name="isSubmenu">True</property>
+		</item>
+		<item id="4">
+			<property name="id">$NUM[4]</property>
+			<label>$LOCALIZE[14111]</label>
+			<label2>$ADDON[script.skinshortcuts 32034]</label2>
+			<icon>DefaultShortcut.png</icon>
+			<thumb />
+			<property name="labelID">14111</property>
+			<property name="defaultID">14111</property>
+			<visible>[system.getbool(eventlog.enabled)] + StringCompare(Window(10000).Property(submenuVisibility),settings)</visible>
+			<onclick>ActivateWindow(EventLog,events://,return)</onclick>
+			<property name="path">ActivateWindow(EventLog,events://,return)</property>
+			<property name="list">events://</property>
+			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">settings</property>
 			<property name="isSubmenu">True</property>
 		</item>
