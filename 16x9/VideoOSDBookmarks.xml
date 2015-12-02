@@ -107,19 +107,6 @@
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>416</top>
-						<width>604</width>
-						<height>28</height>
-						<font>Med28</font>
-						<textcolor>ffffc448</textcolor>
-						<shadowcolor>88000000</shadowcolor>
-						<label>$LOCALIZE[31141]</label>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
-						<animation condition="Control.HasFocus(11) | Container(11).OnNext | Container(11).OnPrevious" delay="700" easing="inout" effect="fade" end="100" reversible="false" start="0" time="220" tween="sine">Focus</animation>
-						<animation condition="Container(11).OnNext | Container(11).OnPrevious" effect="fade" end="0" start="100" time="0">UnFocus</animation>
-					</control>
-					<control type="label">
-						<left>18</left>
 						<top>448</top>
 						<width>604</width>
 						<height>42</height>
@@ -129,8 +116,9 @@
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 						<visible>!StringCompare(ListItem.Label,..)</visible>
-						<animation condition="Control.HasFocus(11) | Container(11).OnNext | Container(11).OnPrevious" delay="560" easing="inout" effect="slide" end="0,0" reversible="false" start="0,-21" time="220" tween="sine">Focus</animation>
+						<animation effect="fade" end="0" start="0" time="0">Focus</animation>
 						<animation condition="Container(11).OnNext | Container(11).OnPrevious" effect="slide" end="0,-21" start="0,0" time="0">UnFocus</animation>
+						<visible>Control.HasFocus(11)</visible>
 					</control>
 					<control type="image">
 						<top>48</top>
@@ -218,12 +206,13 @@
 						<visible>!Control.HasFocus(2) + !Control.HasFocus(3) + !Control.HasFocus(4)</visible>
 					</control>
 					<control id="2" type="button">
-						<width>222</width>
+						<width min="144" max="264">auto</width>
+						<wrapmultiline>true</wrapmultiline>
 						<height>100</height>
 						<onup>11</onup>
 						<ondown>noop</ondown>
 						<font>Med24</font>
-						<label>$LOCALIZE[31142]</label>
+						<label>[CAPITALIZE]$LOCALIZE[294][/CAPITALIZE]</label>
 						<textoffsetx>28</textoffsetx>
 						<textcolor>ffdadada</textcolor>
 						<focusedcolor>ff222222</focusedcolor>
@@ -233,12 +222,13 @@
 						<visible>!StringCompare(ListItem.Label,..) + !SubString(Container.FolderName,$LOCALIZE[20434]) + !SubString(ListItem.Path,videodb://movies/sets,left)</visible>
 					</control>
 					<control id="4" type="button">
-						<width>222</width>
+						<width min="144" max="1000">auto</width>
+						<wrapmultiline>true</wrapmultiline>
 						<height>100</height>
 						<onup>11</onup>
 						<ondown>noop</ondown>
 						<font>Med24</font>
-						<label>$LOCALIZE[31143]</label>
+						<label>[CAPITALIZE]$LOCALIZE[20406][/CAPITALIZE]</label>
 						<textoffsetx>28</textoffsetx>
 						<textcolor>ffdadada</textcolor>
 						<focusedcolor>ff222222</focusedcolor>
@@ -247,12 +237,13 @@
 						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
 					</control>
 					<control id="3" type="button">
-						<width>182</width>
+						<width min="144" max="204">auto</width>
+						<wrapmultiline>true</wrapmultiline>
 						<height>100</height>
 						<onup>11</onup>
 						<ondown>noop</ondown>
 						<font>Med24</font>
-						<label>$LOCALIZE[31102]</label>
+						<label>[CAPITALIZE]$LOCALIZE[296][/CAPITALIZE]</label>
 						<textoffsetx>28</textoffsetx>
 						<textcolor>ffdadada</textcolor>
 						<focusedcolor>ff222222</focusedcolor>
@@ -268,6 +259,7 @@
 					<height>30</height>
 					<align>left</align>
 					<font>Bold32</font>
+					<textcolor>ffffffff</textcolor>
 					<label>$INFO[Container(11).ListItem.Label]</label>
 				</control>
 				<control type="label">

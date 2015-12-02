@@ -548,8 +548,17 @@
 						<font>Med24</font>
 						<aligny>bottom</aligny>
 						<textcolor>ffbebebe</textcolor>
-						<label>$VAR[AiredDate]</label>
-						<visible>!IsEmpty(ListItem.Premiered)</visible>
+						<label>[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$VAR[AiredDate_Day] $VAR[AiredDate_Month] $VAR[AiredDate_YearStart]$VAR[AiredDate_YearEnd]</label>
+						<visible>!IsEmpty(ListItem.Premiered) + StringCompare(System.Language,English)</visible>
+					</control>
+					<control type="label">
+						<width>auto</width>
+						<height>24</height>
+						<font>Med24</font>
+						<aligny>bottom</aligny>
+						<textcolor>ffbebebe</textcolor>
+						<label>[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$INFO[ListItem.Premiered]</label>
+						<visible>!IsEmpty(ListItem.Premiered) + !StringCompare(System.Language,English)</visible>
 					</control>
 					<include>Rating_TV_Episodes</include>
 				</control>

@@ -49,7 +49,7 @@ msgid "Apps"
 msgstr ""
 
 msgctxt "#31102"
-msgid "Clear all Bookmarks"
+msgid ""
 msgstr ""
 
 msgctxt "#31103"
@@ -602,19 +602,19 @@ msgid "Download Subtitles"
 msgstr ""
 
 msgctxt "#31141"
-msgid "Jump to"
+msgid ""
 msgstr ""
 
 msgctxt "#31142"
-msgid "Create New Bookmark Here"
+msgid ""
 msgstr ""
 
 msgctxt "#31143"
-msgid "Set Episode Bookmark Here"
+msgid ""
 msgstr ""
 
 msgctxt "#31144"
-msgid "Clear all Bookmarks"
+msgid ""
 msgstr ""
 
 msgctxt "#31145"

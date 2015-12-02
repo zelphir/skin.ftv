@@ -122,6 +122,7 @@
 					<font>Light27</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
+					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
 				</control>
 				<!--  Total length -->
 				<control id="99" type="label">

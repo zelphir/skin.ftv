@@ -658,13 +658,11 @@
 	</variable>
 	<variable name="PlayerTime">
 		<value condition="IntegerGreaterThan(Player.Duration(h),0)">$INFO[Player.Time(h:mm:ss)]</value>
-		<value condition="IntegerGreaterThan(Player.Duration(mm),0)">$INFO[Player.Time(mm:ss)]</value>
-		<value>$INFO[Player.Time(ss)]</value>
+		<value>$INFO[Player.Time(mm:ss)]</value>
 	</variable>
 	<variable name="PlayerDuration">
 		<value condition="IntegerGreaterThan(Player.Duration(h),0)">$INFO[Player.Duration(h:mm:ss)]</value>
-		<value condition="IntegerGreaterThan(Player.Duration(mm),0)">$INFO[Player.Duration(mm:ss)]</value>
-		<value>$INFO[Player.Duration(ss)]</value>
+		<value>$INFO[Player.Duration(mm:ss)]</value>
 	</variable>
 	<variable name="Fanart">
 		<value condition="[Container.Content(seasons) | Container.Content(episodes)] + !IsEmpty(Container.Art(tvshow.fanart))">$INFO[Container.Art(tvshow.fanart)]</value>
@@ -898,10 +896,6 @@
 		<value condition="Window.IsVisible(addonbrowser)">settings/icon_system.png</value>
 		<value condition="Window.IsVisible(videossettings)">settings/icon_service.png</value>
 		<value condition="Window.IsVisible(musicsettings)">settings/icon_more.png</value>
-	</variable>
-	<variable name="AiredDate">
-		<value condition="!StringCompare(System.Language,English">[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$INFO[ListItem.Premiered]</value>
-		<value>[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$VAR[AiredDate_Day] $VAR[AiredDate_Month] $VAR[AiredDate_YearStart]$VAR[AiredDate_YearEnd]</value>
 	</variable>
 	<variable name="AiredDate_Day">
 		<value condition="SubString(ListItem.Premiered,01/,left)">1</value>

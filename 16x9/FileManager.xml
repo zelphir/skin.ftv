@@ -76,7 +76,7 @@
 						</control>
 						<control type="label">
 							<left>40</left>
-							<width>825</width>
+							<width>745</width>
 							<height>84</height>
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
@@ -84,7 +84,7 @@
 						</control>
 						<control type="label">
 							<right>40</right>
-							<width>825</width>
+							<width>745</width>
 							<height>84</height>
 							<align>right</align>
 							<font>Light32</font>
@@ -102,7 +102,7 @@
 							<visible>Control.HasFocus(20)</visible>
 							<control type="label">
 								<left>40</left>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<font>Light32</font>
 								<textcolor>ffffaf37</textcolor>
@@ -110,7 +110,7 @@
 							</control>
 							<control type="label">
 								<right>40</right>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<align>right</align>
 								<font>Light32</font>
@@ -122,7 +122,7 @@
 							<visible>!Control.HasFocus(20)</visible>
 							<control type="label">
 								<left>40</left>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<font>Light32</font>
 								<textcolor>ffffffff</textcolor>
@@ -130,7 +130,7 @@
 							</control>
 							<control type="label">
 								<right>40</right>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<align>right</align>
 								<font>Light32</font>
@@ -212,7 +212,7 @@
 						</control>
 						<control type="label">
 							<left>40</left>
-							<width>825</width>
+							<width>745</width>
 							<height>84</height>
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
@@ -220,7 +220,7 @@
 						</control>
 						<control type="label">
 							<right>40</right>
-							<width>825</width>
+							<width>745</width>
 							<height>84</height>
 							<align>right</align>
 							<font>Light32</font>
@@ -238,7 +238,7 @@
 							<visible>Control.HasFocus(21)</visible>
 							<control type="label">
 								<left>40</left>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<font>Light32</font>
 								<textcolor>ffffaf37</textcolor>
@@ -246,7 +246,7 @@
 							</control>
 							<control type="label">
 								<right>40</right>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<align>right</align>
 								<font>Light32</font>
@@ -258,7 +258,7 @@
 							<visible>!Control.HasFocus(21)</visible>
 							<control type="label">
 								<left>40</left>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<font>Light32</font>
 								<textcolor>ffffffff</textcolor>
@@ -266,7 +266,7 @@
 							</control>
 							<control type="label">
 								<right>40</right>
-								<width>825</width>
+								<width>745</width>
 								<height>84</height>
 								<align>right</align>
 								<font>Light32</font>
