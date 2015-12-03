@@ -1,3 +1,15 @@
+2.2.17
+
+Fix 'More' button alignment for video addons
+Cleanup votes code
+
+2.2.16
+
+Clean up Time / Duration code
+Clean up Bookmarks code
+Fix label widths in File Manager
+Fix Premiered Date bug
+
 2.2.15
 
 Use long premiered date format for English language only

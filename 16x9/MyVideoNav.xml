@@ -8,7 +8,6 @@
 	<onload condition="System.HasAddon(script.tvtunes)">RunScript(script.tvtunes,backend=True)</onload>
 	<onload condition="Window.Previous(home) + system.getbool(filelists.showparentdiritems)">Control.Move($VAR[ContainerID],1)</onload>
 	<onunload>ClearProperty(TVShowTitle,home)</onunload>
-	<onunload>ClearProperty(TVShowVotes,home)</onunload>
 	<onunload>ClearProperty(TVShowRating,home)</onunload>
 	<onunload condition="Window.Next(home)">Control.Move($VAR[ContainerID],$INFO[Container.CurrentItem,-])</onunload>
 	<onunload condition="Window.Next(home) + !system.getbool(filelists.showparentdiritems)">Control.Move($VAR[ContainerID],1)</onunload>
@@ -149,16 +148,6 @@
 					<texture>$VAR[SeasonStarRating]</texture>
 					<aspectratio align="left">keep</aspectratio>
 					<visible>!IsEmpty(Window(home).Property(TVShowRating))</visible>
-				</control>
-				<control type="label">
-					<top>-8</top>
-					<width>auto</width>
-					<height>38</height>
-					<font>Med32Num</font>
-					<aligny>bottom</aligny>
-					<textcolor>ff707070</textcolor>
-					<label>$INFO[Window(home).Property(TVShowVotes),(,)]</label>
-					<visible>!IsEmpty(Window(home).Property(TVShowVotes)) + IntegerGreaterThan(Window(home).Property(TVShowVotes),0)</visible>
 				</control>
 				<control type="image">
 					<top>3</top>
@@ -721,7 +710,7 @@
 				</control>
 				<!-- Details -->
 				<control type="textbox">
-					<top>107</top>
+					<top>103</top>
 					<width>1192</width>
 					<height>124</height>
 					<align>left</align>
@@ -732,7 +721,7 @@
 					<label>[B]$INFO[ListItem.Label][/B] [LIGHT]$VAR[Plot][/LIGHT]</label>
 				</control>
 				<control id="99" type="scrollbar">
-					<top>107</top>
+					<top>103</top>
 					<width>1192</width>
 					<height>124</height>
 					<showonepage>false</showonepage>
