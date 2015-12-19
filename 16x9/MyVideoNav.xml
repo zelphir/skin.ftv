@@ -145,7 +145,7 @@
 					<top>2</top>
 					<width>147</width>
 					<height>24</height>
-					<texture>$VAR[SeasonStarRating]</texture>
+					<texture>$INFO[Window(home).Property(TVShowRating),rating/rating,.png]</texture>
 					<aspectratio align="left">keep</aspectratio>
 					<visible>!IsEmpty(Window(home).Property(TVShowRating))</visible>
 				</control>
@@ -181,7 +181,7 @@
 					<top>2</top>
 					<width>147</width>
 					<height>24</height>
-					<texture>$VAR[StarRating]</texture>
+					<texture>$INFO[ListItem.UserRating,rating/rating,.png]</texture>
 					<aspectratio align="left">keep</aspectratio>
 					<visible>!IsEmpty(ListItem.UserRating)</visible>
 				</control>
@@ -389,7 +389,7 @@
 						<top>2</top>
 						<width>147</width>
 						<height>24</height>
-						<texture>$VAR[StarRating]</texture>
+						<texture>$INFO[ListItem.UserRating,rating/rating,.png]</texture>
 						<aspectratio align="left">keep</aspectratio>
 						<visible>!IsEmpty(ListItem.UserRating)</visible>
 					</control>

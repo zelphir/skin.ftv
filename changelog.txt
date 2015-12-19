@@ -1,3 +1,9 @@
+2.2.20
+
+Fix some text widths
+Clean up user rating code
+Clean up textures
+
 2.2.19
 
 Updated Song Info dialog
