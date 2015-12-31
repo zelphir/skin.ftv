@@ -1,3 +1,7 @@
+2.3.4
+
+Added busy icon when buffering
+
 2.3.3
 
 Fixed and cleaned up 'Global search info' script 
