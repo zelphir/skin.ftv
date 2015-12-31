@@ -285,6 +285,7 @@
 				<onleft>noop</onleft>
 				<onright>ClearProperty(MainMenuFocus,home)</onright>
 				<!-- workaround to move the focused row after startup -->
+				<onback>ClearProperty(fadeoutdelay,Home)</onback>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(100).CurrentItem,2)">Control.Move(100,-1)</onfocus>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(100).CurrentItem,3)">Control.Move(100,-2)</onfocus>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(100).CurrentItem,4)">Control.Move(100,-3)</onfocus>
@@ -1848,6 +1849,7 @@
 					<font>Reg27</font>
 					<textcolor>ffa3a3a3</textcolor>
 					<pauseatend>340</pauseatend>
+					<label>[COLOR 00ffffff].[/COLOR]</label>
 					<label>.</label>
 					<label>..</label>
 					<label>...</label>
@@ -1857,6 +1859,7 @@
 		<!-- check if preloading is in progress -->
 		<control type="button" id="90000">
 			<include>HiddenControl</include>
+			<onback>ClearProperty(fadeoutdelay,Home)</onback>
 			<onfocus>SetProperty(preload,1,Home)</onfocus>
 			<onfocus>SetProperty(fadeoutdelay,1,Home)</onfocus>
 			<onfocus condition="Control.IsVisible(90001)">SetFocus(90003)</onfocus>
@@ -1870,6 +1873,7 @@
 		<!-- ready to focus -->
 		<control type="button" id="90004">
 			<include>HiddenControl</include>
+			<onback>ClearProperty(fadeoutdelay,Home)</onback>
 			<onfocus condition="StringCompare(Container(9000).ListItem.Property(defaultID),script.globalsearch)">AlarmClock(waitforpreload,Control.SetFocus(9000,1),00:01,silent)</onfocus>
 			<onfocus condition="!StringCompare(Container(9000).ListItem.Property(defaultID),script.globalsearch)">AlarmClock(waitforpreload,Control.SetFocus(9000,0),00:01,silent)</onfocus>
 			<onfocus>AlarmClock(preload,ClearProperty(preload,Home),00:01,silent)</onfocus>
