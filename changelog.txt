@@ -1,3 +1,9 @@
+2.3.2
+
+Fix widget loading problem
+Fix weather widget sizing
+Fix bookmark animations
+
 2.3.1
 
 Add option to press 'back' to cancel loading widgets
