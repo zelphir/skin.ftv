@@ -1,3 +1,7 @@
+2.3.5
+
+Buffering 2nd attempt
+
 2.3.4
 
 Added busy icon when buffering
