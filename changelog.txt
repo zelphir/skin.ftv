@@ -1,3 +1,7 @@
+2.3.6
+
+Added Fire TV style search
+
 2.3.5
 
 Buffering 2nd attempt
