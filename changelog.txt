@@ -1,3 +1,7 @@
+2.3.8
+
+Fix search list problem
+
 2.3.7
 
 Clean up keyboard code

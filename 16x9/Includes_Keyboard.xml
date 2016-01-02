@@ -11,6 +11,7 @@
 				<animation easing="inout" effect="slide" end="0,0" start="0,-329" time="120" tween="sine">WindowOpen</animation>
 				<animation easing="inout" effect="slide" end="0,-329" start="0,0" time="120" tween="sine">WindowClose</animation>
 				<control type="group">
+					<animation effect="slide" end="0,0" start="0,-1000" time="0" delay="800">WindowOpen</animation>
 					<visible>!IsEmpty(Control.GetLabel(312).Index(1))</visible>
 					<!-- Background -->
 					<control type="image">
