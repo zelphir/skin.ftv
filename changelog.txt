@@ -1,3 +1,11 @@
+2.3.9
+
+Added QWERTY and AZERTY keyboard layouts to fTV style search
+Fixed focused widget problem  (thanks to sualfred)
+Fixed sort order for widgets
+Fixed Entended Info biography problem
+Fixed busy dialog visible when pausing video
+
 2.3.8
 
 Fix search list problem

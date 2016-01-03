@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="KeyboardLayout">
+		<value condition="!IsEmpty(Skin.String(KeyboardLayout))">$INFO[Skin.String(KeyboardLayout)]</value>
+		<value>$LOCALIZE[31144]</value>
+	</variable>
+	<variable name="SearchKeyboard">
+		<value condition="StringCompare(Control.GetLabel(309),English ABC) | StringCompare(Control.GetLabel(309),English QWERTY)">$LOCALIZE[31141]</value>
+		<value>$LOCALIZE[31141]</value>
+	</variable>
 	<variable name="SearchEditColor">
 		<value condition="Control.HasFocus(300)">ffffc24b</value>
 		<value>ffdadada</value>
@@ -83,25 +91,25 @@
 	<variable name="SortBy1-1">
 		<value condition="SubString(Skin.String(1-WidgetList-1),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-2">
 		<value condition="SubString(Skin.String(1-WidgetList-2),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-3">
 		<value condition="SubString(Skin.String(1-WidgetList-3),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-4">
 		<value condition="SubString(Skin.String(1-WidgetList-4),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-5">
 		<value condition="SubString(Skin.String(1-WidgetList-5),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-6">
 		<value condition="SubString(Skin.String(1-WidgetList-6),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-7">
 		<value condition="SubString(Skin.String(1-WidgetList-7),addons://sources/)">label</value>
 	</variable>
-	<variable name="SortBy1-1">
+	<variable name="SortBy1-8">
 		<value condition="SubString(Skin.String(1-WidgetList-8),addons://sources/)">label</value>
 	</variable>
 	<variable name="SortBy2-1">
@@ -899,6 +907,7 @@
 		<value condition="ControlGroup(9).HasFocus(17)">$LOCALIZE[31034]</value>
 		<value condition="ControlGroup(9).HasFocus(18)">$LOCALIZE[31150]</value>
 		<value condition="ControlGroup(9).HasFocus(19)">$LOCALIZE[31143]</value>
+		<value condition="ControlGroup(9).HasFocus(20)">$LOCALIZE[31226]</value>
 		<value condition="ControlGroup(9).HasFocus(21)">$LOCALIZE[31039]</value>
 		<value condition="ControlGroup(9).HasFocus(22)">$LOCALIZE[31040]</value>
 	</variable>

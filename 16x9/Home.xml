@@ -111,7 +111,7 @@
 			</control>
 			<control id="308" type="list">
 				<include>HiddenHomeList</include>
-				<content sortby="$VAR[SortBy3-8" limit="6">$INFO[Skin.String(3-WidgetList-8)]</content>
+				<content sortby="$VAR[SortBy3-8]" limit="6">$INFO[Skin.String(3-WidgetList-8)]</content>
 			</control>
 			<control id="401" type="list">
 				<include>HiddenHomeList</include>
@@ -342,6 +342,8 @@
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(800).CurrentItem,6)">Control.Move(800,-5)</onfocus>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(800).CurrentItem,7)">Control.Move(800,-6)</onfocus>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(800).CurrentItem,8)">Control.Move(800,-7)</onfocus>
+				<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
+				<onright>SetProperty(WidgetHasFocus,1,Home)</onright>
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget1) + IntegerGreaterThan(Container(100).NumItems,1)">SetFocus(100)</onright>
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget1) + !IntegerGreaterThan(Container(100).NumItems,1)">$INFO[Skin.String(1-WidgetAction-1)]</onright>
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget2) + IntegerGreaterThan(Container(200).NumItems,1)">SetFocus(200)</onright>
@@ -378,6 +380,7 @@
 					<control type="button">
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
+						<onfocus>ClearProperty(WidgetHasFocus,Home)</onfocus>
 						<onfocus>SetProperty(MainMenuFocus,1,home)</onfocus>
 						<onfocus condition="!StringCompare(Container(9000).ListItem.Property(defaultID),Window(home).Property(MainFocus))">ClearProperty(MainFocus)</onfocus>
 						<onfocus condition="!StringCompare(Container(9000).ListItem.Property(defaultID),Window(home).Property(MainFocus))">ClearProperty(FocusRow)</onfocus>
@@ -565,7 +568,7 @@
 					<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(100).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(100).NumItems,2) + Container(100).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -575,12 +578,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(100).NumItems,2) + Container(100).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(100).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(100).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(100).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(100).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -602,7 +603,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(100)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -614,13 +617,24 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(100)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
 								<animation center="135,201" condition="true" effect="zoom" end="76" start="76" time="0">Conditional</animation>
 							</control>
 						</control>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(100).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
 						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
@@ -680,7 +694,7 @@
 					<include condition="StringCompare(Skin.String(2-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(2-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(2-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(200).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(200).NumItems,2) + Container(200).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -690,12 +704,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(200).NumItems,2) + Container(200).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(200).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(200).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(200).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(200).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -717,7 +729,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(200)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -729,7 +743,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(200)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -740,6 +756,15 @@
 						<include condition="StringCompare(Skin.String(2-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(2-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(2-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(2-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(200).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem2Content</include>
@@ -795,7 +820,7 @@
 					<include condition="StringCompare(Skin.String(3-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(3-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(3-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(300).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(300).NumItems,2) + Container(300).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -805,12 +830,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(300).NumItems,2) + Container(300).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(300).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(300).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(300).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(300).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -832,7 +855,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(300)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -844,7 +869,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(300)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -855,6 +882,15 @@
 						<include condition="StringCompare(Skin.String(3-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(3-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(3-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(3-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(300).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem3Content</include>
@@ -910,7 +946,7 @@
 					<include condition="StringCompare(Skin.String(4-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(4-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(4-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(400).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(400).NumItems,2) + Container(400).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -920,12 +956,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(400).NumItems,2) + Container(400).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(400).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(400).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(400).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(400).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -947,7 +981,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(400)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -959,7 +995,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(400)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -970,6 +1008,15 @@
 						<include condition="StringCompare(Skin.String(4-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(4-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(4-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(4-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(400).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem4Content</include>
@@ -1025,7 +1072,7 @@
 					<include condition="StringCompare(Skin.String(5-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(5-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(5-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(500).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(500).NumItems,2) + Container(500).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -1035,12 +1082,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(500).NumItems,2) + Container(500).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(500).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(500).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(500).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(500).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -1062,7 +1107,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(500)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -1074,7 +1121,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(500)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -1085,6 +1134,15 @@
 						<include condition="StringCompare(Skin.String(5-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(5-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(5-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(5-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(500).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem5Content</include>
@@ -1140,7 +1198,7 @@
 					<include condition="StringCompare(Skin.String(6-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(6-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(6-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(600).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(600).NumItems,2) + Container(600).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -1150,12 +1208,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(600).NumItems,2) + Container(600).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(600).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(600).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(600).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(600).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -1177,7 +1233,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(600)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -1189,7 +1247,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(600)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -1200,6 +1260,15 @@
 						<include condition="StringCompare(Skin.String(6-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(6-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(6-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(6-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(600).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem6Content</include>
@@ -1255,7 +1324,7 @@
 					<include condition="StringCompare(Skin.String(7-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(7-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(7-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(700).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(700).NumItems,2) + Container(700).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -1265,12 +1334,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(700).NumItems,2) + Container(700).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(700).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(700).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(700).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(700).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -1292,7 +1359,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(700)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -1304,7 +1373,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(700)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -1315,6 +1386,15 @@
 						<include condition="StringCompare(Skin.String(7-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(7-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(7-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(7-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(700).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem7Content</include>
@@ -1370,7 +1450,7 @@
 					<include condition="StringCompare(Skin.String(8-WidgetView),$LOCALIZE[31161])">HomeSquareItemlayout</include>
 					<include condition="StringCompare(Skin.String(8-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(8-WidgetView))">HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="370" width="2000">
+				<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container(800).NumItems,1)">
 					<control type="button">
 						<include>HiddenControl</include>
 						<onfocus condition="StringCompare(Container(800).NumItems,2) + Container(800).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
@@ -1380,12 +1460,10 @@
 						<onfocus condition="IntegerGreaterThan(Container(800).NumItems,2) + Container(800).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
 					</control>
 					<control type="group">
-						<animation center="142,167" condition="StringCompare(Container(800).NumItems,1)" effect="zoom" end="132" start="100" time="0">Conditional</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(800).NumItems,1)" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
-						<animation center="142,167" condition="IntegerGreaterThan(Container(800).NumItems,1)" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
+						<animation center="142,167" easing="inout" effect="zoom" end="100" start="132" time="220" tween="sine">UnFocus</animation>
 						<control type="group">
 							<left>33</left>
-							<visible>IntegerGreaterThan(Container(800).NumItems,1)</visible>
 							<control type="image">
 								<width>227</width>
 								<height>334</height>
@@ -1407,7 +1485,9 @@
 								<width>227</width>
 								<height>334</height>
 								<texture border="0,14,11,14">home/home_button_fo.png</texture>
-								<visible>Control.HasFocus(800)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							</control>
@@ -1419,7 +1499,9 @@
 								<align>left</align>
 								<textcolor>ff453a18</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>Control.HasFocus(800)</visible>
+								<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+								<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+								<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 								<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 								<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 								<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -1430,6 +1512,15 @@
 						<include condition="StringCompare(Skin.String(8-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(8-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
 						<include condition="StringCompare(Skin.String(8-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(8-WidgetView))">HomeSquareInfoFocusedlayout</include>
+					</control>
+				</focusedlayout>
+				<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container(800).NumItems,1)">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31160])">HomePosterFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31159])">HomeWideFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31161])">HomeSquareFocusedlayout</include>
+						<include condition="StringCompare(Skin.String(1-WidgetView),$LOCALIZE[31203]) | IsEmpty(Skin.String(1-WidgetView))">HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
 				<include>ListItem8Content</include>
@@ -1846,7 +1937,7 @@
 					<label>$LOCALIZE[31220]</label>
 				</control>
 				<control type="fadelabel">
-					<width>30</width>
+					<width>26</width>
 					<height>40</height>
 					<font>Reg27</font>
 					<textcolor>ffa3a3a3</textcolor>
