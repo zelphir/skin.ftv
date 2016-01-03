@@ -1,3 +1,9 @@
+2.4.0
+
+Added individual widget view types  (thanks to sualfred)
+Increased auto-width buttons' max width
+Cleaned up search layouts
+
 2.3.9
 
 Added QWERTY and AZERTY keyboard layouts to fTV style search
