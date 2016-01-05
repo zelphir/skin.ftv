@@ -945,3 +945,6 @@ msgctxt "#31226"
 msgid "Select the keyboard layout used in Kodi"
 msgstr ""
 
+msgctxt "#31227"
+msgid "Air time"
+msgstr ""

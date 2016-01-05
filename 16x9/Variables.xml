@@ -1,5 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="NextAiredNextSeasonNumber">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(NextSeasonNumber),S]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(NextSeasonNumber),S]</value>
+	</variable>
+	<variable name="NextAiredNextEpisodeNumber">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(NextEpisodeNumber),E]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(NextEpisodeNumber),E]</value>
+	</variable>
+	<variable name="NextAiredFanart">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(Fanart)]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(Fanart)]</value>
+	</variable>
+	<variable name="NextAiredShow">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Label]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Label]</value>
+	</variable>
+	<variable name="NextAiredRuntime">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(Runtime)]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(Runtime)]</value>
+	</variable>
+	<variable name="NextAiredNextTitle">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(NextTitle)]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(NextTitle)]</value>
+	</variable>
+	<variable name="NextAiredShortTime">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(ShortTime)]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(ShortTime)]</value>
+	</variable>
+	<variable name="NextAiredNextDay">
+		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1202)">$INFO[Container(202).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1203)">$INFO[Container(203).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1204)">$INFO[Container(204).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1205)">$INFO[Container(205).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1206)">$INFO[Container(206).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1207)">$INFO[Container(207).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1208)">$INFO[Container(208).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1209)">$INFO[Container(209).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1210)">$INFO[Container(210).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1211)">$INFO[Container(211).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1212)">$INFO[Container(212).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1213)">$INFO[Container(213).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1214)">$INFO[Container(214).ListItem.Property(NextDay)]</value>
+		<value condition="Container(999).HasFocus(1215)">$INFO[Container(215).ListItem.Property(NextDay)]</value>
+	</variable>
 	<variable name="KeyboardLayout">
 		<value condition="!IsEmpty(Skin.String(KeyboardLayout))">$INFO[Skin.String(KeyboardLayout)]</value>
 		<value>$LOCALIZE[31144]</value>
@@ -35,55 +179,55 @@
 		<value condition="Control.IsVisible(211)">$LOCALIZE[20338]</value>
 	</variable>
 	<variable name="CategoryColourMovies">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),movies)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),movies)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(111) | StringCompare(Window(home).Property(Category),movies)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourTVShows">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),tvshows)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),tvshows)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(121) | StringCompare(Window(home).Property(Category),tvshows)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourSeasons">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),seasons)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),seasons)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(131) | StringCompare(Window(home).Property(Category),seasons)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourEpisodes">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),episodes)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),episodes)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(141) | StringCompare(Window(home).Property(Category),episodes)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourMusicVideos">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),musicvideos)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),musicvideos)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(151) | StringCompare(Window(home).Property(Category),musicvideos)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourArtists">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),artists)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),artists)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(161) | StringCompare(Window(home).Property(Category),artists)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourAlbums">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),albums)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),albums)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(171) | StringCompare(Window(home).Property(Category),albums)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourSongs">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),songs)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),songs)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(181) | StringCompare(Window(home).Property(Category),songs)">ffd7d7d7</value>
 		<value>ff505559</value>
 	</variable>
 	<variable name="CategoryColourActors">
-		<value condition="!Control.HasFocus(300) + StringCompare(Window(home).Property(CategoryFocus),actors)">ffffc24b</value>
+		<value condition="StringCompare(Window(home).Property(CategoryFocus),actors)">ffffc24b</value>
 		<value condition="ControlGroup(999).HasFocus">ff8e8b90</value>
 		<value condition="Control.HasFocus(211) | StringCompare(Window(home).Property(Category),actors)">ffd7d7d7</value>
 		<value>ff505559</value>

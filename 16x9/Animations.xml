@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<include name="WidgetFocusAnimation">
-		<animation condition="StringCompare(Container($PARAM[ID]).NumItems,1)" effect="slide" end="-304,0">Conditional</animation>
-		<animation condition="StringCompare(Container($PARAM[ID]).NumItems,2)" effect="slide" end="0,-185">Conditional</animation>
-		<animation condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(1)" easing="inout" effect="slide" end="0,114" time="220" tween="sine">Conditional</animation>
-		<animation condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3)" easing="inout" effect="slide" end="0,-212" time="220" tween="sine">Conditional</animation>
-	</include>
 	<!-- Home fade animation -->
 	<include name="WindowHomeFadeAnimation">
 		<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
