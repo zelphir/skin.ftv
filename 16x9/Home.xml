@@ -285,6 +285,7 @@
 				<ondown>ClearProperty(Movement)</ondown>
 				<onleft>noop</onleft>
 				<onright>ClearProperty(MainMenuFocus,home)</onright>
+				<onfocus>ClearProperty(ForceViewType,home)</onfocus>
 				<!-- workaround to move the focused row after startup -->
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(100).CurrentItem,2)">Control.Move(100,-1)</onfocus>
 				<onfocus condition="System.HasAlarm(waitforpreload) + StringCompare(Container(100).CurrentItem,3)">Control.Move(100,-2)</onfocus>
@@ -360,7 +361,9 @@
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget7) + !IntegerGreaterThan(Container(700).NumItems,1)">$INFO[Skin.String(7-WidgetAction-1)]</onright>
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget8) + IntegerGreaterThan(Container(800).NumItems,1)">SetFocus(800)</onright>
 				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),widget8) + !IntegerGreaterThan(Container(800).NumItems,1)">$INFO[Skin.String(8-WidgetAction-1)]</onright>
-				<onright condition="StringCompare(Container(9000).ListItem.Property(defaultID),settings) | StringCompare(Container(9000).ListItem.Property(defaultID),weather) | StringCompare(Container(9000).ListItem.Property(defaultID),favourites)">Select</onright>
+				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),weather)">ActivateWindow(weather)</onright>
+				<onright condition="StringCompare(Container(9000).ListItem.Property(widget),favourites)">ActivateWindow(favourites)</onright>
+				<onright condition="StringCompare(Container(9000).ListItem.Property(defaultID),settings)">Select</onright>
 				<orientation>vertical</orientation>
 				<scrolltime easing="out" tween="sine">180</scrolltime>
 				<include>WindowHomeFadeAnimation</include>
@@ -567,127 +570,38 @@
 			</include>
 			<!-- Favourites widget -->
 			<control id="900" type="fixedlist">
-				<left>-3</left>
-				<top>252</top>
-				<width>2200</width>
-				<height>576</height>
-				<focusposition>1</focusposition>
+				<left>419</left>
+				<top>-367</top>
+				<width>2100</width>
+				<height>1500</height>
+				<onup condition="!Window.IsVisible(1101)">SetProperty(BounceUp,1,Home)</onup>
+				<onup>noop</onup>
+				<ondown condition="!Window.IsVisible(1101)">SetProperty(BounceDown,1,Home)</ondown>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>Select</onright>
+				<onback>9000</onback>
+				<movement>1</movement>
+				<preloaditems>2</preloaditems>
+				<focusposition>2</focusposition>
 				<viewtype label="">list</viewtype>
-				<orientation>horizontal</orientation>
-				<include>WindowHomeFadeAnimation</include>
+				<orientation>vertical</orientation>
+				<defaultcontrol>0</defaultcontrol>
+				<scrolltime easing="inout" tween="sine">300</scrolltime>
 				<include>HomeWidgetsAnimation</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(defaultID),favourites)</visible>
-				<itemlayout height="576" width="436">
-					<control type="image">
-						<top>83</top>
-						<width>408</width>
-						<height>408</height>
-						<texture border="2">common/default_empty.png</texture>
-					</control>
-					<control type="image">
-						<top>68</top>
-						<width>419</width>
-						<height>440</height>
-						<bordersize>0,17,13,17</bordersize>
-						<aspectratio align="center">scale</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="16,30,16,18">home/image_shadow_small_nf.png</bordertexture>
-					</control>
-					<control type="image">
-						<top>83</top>
-						<width>408</width>
-						<height>408</height>
-						<texture border="2">views/season_overlay.png</texture>
-					</control>
-					<control type="image">
-						<left>14</left>
-						<top>398</top>
-						<width>53</width>
-						<height>53</height>
-						<texture>views/equaliser.gif</texture>
-						<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
-					</control>
-					<control type="label">
-						<left>83</left>
-						<top>422</top>
-						<width>311</width>
-						<height>36</height>
-						<font>Bold36</font>
-						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
-						<shadowcolor>88000000</shadowcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
-					</control>
-					<control type="label">
-						<left>14</left>
-						<top>422</top>
-						<width>379</width>
-						<height>36</height>
-						<font>Bold36</font>
-						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
-						<shadowcolor>88000000</shadowcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Player.Playing | !StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
-					</control>
+				<include>WindowHomeFadeAnimation</include>
+				<visible>!IsEmpty(Window(home).Property(preload)) | StringCompare(Container(9000).ListItem.Property(widget),favourites)</visible>
+				<animation condition="true" effect="slide" end="-304,0">Conditional</animation>
+				<itemlayout height="370" width="2000">
+					<include>HomeSquareInfoItemlayout</include>
 				</itemlayout>
-				<focusedlayout height="576" width="436">
-					<control type="image">
-						<top>83</top>
-						<width>408</width>
-						<height>408</height>
-						<texture border="2">common/default_empty.png</texture>
-					</control>
-					<control type="image">
-						<top>68</top>
-						<width>419</width>
-						<height>440</height>
-						<bordersize>0,17,13,17</bordersize>
-						<aspectratio align="center">scale</aspectratio>
-						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="16,30,16,18">home/image_shadow_small_nf.png</bordertexture>
-					</control>
-					<control type="image">
-						<top>83</top>
-						<width>408</width>
-						<height>408</height>
-						<texture border="2">views/season_overlay.png</texture>
-					</control>
-					<control type="image">
-						<left>14</left>
-						<top>398</top>
-						<width>53</width>
-						<height>53</height>
-						<texture>views/equaliser.gif</texture>
-						<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
-					</control>
-					<control type="label">
-						<left>83</left>
-						<top>422</top>
-						<width>311</width>
-						<height>36</height>
-						<font>Bold36</font>
-						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
-						<shadowcolor>88000000</shadowcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
-					</control>
-					<control type="label">
-						<left>14</left>
-						<top>422</top>
-						<width>379</width>
-						<height>36</height>
-						<font>Bold36</font>
-						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
-						<shadowcolor>88000000</shadowcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<visible>!Player.Playing | !StringCompare(MusicPlayer.Album,ListItem.Label)</visible>
+				<focusedlayout height="370" width="2000">
+					<control type="group">
+						<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
+						<include>HomeSquareInfoFocusedlayout</include>
 					</control>
 				</focusedlayout>
-				<content limit="4">favourites://</content>
+				<include>FavouritesContent</include>
 			</control>
 			<!-- Weather widget -->
 			<control type="fixedlist">
@@ -699,7 +613,7 @@
 				<orientation>horizontal</orientation>
 				<include>WindowHomeFadeAnimation</include>
 				<include>HomeWidgetsAnimation</include>
-				<visible>StringCompare(Container(9000).ListItem.Property(defaultID),weather)</visible>
+				<visible>StringCompare(Container(9000).ListItem.Property(widget),weather)</visible>
 				<itemlayout height="914" width="297">
 					<control type="image">
 						<width>297</width>

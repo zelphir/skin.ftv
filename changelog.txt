@@ -1,3 +1,9 @@
+2.4.2
+
+Added close to Next Aired
+Added forced view types (thanks to sualfred)
+Added Favourites and Weather as separate widgets (thanks to sualfred)
+
 2.4.1
 
 Added 'Next Aired' script

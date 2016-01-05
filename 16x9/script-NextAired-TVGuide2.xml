@@ -60,7 +60,7 @@
 				<left>196</left>
 				<top>212</top>
 				<height>40</height>
-				<onup>noop</onup>
+				<onup>Back</onup>
 				<ondown>$INFO[Container(999).ListItem.Property(OnDown)]</ondown>
 				<onleft>noop</onleft>
 				<onright>noop</onright>

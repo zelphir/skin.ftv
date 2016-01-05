@@ -1635,6 +1635,13 @@
 					<top>13</top>
 					<width>58</width>
 					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution1),719)</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
 					<texture>views/OverlayWatched.png</texture>
 					<visible>StringCompare(ListItem.Property(Overlay1),OverlayWatched.png)</visible>
 				</control>
@@ -1690,6 +1697,13 @@
 					<top>13</top>
 					<width>58</width>
 					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution2),719)</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
 					<texture>views/OverlayWatched.png</texture>
 					<visible>StringCompare(ListItem.Property(Overlay2),OverlayWatched.png)</visible>
 				</control>
@@ -1740,6 +1754,13 @@
 					<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Property(Icon3)]</texture>
 					<bordertexture border="16,30,16,18">home/image_shadow_small_nf.png</bordertexture>
 					<visible>IsEmpty(ListItem.Property(ArtFTV3)) + IsEmpty(ListItem.Property(ArtFanart3))</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution3),719)</visible>
 				</control>
 				<control type="image">
 					<top>13</top>
@@ -1805,6 +1826,13 @@
 					<top>13</top>
 					<width>58</width>
 					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution1),719)</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
 					<texture>views/OverlayWatched.png</texture>
 					<visible>StringCompare(ListItem.Property(Overlay1),OverlayWatched.png)</visible>
 				</control>
@@ -1862,6 +1890,13 @@
 					<top>13</top>
 					<width>58</width>
 					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution2),719)</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
 					<texture>views/OverlayWatched.png</texture>
 					<visible>StringCompare(ListItem.Property(Overlay2),OverlayWatched.png)</visible>
 				</control>
@@ -1914,6 +1949,13 @@
 					<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Property(Icon3)]</texture>
 					<bordertexture border="16,30,16,18">home/image_shadow_small_nf.png</bordertexture>
 					<visible>IsEmpty(ListItem.Property(ArtFTV3)) + IsEmpty(ListItem.Property(ArtFanart3))</visible>
+				</control>
+				<control type="image">
+					<top>13</top>
+					<width>58</width>
+					<height>58</height>
+					<texture>views/OverlayHD.png</texture>
+					<visible>IntegerGreaterThan(ListItem.Property(VideoResolution3),719)</visible>
 				</control>
 				<control type="image">
 					<top>13</top>
@@ -4471,50 +4513,46 @@
 			</item>
 		</content>
 	</include>
-	<!-- List Item LiveTV Content -->
-	<include name="ListItemLiveTVContent">
+	<!-- Favourites Content -->
+	<include name="FavouritesContent">
 		<content>
 			<item>
-				<label>$LOCALIZE[4]</label>
-				<visible>IsEmpty(Window(0).Property(chan1))</visible>
-				<property name="Icon1">$INFO[Container(888).ListItemPosition(0).Icon]</property>
-				<property name="Icon2">$INFO[Container(888).ListItemPosition(1).Icon]</property>
-				<property name="Icon3">$INFO[Container(888).ListItemPosition(2).Icon]</property>
-				<property name="Icon4">$INFO[Container(888).ListItemPosition(3).Icon]</property>
-				<property name="InfoLabel1">$INFO[Container(888).ListItemPosition(0).ChannelName]</property>
-				<property name="InfoLabel2">$INFO[Container(888).ListItemPosition(1).ChannelName]</property>
-				<property name="InfoLabel3">$INFO[Container(888).ListItemPosition(2).ChannelName]</property>
-				<property name="InfoLabel4">$INFO[Container(888).ListItemPosition(3).ChannelName]</property>
-				<property name="Path">channels</property>
-				<onclick>ActivateWindow(tvchannels)</onclick>
-			</item>
-			<item>
-				<label>$LOCALIZE[4]</label>
-				<visible>!IsEmpty(Window(0).Property(chan1))</visible>
-				<property name="Icon1">$INFO[Window(0).Property(chan1)]</property>
-				<property name="Icon2">$INFO[Window(0).Property(chan2)]</property>
-				<property name="Icon3">$INFO[Window(0).Property(chan3)]</property>
-				<property name="Icon4">$INFO[Window(0).Property(chan4)]</property>
-				<property name="InfoLabel1">$INFO[Window(0).Property(channame1)]</property>
-				<property name="InfoLabel2">$INFO[Window(0).Property(channame2)]</property>
-				<property name="InfoLabel3">$INFO[Window(0).Property(channame3)]</property>
-				<property name="InfoLabel4">$INFO[Window(0).Property(channame4)]</property>
-				<property name="Path">channels</property>
-				<onclick>>ActivateWindow(tvchannels)</onclick>
-			</item>
-			<item>
-				<label>$LOCALIZE[19017]</label>
-				<visible>!IsEmpty(Container(889).ListItemPosition(0).Label)</visible>
-				<property name="Icon1">$INFO[Container(889).ListItemPosition(0).Icon]</property>
-				<property name="Icon2">$INFO[Container(889).ListItemPosition(1).Icon]</property>
-				<property name="Icon3">$INFO[Container(889).ListItemPosition(2).Icon]</property>
-				<property name="Icon4">$INFO[Container(889).ListItemPosition(3).Icon]</property>
-				<property name="InfoLabel1">$INFO[Container(889).ListItemPosition(0).Label]</property>
-				<property name="InfoLabel2">$INFO[Container(889).ListItemPosition(1).Label]</property>
-				<property name="InfoLabel3">$INFO[Container(889).ListItemPosition(2).Label]</property>
-				<property name="InfoLabel4">$INFO[Container(889).ListItemPosition(3).Label]</property>
-				<property name="Path">recordings</property>
-				<onclick>ActivateWindow(tvrecordings)</onclick>
+				<label>$LOCALIZE[10134]</label>
+				<visible>!IsEmpty(Container(899).ListItemPosition(0).Label)</visible>
+				<property name="Icon1">$INFO[Container(899).ListItemPosition(0).Icon]</property>
+				<property name="Icon2">$INFO[Container(899).ListItemPosition(1).Icon]</property>
+				<property name="Icon3">$INFO[Container(899).ListItemPosition(2).Icon]</property>
+				<property name="Icon4">$INFO[Container(899).ListItemPosition(3).Icon]</property>
+				<property name="Icon5">$INFO[Container(899).ListItemPosition(4).Icon]</property>
+				<property name="Icon6">$INFO[Container(899).ListItemPosition(5).Icon]</property>
+				<property name="InfoLabel1">$INFO[Container(899).ListItemPosition(0).Label]</property>
+				<property name="InfoLabel2">$INFO[Container(899).ListItemPosition(1).Label]</property>
+				<property name="InfoLabel3">$INFO[Container(899).ListItemPosition(2).Label]</property>
+				<property name="InfoLabel4">$INFO[Container(899).ListItemPosition(3).Label]</property>
+				<property name="InfoLabel5">$INFO[Container(899).ListItemPosition(4).Label]</property>
+				<property name="InfoLabel6">$INFO[Container(899).ListItemPosition(5).Label]</property>
+				<property name="Overlay1">$INFO[Container(899).ListItemPosition(0).Overlay]</property>
+				<property name="Overlay2">$INFO[Container(899).ListItemPosition(1).Overlay]</property>
+				<property name="Overlay3">$INFO[Container(899).ListItemPosition(2).Overlay]</property>
+				<property name="Overlay4">$INFO[Container(899).ListItemPosition(3).Overlay]</property>
+				<property name="Overlay5">$INFO[Container(899).ListItemPosition(4).Overlay]</property>
+				<property name="Overlay6">$INFO[Container(899).ListItemPosition(5).Overlay]</property>
+				<property name="VideoResolution1">$INFO[Container(899).ListItemPosition(0).VideoResolution]</property>
+				<property name="VideoResolution2">$INFO[Container(899).ListItemPosition(1).VideoResolution]</property>
+				<property name="VideoResolution3">$INFO[Container(899).ListItemPosition(2).VideoResolution]</property>
+				<property name="VideoResolution4">$INFO[Container(899).ListItemPosition(3).VideoResolution]</property>
+				<property name="VideoResolution5">$INFO[Container(899).ListItemPosition(4).VideoResolution]</property>
+				<property name="VideoResolution6">$INFO[Container(899).ListItemPosition(5).VideoResolution]</property>
+				<property name="ArtFTV1">$INFO[Container(899).ListItemPosition(0).Art(ftv)]</property>
+				<property name="ArtFTV2">$INFO[Container(899).ListItemPosition(1).Art(ftv)]</property>
+				<property name="ArtFTV3">$INFO[Container(899).ListItemPosition(2).Art(ftv)]</property>
+				<property name="ArtFanart1">$INFO[Container(899).ListItemPosition(0).Art(fanart)]</property>
+				<property name="ArtFanart2">$INFO[Container(899).ListItemPosition(1).Art(fanart)]</property>
+				<property name="ArtFanart3">$INFO[Container(899).ListItemPosition(2).Art(fanart)]</property>
+				<property name="ArtLogo1">$INFO[Container(899).ListItemPosition(0).Art(clearlogo)]</property>
+				<property name="ArtLogo2">$INFO[Container(899).ListItemPosition(1).Art(clearlogo)]</property>
+				<property name="ArtLogo3">$INFO[Container(899).ListItemPosition(2).Art(clearlogo)]</property>
+				<onclick>ActivateWindow(Favourites)</onclick>
 			</item>
 		</content>
 	</include>

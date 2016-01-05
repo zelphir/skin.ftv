@@ -63,6 +63,8 @@
 			<thumb />
 			<property name="labelID">1036</property>
 			<property name="defaultID">favourites</property>
+			<property name="widgetName">Widget Group 8</property>
+			<property name="widget">widget8</property>
 			<onclick>ActivateWindow(favourites)</onclick>
 			<property name="path">ActivateWindow(favourites)</property>
 			<property name="list">favourites</property>
