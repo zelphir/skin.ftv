@@ -273,6 +273,10 @@
 				<include>HiddenHomeList</include>
 				<content sortby="$VAR[8-orderby-8]" limit="6">$INFO[Skin.String(8-WidgetList-8)]</content>
 			</control>
+			<control id="899" type="list">
+				<include>HiddenHomeList</include>
+				<content sortby="$VAR[8-orderby-8]" limit="6">favourites://</content>
+			</control>
 			<!-- Main list -->
 			<control id="9000" type="list">
 				<left>84</left>
