@@ -1,3 +1,9 @@
+2.4.3
+
+Fixed focus problem in Event Log
+Fixed 'More' button focus problem
+Fixed text viewer unload focus problem
+
 2.4.2
 
 Added close to Next Aired
