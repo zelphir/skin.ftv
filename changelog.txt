@@ -1,3 +1,7 @@
+2.4.4
+
+Change recommended media method to skin helper service
+
 2.4.3
 
 Fixed focus problem in Event Log
