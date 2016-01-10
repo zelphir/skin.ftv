@@ -111,6 +111,38 @@
 	</include>
 	<!-- Home Widget Param Include -->
 	<include name="ParamWidgetInclude">
+		<control id="$PARAM[ID]1" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-1]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-1)]</content>
+		</control>
+		<control id="$PARAM[ID]2" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-2]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-2)]</content>
+		</control>
+		<control id="$PARAM[ID]3" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-3]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-3)]</content>
+		</control>
+		<control id="$PARAM[ID]4" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-4]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-4)]</content>
+		</control>
+		<control id="$PARAM[ID]5" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-5]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-5)]</content>
+		</control>
+		<control id="$PARAM[ID]6" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-6]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-6)]</content>
+		</control>
+		<control id="$PARAM[ID]7" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-7]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-7)]</content>
+		</control>
+		<control id="$PARAM[ID]8" type="list">
+			<include>HiddenHomeList</include>
+			<content sortby="$VAR[$PARAM[ID]0-SortBy-8]" limit="6">$INFO[Skin.String($PARAM[ID]0-WidgetList-8)]</content>
+		</control>
 		<control id="$PARAM[ID]" type="fixedlist">
 			<left>419</left>
 			<top>-367</top>
@@ -120,9 +152,9 @@
 			<onup>noop</onup>
 			<ondown condition="!Window.IsVisible(1101)">SetProperty(BounceDown,1,Home)</ondown>
 			<ondown>noop</ondown>
-			<onleft>9000</onleft>
+			<onleft>99</onleft>
 			<onright>Select</onright>
-			<onback>9000</onback>
+			<onback>99</onback>
 			<movement>1</movement>
 			<preloaditems>2</preloaditems>
 			<focusposition>2</focusposition>
@@ -132,7 +164,7 @@
 			<scrolltime easing="inout" tween="sine">300</scrolltime>
 			<include>HomeWidgetsAnimation</include>
 			<include>WindowHomeFadeAnimation</include>
-			<visible>!IsEmpty(Window(home).Property(preload)) | StringCompare(Container(9000).ListItem.Property(widget),$PARAM[widget])</visible>
+			<visible>StringCompare(Container(99).ListItem.Property(widget),$PARAM[widget])</visible>
 			<animation condition="StringCompare(Container($PARAM[ID]).NumItems,1)" effect="slide" end="-304,0">Conditional</animation>
 			<animation condition="StringCompare(Container($PARAM[ID]).NumItems,2)" effect="slide" end="0,-185">Conditional</animation>
 			<animation condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(1)" easing="inout" effect="slide" end="0,114" time="220" tween="sine">Conditional</animation>

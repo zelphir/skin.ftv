@@ -1,3 +1,10 @@
+2.4.6
+
+More parameterising work
+Removed editing gui settings
+Removed widget loading
+Fixed Wide/Poster widget selection when only 1 item
+
 2.4.5
 
 Fixed only having 1 item visible for widgets with no icons
