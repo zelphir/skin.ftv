@@ -20,7 +20,7 @@
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<visible>[[!StringCompare(Window(Home).Property(ForceViewType),60) + !StringCompare(Window(Home).Property(ForceViewType),61)] | Skin.HasSetting(WideSeasonArt) + Container.Content(seasons)] + IsEmpty(Container.PluginName) + [[Skin.HasSetting(WideMovieArt) + [Container.Content(movies) | Container.Content(sets)]] | [Skin.HasSetting(WideTVShowArt) + Container.Content(tvshows)] | [Skin.HasSetting(WideSeasonArt) + Container.Content(seasons)]]</visible>
+				<visible>[StringCompare(Window(Home).Property(ForceViewType),wide) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(artists)]] | [IsEmpty(Window(Home).Property(ForceViewType)) + IsEmpty(Container.PluginName) + [[Skin.HasSetting(WideTVShowArt) + Container.Content(tvshows)] | [Skin.HasSetting(WideSeasonArt) + Container.Content(seasons)]]]</visible>
 				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -76,7 +76,7 @@
 							<width>640</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>Container.Content(seasons) + !StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+							<visible>[Container.Content(artists) | Container.Content(seasons)] + !StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -87,7 +87,7 @@
 							<textcolor>ffffffff</textcolor>
 							<shadowcolor>88000000</shadowcolor>
 							<label>$VAR[SeasonValue]</label>
-							<visible>Container.Content(seasons) + !StringCompare(ListItem.Label,..)</visible>
+							<visible>[Container.Content(artists) | Container.Content(seasons)] + !StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -164,7 +164,7 @@
 							<width>640</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>Container.Content(seasons) + !StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+							<visible>[Container.Content(artists) | Container.Content(seasons)] + !StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -175,7 +175,7 @@
 							<textcolor>ffffffff</textcolor>
 							<shadowcolor>88000000</shadowcolor>
 							<label>$VAR[SeasonValue]</label>
-							<visible>Container.Content(seasons) + !StringCompare(ListItem.Label,..)</visible>
+							<visible>[Container.Content(artists) | Container.Content(seasons)] + !StringCompare(ListItem.Label,..)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
