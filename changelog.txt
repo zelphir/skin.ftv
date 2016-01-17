@@ -1,3 +1,7 @@
+2.4.8
+
+Reverted previous change
+
 2.4.7
 
 Removed need for separate viewtypes for widgets and changed property name
