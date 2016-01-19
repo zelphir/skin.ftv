@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<!-- textviewer -->
-	<zorder>2</zorder>
 	<defaultcontrol always="true">3000</defaultcontrol>
 	<onunload condition="!IsEmpty(Window(home).Property(OpenTextViewer))">SetFocus(50)</onunload>
 	<onunload condition="!IsEmpty(Window(home).Property(SearchOpenTextViewer))">$VAR[SearchSetFocus]</onunload>

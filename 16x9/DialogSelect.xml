@@ -2,7 +2,6 @@
 <window>
 	<!-- selectdialog -->
 	<defaultcontrol always="true">3</defaultcontrol>
-	<zorder>2</zorder>
 	<controls>
 		<!-- Hidden Button -->
 		<control id="7" type="button">

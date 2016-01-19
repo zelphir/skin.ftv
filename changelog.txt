@@ -1,3 +1,9 @@
+2.4.9
+
+Updated 'Next Up' dialogs
+Updated debug overlay
+Removed zorder tags
+
 2.4.8
 
 Reverted previous change
