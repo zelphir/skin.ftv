@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<onload>ClearProperty(Category,home)</onload>
-	<onload>ClearProperty(CategoryFocus,home)</onload>
 	<coordinates>
 		<system>1</system>
 		<left>0</left>
@@ -9,115 +7,6 @@
 	</coordinates>
 	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
 	<controls>
-		<control type="grouplist" id="999">
-			<left>-100</left>
-			<top>0</top>
-			<height>1</height>
-			<width>10</width>
-			<itemgap>0</itemgap>
-			<onleft>Down</onleft>
-			<onright>noop</onright>
-			<orientation>horizontal</orientation>
-			<control type="button" id="115">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,movies,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(111)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>noop</onleft>
-				<onright>125</onright>
-				<visible>Control.IsVisible(119)</visible>
-			</control>
-			<control type="button" id="125">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,tvshows,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(121)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>115</onleft>
-				<onright>135</onright>
-				<visible>Control.IsVisible(129)</visible>
-			</control>
-			<control type="button" id="135">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,seasons,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(131)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>125</onleft>
-				<onright>145</onright>
-				<visible>Control.IsVisible(139)</visible>
-			</control>
-			<control type="button" id="145">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,episodes,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(141)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>135</onleft>
-				<onright>155</onright>
-				<visible>Control.IsVisible(149)</visible>
-			</control>
-			<control type="button" id="155">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,musicvideos,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(151)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>145</onleft>
-				<onright>165</onright>
-				<visible>Control.IsVisible(159)</visible>
-			</control>
-			<control type="button" id="165">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,artists,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(161)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>155</onleft>
-				<onright>175</onright>
-				<visible>Control.IsVisible(169)</visible>
-			</control>
-			<control type="button" id="175">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,albums,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(171)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>165</onleft>
-				<onright>185</onright>
-				<visible>Control.IsVisible(179)</visible>
-			</control>
-			<control type="button" id="185">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,songs,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(181)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>175</onleft>
-				<onright>215</onright>
-				<visible>Control.IsVisible(189)</visible>
-			</control>
-			<control type="button" id="215">
-				<height>1</height>
-				<width>1</width>
-				<onfocus>SetProperty(CategoryFocus,actors,home)</onfocus>
-				<onup>Close</onup>
-				<ondown>SetFocus(211)</ondown>
-				<ondown>ClearProperty(CategoryFocus,home)</ondown>
-				<onleft>185</onleft>
-				<onright>noop</onright>
-				<visible>Control.IsVisible(219)</visible>
-			</control>
-		</control>
 		<control type="group" id="100">
 			<control type="label" id="110">
 				<include>HiddenControl</include>
@@ -228,191 +117,110 @@
 					<control type="group">
 						<visible>!Control.IsVisible(199)</visible>
 						<!-- Categories -->
-						<control type="grouplist">
+						<control type="fixedlist" id="999">
 							<left>196</left>
 							<top>212</top>
 							<height>40</height>
-							<itemgap>14</itemgap>
+							<onup>Back</onup>
+							<ondown>$INFO[Container(999).ListItem.Property(OnDown)]</ondown>
+							<onleft>Down</onleft>
+							<onright>noop</onright>
+							<focusposition>0</focusposition>
 							<orientation>horizontal</orientation>
-							<usecontrolcoords>true</usecontrolcoords>
 							<include>VisibleDelayFadeAnimation</include>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourMovies]</textcolor>
-								<label>342</label>
-								<visible>Control.IsVisible(119)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourMovies]</textcolor>
-								<label>$INFO[Container(111).NumItems]    </label>
-								<visible>Control.IsVisible(119)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourTVShows]</textcolor>
-								<label>20343</label>
-								<visible>Control.IsVisible(129)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourTVShows]</textcolor>
-								<label>$INFO[Container(121).NumItems]    </label>
-								<visible>Control.IsVisible(129)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourSeasons]</textcolor>
-								<label>33054</label>
-								<visible>Control.IsVisible(139)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourSeasons]</textcolor>
-								<label>$INFO[Container(131).NumItems]    </label>
-								<visible>Control.IsVisible(139)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourEpisodes]</textcolor>
-								<label>20360</label>
-								<visible>Control.IsVisible(149)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourEpisodes]</textcolor>
-								<label>$INFO[Container(141).NumItems]    </label>
-								<visible>Control.IsVisible(149)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourMusicVideos]</textcolor>
-								<label>20389</label>
-								<visible>Control.IsVisible(159)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourMusicVideos]</textcolor>
-								<label>$INFO[Container(151).NumItems]    </label>
-								<visible>Control.IsVisible(159)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourArtists]</textcolor>
-								<label>133</label>
-								<visible>Control.IsVisible(169)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourArtists]</textcolor>
-								<label>$INFO[Container(161).NumItems]    </label>
-								<visible>Control.IsVisible(169)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourAlbums]</textcolor>
-								<label>132</label>
-								<visible>Control.IsVisible(179)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourAlbums]</textcolor>
-								<label>$INFO[Container(171).NumItems]    </label>
-								<visible>Control.IsVisible(179)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourSongs]</textcolor>
-								<label>134</label>
-								<visible>Control.IsVisible(189)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourSongs]</textcolor>
-								<label>$INFO[Container(181).NumItems]    </label>
-								<visible>Control.IsVisible(189)</visible>
-							</control>
-							<control type="label">
-								<width>auto</width>
-								<height>40</height>
-								<font>Light32</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourActors]</textcolor>
-								<label>344</label>
-								<visible>Control.IsVisible(219)</visible>
-							</control>
-							<control type="label">
-								<top>7</top>
-								<width>auto</width>
-								<height>40</height>
-								<font>Light24</font>
-								<aligny>bottom</aligny>
-								<textcolor>$VAR[CategoryColourActors]</textcolor>
-								<label>$INFO[Container(211).NumItems]    </label>
-								<visible>Control.IsVisible(219)</visible>
-							</control>
+							<itemlayout width="287" height="40">
+								<control type="label">
+									<width>287</width>
+									<height>40</height>
+									<font>Light32</font>
+									<aligny>bottom</aligny>
+									<textcolor>ff8e8b90</textcolor>
+									<label>$INFO[ListItem.Label]  $INFO[ListItem.Label2]</label>
+									<visible>Control.HasFocus(999)</visible>
+								</control>
+								<control type="label">
+									<width>287</width>
+									<height>40</height>
+									<font>Light32</font>
+									<aligny>bottom</aligny>
+									<textcolor>ff505559</textcolor>
+									<label>$INFO[ListItem.Label]  $INFO[ListItem.Label2]</label>
+									<visible>!Control.HasFocus(999)</visible>
+								</control>
+							</itemlayout>
+							<focusedlayout width="287" height="40">
+								<control type="label">
+									<width>287</width>
+									<height>40</height>
+									<font>Light32</font>
+									<aligny>bottom</aligny>
+									<textcolor>ffffc24b</textcolor>
+									<label>$INFO[ListItem.Label]  $INFO[ListItem.Label2]</label>
+									<visible>Control.HasFocus(999)</visible>
+								</control>
+								<control type="label">
+									<width>287</width>
+									<height>40</height>
+									<font>Light32</font>
+									<aligny>bottom</aligny>
+									<textcolor>ffd7d7d7</textcolor>
+									<label>$INFO[ListItem.Label]  $INFO[ListItem.Label2]</label>
+									<visible>!Control.HasFocus(999)</visible>
+								</control>
+							</focusedlayout>
+							<content>
+								<include name="SearchItems">
+									<param name="ItemID" value="111" />
+									<param name="LabelID" value="$LOCALIZE[342]" />
+									<param name="VisibleID" value="119" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="121" />
+									<param name="LabelID" value="$LOCALIZE[20343]" />
+									<param name="VisibleID" value="129" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="131" />
+									<param name="LabelID" value="$LOCALIZE[33054]" />
+									<param name="VisibleID" value="139" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="141" />
+									<param name="LabelID" value="$LOCALIZE[20360]" />
+									<param name="VisibleID" value="149" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="151" />
+									<param name="LabelID" value="$LOCALIZE[20389]" />
+									<param name="VisibleID" value="159" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="161" />
+									<param name="LabelID" value="$LOCALIZE[133]" />
+									<param name="VisibleID" value="169" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="171" />
+									<param name="LabelID" value="$LOCALIZE[132]" />
+									<param name="VisibleID" value="179" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="181" />
+									<param name="LabelID" value="$LOCALIZE[134]" />
+									<param name="VisibleID" value="189" />
+								</include>
+								<include name="SearchItems">
+									<param name="ItemID" value="211" />
+									<param name="LabelID" value="$LOCALIZE[344]" />
+									<param name="VisibleID" value="219" />
+								</include>
+							</content>
 						</control>
 						<!-- Lower group -->
 						<control type="group">
 							<left>196</left>
 							<top>782</top>
-							<visible>!ControlGroup(999).HasFocus</visible>
+							<visible>!Control.HasFocus(999)</visible>
 							<include>VisibleFadeAnimation</include>
 							<!-- Controls -->
 							<control id="1000" type="grouplist">
@@ -425,7 +233,7 @@
 								<usecontrolcoords>true</usecontrolcoords>
 								<defaultcontrol always="true">1001</defaultcontrol>
 								<control id="1001" type="button">
-									<width min="104" max="224">auto</width>
+									<width min="124" max="204">auto</width>
 									<wrapmultiline>true</wrapmultiline>
 									<height>100</height>
 									<onup>$VAR[SearchSetFocus]</onup>
@@ -640,1287 +448,44 @@
 						</control>
 					</control>
 				</control>
-				<!-- Movies group -->
-				<control type="group" id="119">
-					<!-- Movies list -->
-					<control id="111" type="fixedlist">
-						<left>-102</left>
-						<top>242</top>
-						<width>2036</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,movies,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(111) | Control.HasFocus(115) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),movies] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),movies)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(111).OnNext | Container(111).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(111) | Container(111).OnNext | Container(111).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(111).OnNext | Container(111).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(111)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(111)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(111)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(111)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- TV Shows group -->
-				<control type="group" id="129">
-					<!-- TV Shows list -->
-					<control id="121" type="fixedlist">
-						<left>-102</left>
-						<top>242</top>
-						<width>2036</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,tvshows,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(121) | Control.HasFocus(125) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),tvshows] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),tvshows)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(121).OnNext | Container(121).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(121) | Container(121).OnNext | Container(121).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(121).OnNext | Container(121).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(121)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(121)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(121)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(121)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Seasons group -->
-				<control type="group" id="139">
-					<!-- Seasons list -->
-					<control id="131" type="fixedlist">
-						<left>-102</left>
-						<top>242</top>
-						<width>2036</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,seasons,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(131) | Control.HasFocus(135) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),seasons] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),seasons)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(131).OnNext | Container(131).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(131) | Container(131).OnNext | Container(131).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(131).OnNext | Container(131).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(131)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(131)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(131)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(131)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Episodes group -->
-				<control type="group" id="149">
-					<!-- Episodes list -->
-					<control id="141" type="fixedlist">
-						<left>-374</left>
-						<top>242</top>
-						<width>2388</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,episodes,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>151</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(141) | Control.HasFocus(145) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),episodes] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),episodes)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="572">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture border="2">views/season_overlay.png</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="label">
-									<left>18</left>
-									<top>448</top>
-									<width>604</width>
-									<height>42</height>
-									<font>Bold44</font>
-									<textcolor>ffffffff</textcolor>
-									<shadowcolor>88000000</shadowcolor>
-									<label>$VAR[SearchEpisodeValue]</label>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="572">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(141).OnNext | Container(141).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture border="2">views/season_overlay.png</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(141) | Container(141).OnNext | Container(141).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(141).OnNext | Container(141).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(141)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(141)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="label">
-									<left>18</left>
-									<top>448</top>
-									<width>604</width>
-									<height>42</height>
-									<font>Bold44</font>
-									<textcolor>ffffffff</textcolor>
-									<shadowcolor>88000000</shadowcolor>
-									<label>$VAR[SearchEpisodeValue]</label>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(141)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(141)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Music Videos group -->
-				<control type="group" id="159">
-					<!-- Music Videos list -->
-					<control id="151" type="fixedlist">
-						<left>-374</left>
-						<top>242</top>
-						<width>2344</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,musicvideos,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>161</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(151) | Control.HasFocus(155) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),musicvideos] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),musicvideos)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="572">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="572">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(151).OnNext | Container(151).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/episode_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(151) | Container(151).OnNext | Container(151).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(151).OnNext | Container(151).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>736</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(151)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(151)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>640</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(151)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(151)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Artists group -->
-				<control type="group" id="169">
-					<!-- Artists list -->
-					<control id="161" type="fixedlist">
-						<left>-238</left>
-						<top>242</top>
-						<width>2200</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,artists,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>171</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(161) | Control.HasFocus(165) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),artists] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),artists)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<left>17</left>
-									<top>419</top>
-									<width>62</width>
-									<height>62</height>
-									<texture>views/equaliser.gif</texture>
-									<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Album)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(161).OnNext | Container(161).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(161) | Container(161).OnNext | Container(161).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(161).OnNext | Container(161).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(161)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(161)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>17</left>
-									<top>419</top>
-									<width>62</width>
-									<height>62</height>
-									<texture>views/equaliser.gif</texture>
-									<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Album)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(161)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(161)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Albums group -->
-				<control type="group" id="179">
-					<!-- Albums list -->
-					<control id="171" type="fixedlist">
-						<left>-238</left>
-						<top>242</top>
-						<width>2200</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,albums,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>181</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(171) | Control.HasFocus(175) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),albums] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),albums)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(171).OnNext | Container(171).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(171) | Container(171).OnNext | Container(171).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(171).OnNext | Container(171).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(171)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(171)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(171)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(171)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Songs group -->
-				<control type="group" id="189">
-					<!-- Songs list -->
-					<control id="181" type="fixedlist">
-						<left>-238</left>
-						<top>242</top>
-						<width>2200</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,songs,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>211</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(181) | Control.HasFocus(185) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),songs] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),songs)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="436">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(181).OnNext | Container(181).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/music_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(181) | Container(181).OnNext | Container(181).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(181).OnNext | Container(181).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>576</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(181)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(181)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>480</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(181)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(181)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Starring group -->
-				<control type="group" id="219">
-					<!-- Starring list -->
-					<control id="211" type="fixedlist">
-						<left>-102</left>
-						<top>242</top>
-						<width>2036</width>
-						<height>576</height>
-						<onfocus>SetProperty(Category,actors,home)</onfocus>
-						<onup>999</onup>
-						<ondown>1000</ondown>
-						<ondown>221</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible allowhiddenfocus="true">Control.HasFocus(211) | Control.HasFocus(215) | [ControlGroup(1000).HasFocus + StringCompare(Window(home).Property(Category),actors] | [Control.HasFocus(3000) + StringCompare(Window(home).Property(Category),actors)]</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(211).OnNext | Container(211).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(211) | Container(211).OnNext | Container(211).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(211).OnNext | Container(211).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(211)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(211)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(211)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(211)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
-				</control>
-				<!-- Programs group -->
-				<control type="group" id="229">
-					<!-- Programs list -->
-					<control id="221" type="fixedlist">
-						<left>-102</left>
-						<top>242</top>
-						<width>2036</width>
-						<height>576</height>
-						<onup>211</onup>
-						<onup>SetProperty(Movement,1)</onup>
-						<onup condition="!Window.IsVisible(1104)">SetProperty(Fade,1,Home)</onup>
-						<ondown condition="!Window.IsVisible(1101)">SetProperty(BounceDown,1,Home)</ondown>
-						<ondown condition="!Window.IsVisible(1104)">SetProperty(Fade,1,Home)</ondown>
-						<onleft>Back</onleft>
-						<onright>noop</onright>
-						<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
-						<preloaditems>2</preloaditems>
-						<focusposition>1</focusposition>
-						<viewtype label="">list</viewtype>
-						<orientation>horizontal</orientation>
-						<scrolltime easing="inout" tween="sine">300</scrolltime>
-						<visible>false</visible>
-						<animation reversible="false" type="Hidden">
-							<effect center="357,540" easing="out" end="98" start="100" time="180" tween="linear" type="zoom" />
-							<effect easing="out" end="0" start="100" time="180" tween="linear" type="fade" />
-						</animation>
-						<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
-							<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
-							<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
-						</animation>
-						<animation reversible="false" type="Visible">
-							<effect center="357,540" delay="280" easing="in" end="100" start="98" time="180" tween="sine" type="zoom" />
-							<effect delay="280" easing="in" end="100" start="0" time="180" tween="sine" type="fade" />
-						</animation>
-						<itemlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Hidden</animation>
-									<animation center="auto" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Visible</animation>
-								</control>
-							</control>
-						</itemlayout>
-						<focusedlayout height="576" width="300">
-							<control type="group">
-								<animation center="150,288" easing="inout" effect="zoom" end="100" start="85" time="300" tween="sine">Focus</animation>
-								<animation center="150,288" condition="Container(221).OnNext | Container(221).OnPrevious" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">UnFocus</animation>
-								<animation center="150,288" condition="Window.IsVisible(textviewer)" easing="inout" effect="zoom" end="85" start="100" time="300" tween="sine">Conditional</animation>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<aspectratio align="center">scale</aspectratio>
-									<texture background="true" fallback="views/movie_fallback.png">$INFO[ListItem.Icon]</texture>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayHD.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>90</width>
-									<height>90</height>
-									<texture>views/OverlayWatched.png</texture>
-									<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="51">views/shadow_fo.png</texture>
-									<animation center="auto" condition="Control.HasFocus(221) | Container(221).OnNext | Container(221).OnPrevious" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Container(221).OnNext | Container(221).OnPrevious" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<left>-48</left>
-									<centertop>288</centertop>
-									<width>416</width>
-									<height>576</height>
-									<texture border="66,66,51,51">views/shadow_nf.png</texture>
-									<animation center="auto" condition="Control.HasFocus(221)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(221)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-								<control type="image">
-									<top>48</top>
-									<width>320</width>
-									<height>480</height>
-									<texture>views/OverlayNF.png</texture>
-									<visible>!ControlGroup(999).HasFocus</visible>
-									<animation center="auto" condition="Control.HasFocus(221)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
-									<animation center="auto" condition="Control.HasFocus(221)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
-								</control>
-							</control>
-						</focusedlayout>
-					</control>
+				<!-- Lists group -->
+				<control type="group" id="9999">
+					<include name="SearchPosterList">
+						<param name="GroupID" value="119" />
+						<param name="ListID" value="111" />
+					</include>
+					<include name="SearchPosterList">
+						<param name="GroupID" value="129" />
+						<param name="ListID" value="121" />
+					</include>
+					<include name="SearchPosterList">
+						<param name="GroupID" value="139" />
+						<param name="ListID" value="131" />
+					</include>
+					<include name="SearchWideList">
+						<param name="GroupID" value="149" />
+						<param name="ListID" value="141" />
+					</include>
+					<include name="SearchWideList">
+						<param name="GroupID" value="159" />
+						<param name="ListID" value="151" />
+					</include>
+					<include name="SearchSquareList">
+						<param name="GroupID" value="169" />
+						<param name="ListID" value="161" />
+					</include>
+					<include name="SearchSquareList">
+						<param name="GroupID" value="179" />
+						<param name="ListID" value="171" />
+					</include>
+					<include name="SearchSquareList">
+						<param name="GroupID" value="189" />
+						<param name="ListID" value="181" />
+					</include>
+					<include name="SearchPosterList">
+						<param name="GroupID" value="219" />
+						<param name="ListID" value="211" />
+					</include>
 				</control>
 			</control>
 		</control>

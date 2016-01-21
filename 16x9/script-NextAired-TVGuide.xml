@@ -62,7 +62,7 @@
 				<height>40</height>
 				<onup>Back</onup>
 				<ondown>$INFO[Container(999).ListItem.Property(OnDown)]</ondown>
-				<onleft>noop</onleft>
+				<onleft>Down</onleft>
 				<onright>noop</onright>
 				<focusposition>0</focusposition>
 				<orientation>horizontal</orientation>
