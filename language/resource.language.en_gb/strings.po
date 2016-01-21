@@ -956,3 +956,11 @@ msgstr ""
 msgctxt "#31229"
 msgid "Cancel Next Up"
 msgstr ""
+
+msgctxt "#31230"
+msgid "Sorry, no shows are airing at this time."
+msgstr ""
+
+msgctxt "#31231"
+msgid "Please try again later."
+msgstr ""
