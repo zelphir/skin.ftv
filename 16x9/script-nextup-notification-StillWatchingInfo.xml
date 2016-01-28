@@ -108,7 +108,6 @@
 			<left>1472</left>
 			<top>573</top>
 			<width>328</width>
-			<animation effect="fade" end="100" start="0" time="200" condition="Window.IsVisible(script-nextup-notification-NextUpInfo.xml)">Conditional</animation>
 			<!--  Next up label -->
 			<control type="label">
 				<width>auto</width>
@@ -144,7 +143,7 @@
 			<!-- Next episode countdown -->
 			<control type="image">
 				<left>109</left>
-				<top>138</top>
+				<top>68</top>
 				<width>110</width>
 				<height>110</height>
 				<texture>$VAR[NextEpisodeCountdown]</texture>

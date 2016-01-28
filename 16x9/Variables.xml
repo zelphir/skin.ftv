@@ -1146,21 +1146,21 @@
 		<value>50</value>
 	</variable>
 	<variable name="WideImage">
-		<value condition="StringCompare(ListItem.Label,..)">views/folder_back_wide.png</value>
+		<value condition="ListItem.IsParentFolder">views/folder_back_wide.png</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(thumb)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + StringCompare(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(fanart)) + [IsEmpty(ListItem.Art(thumb)) | [Skin.HasSetting(HideUnwatchedThumbs) + !StringCompare(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>views/episode_fallback.png</value>
 	</variable>
 	<variable name="TVShowWideImage">
-		<value condition="StringCompare(ListItem.Label,..)">views/folder_back_wide.png</value>
+		<value condition="ListItem.IsParentFolder">views/folder_back_wide.png</value>
 		<value condition="!IsEmpty(ListItem.Art(ftv))">$INFO[ListItem.Art(ftv)]</value>
 		<value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!Container.Content(episodes)">$INFO[ListItem.Icon]</value>
 		<value>views/episode_fallback.png</value>
 	</variable>
 	<variable name="PosterImage">
-		<value condition="StringCompare(ListItem.Label,..)">views/folder_back_poster.png</value>
+		<value condition="ListItem.IsParentFolder">views/folder_back_poster.png</value>
 		<value condition="!IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
 		<value>views/movie_fallback.png</value>
 	</variable>
@@ -1359,8 +1359,8 @@
 		<value condition="SubString(ListItem.Premiered,/20)">20</value>
 	</variable>
 	<variable name="SimilarVideos">
-		<value condition="[Container.Content(tvshows) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=similarshows&imdbid=$INFO[Window(home).Property(TVShowID)]&limit=20</value>
-		<value condition="Container.Content(movies) + !IsEmpty(ListItem.IMDBNumber)">plugin://script.skin.helper.service/?action=similarmovies&imdbid=$INFO[ListItem.IMDBNumber]&limit=20</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(episodes)] + !IsEmpty(Window(home).Property(TVShowID))">plugin://script.skin.helper.service/?action=similarshows&amp;imdbid=$INFO[Window(home).Property(TVShowID)]&amp;limit=20</value>
+		<value condition="Container.Content(movies) + !IsEmpty(ListItem.IMDBNumber)">plugin://script.skin.helper.service/?action=similarmovies&amp;imdbid=$INFO[ListItem.IMDBNumber]&amp;limit=20</value>
 	</variable>
 	<variable name="HeadingLabel">
 		<value condition="!StringCompare(Container.FolderName,$LOCALIZE[369]) + !IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>

@@ -65,7 +65,7 @@
 						<width>480</width>
 						<height>480</height>
 						<texture border="2">views/season_overlay.png</texture>
-						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+						<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="image">
 						<left>17</left>
@@ -85,7 +85,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
 						<animation condition="!IsEmpty(ListItem.Artist)" effect="slide" end="0,-36" start="0,0">Conditional</animation>
 					</control>
 					<control type="label">
@@ -98,7 +98,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
+						<visible>!ListItem.IsParentFolder + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
 						<animation condition="!IsEmpty(ListItem.Artist)" effect="slide" end="0,-36" start="0,0">Conditional</animation>
 					</control>
 					<control type="label">
@@ -111,7 +111,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Artist) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Artist) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -123,7 +123,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Artist) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Artist) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
 					</control>
 					<control type="image">
 						<top>48</top>
@@ -167,7 +167,7 @@
 						<width>480</width>
 						<height>480</height>
 						<texture border="2">views/season_overlay.png</texture>
-						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+						<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="image">
 						<left>17</left>
@@ -188,7 +188,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!ListItem.IsParentFolder</visible>
 						<animation condition="!IsEmpty(ListItem.Artist)" effect="slide" end="0,-36" start="0,0">Conditional</animation>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">UnFocus</animation>
 					</control>
@@ -202,7 +202,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Artist)</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Artist)</visible>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">UnFocus</animation>
 					</control>
 					<control type="label">
@@ -215,7 +215,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
 						<animation condition="!IsEmpty(ListItem.Artist)" effect="slide" end="0,-36" start="0,0">Conditional</animation>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">Focus</animation>
 					</control>
@@ -230,7 +230,7 @@
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<visible>Control.HasFocus(50)</visible>
-						<visible>!StringCompare(ListItem.Label,..) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
+						<visible>!ListItem.IsParentFolder + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
 						<animation condition="!IsEmpty(ListItem.Artist)" effect="slide" end="0,-36" start="0,0">Conditional</animation>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">Focus</animation>
 					</control>
@@ -252,7 +252,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Artist) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Artist) + Player.Playing + StringCompare(MusicPlayer.Title,ListItem.Title)</visible>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">Focus</animation>
 					</control>
 					<control type="label">
@@ -266,7 +266,7 @@
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Artist]</label>
 						<visible>Control.HasFocus(50)</visible>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Artist) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Artist) + [[Player.HasAudio + !Player.Playing] | !StringCompare(MusicPlayer.Title,ListItem.Title)]</visible>
 						<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" reversible="false" start="100" time="0" tween="sine">Focus</animation>
 					</control>
 					<control type="image">

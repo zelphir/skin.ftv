@@ -127,7 +127,7 @@
 						<width>480</width>
 						<height>480</height>
 						<texture border="2">views/season_overlay.png</texture>
-						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+						<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -139,7 +139,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<top>48</top>
@@ -212,7 +212,7 @@
 						<width>480</width>
 						<height>480</height>
 						<texture border="2">views/season_overlay.png</texture>
-						<visible>!StringCompare(ListItem.Label,..) + !SubString(ListItem.Icon,Default)</visible>
+						<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -224,7 +224,7 @@
 						<textcolor>ffffffff</textcolor>
 						<shadowcolor>88000000</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>!StringCompare(ListItem.Label,..)</visible>
+						<visible>!ListItem.IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<top>48</top>

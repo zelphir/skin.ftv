@@ -287,7 +287,7 @@
 						<focusedcolor>ff222222</focusedcolor>
 						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
 						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
-						<visible>!StringCompare(ListItem.Label,..) + !SubString(Container.FolderName,$LOCALIZE[20434]) + !SubString(ListItem.Path,videodb://movies/sets,left)</visible>
+						<visible>!ListItem.IsParentFolder + !SubString(Container.FolderName,$LOCALIZE[20434]) + !SubString(ListItem.Path,videodb://movies/sets,left)</visible>
 					</control>
 					<control id="1003" type="button">
 						<width min="124" max="204">auto</width>
@@ -453,7 +453,7 @@
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<onclick>SetProperty(OpenTextViewer,1,home)</onclick>
-						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='"$VAR[Plot]"')</onclick>
+						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='$ESCVAR[Plot]')</onclick>
 						<visible>Control.IsVisible(96)</visible>
 						<texturefocus>views/more_fo.png</texturefocus>
 						<texturenofocus>views/more_nf.png</texturenofocus>
@@ -491,7 +491,7 @@
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<onclick>SetProperty(OpenTextViewer,1,home)</onclick>
-						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.TVShowTitle] - $VAR[SeasonValue],text='"$VAR[Plot]"')</onclick>
+						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.TVShowTitle] - $VAR[SeasonValue],text='$ESCVAR[Plot]')</onclick>
 						<visible>Control.IsVisible(97)</visible>
 						<texturefocus>views/more_fo.png</texturefocus>
 						<texturenofocus>views/more_nf.png</texturenofocus>
@@ -565,7 +565,7 @@
 						<onleft>50</onleft>
 						<onright>50</onright>
 						<onclick>SetProperty(OpenTextViewer,1,home)</onclick>
-						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Title],text='"$VAR[Plot]"')</onclick>
+						<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Title],text='$ESCVAR[Plot]')</onclick>
 						<visible>Control.IsVisible(98)</visible>
 						<texturefocus>views/more_fo.png</texturefocus>
 						<texturenofocus>views/more_nf.png</texturenofocus>
@@ -711,7 +711,7 @@
 					<onleft>50</onleft>
 					<onright>50</onright>
 					<onclick>SetProperty(OpenTextViewer,1,home)</onclick>
-					<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='"$VAR[Plot]"')</onclick>
+					<onclick>RunScript(script.toolbox,info=textviewer,header=$INFO[ListItem.Label],text='$ESCVAR[Plot]')</onclick>
 					<visible>Control.IsVisible(99)</visible>
 					<texturefocus>views/more_fo.png</texturefocus>
 					<texturenofocus>views/more_nf.png</texturenofocus>

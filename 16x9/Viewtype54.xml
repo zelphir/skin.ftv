@@ -75,7 +75,7 @@
 						<font>Light32</font>
 						<textcolor>ffd8d8d8</textcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -84,7 +84,7 @@
 						<font>Light32</font>
 						<textcolor>ffd8d8d8</textcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Title)</visible>
+						<visible>ListItem.IsParentFolder | IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -124,7 +124,7 @@
 						<textcolor>ffe9a01e</textcolor>
 						<selectedcolor>ffe9a01e</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!StringCompare(ListItem.Label,..) + !IsEmpty(ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -134,7 +134,7 @@
 						<textcolor>ffe9a01e</textcolor>
 						<selectedcolor>ffe9a01e</selectedcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>StringCompare(ListItem.Label,..) | IsEmpty(ListItem.Title)</visible>
+						<visible>ListItem.IsParentFolder | IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -192,7 +192,7 @@
 						<focusedcolor>ff222222</focusedcolor>
 						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
 						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
-						<enabled>!StringCompare(ListItem.Label,..)</enabled>
+						<enabled>!ListItem.IsParentFolder</enabled>
 					</control>
 					<control id="2003" type="button">
 						<top>110</top>

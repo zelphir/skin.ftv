@@ -27,7 +27,6 @@
 	<groupoverride group="shutdown" condition="true">Close</groupoverride>
 	<widgetPlaylists>False</widgetPlaylists>
 	<groupings>
-		<shortcut label="$ADDON[script.skin.helper.service 32062]" type="32010" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>
 		<node label="fTV">
 			<shortcut label="10134" icon="ftv_icon.png">ActivateWindow(Favourites,favourites://,return)</shortcut>
 			<node label="342">
