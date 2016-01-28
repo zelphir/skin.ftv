@@ -36,6 +36,16 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
+				<label>EventLog.xml</label>
+				<visible>Window.IsVisible(EventLog.xml)</visible>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FF0000FF</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
 				<label>FileManager.xml</label>
 				<visible>Window.IsVisible(FileManager.xml)</visible>
 			</control>
@@ -307,6 +317,16 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
+				<label>DialogConfirm.xml</label>
+				<visible>Window.IsVisible(DialogConfirm.xml)</visible>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
 				<label>DialogContentSettings.xml</label>
 				<visible>Window.IsVisible(DialogContentSettings.xml)</visible>
 			</control>
@@ -377,26 +397,6 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>DialogKaraokeSongSelector.xml</label>
-				<visible>Window.IsVisible(DialogKaraokeSongSelector.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>DialogKaraokeSongSelectorLarge.xml</label>
-				<visible>Window.IsVisible(DialogKaraokeSongSelectorLarge.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
 				<label>DialogKeyboard.xml</label>
 				<visible>Window.IsVisible(DialogKeyboard.xml)</visible>
 			</control>
@@ -457,16 +457,6 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>DialogOK.xml</label>
-				<visible>Window.IsVisible(DialogOK.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
 				<label>DialogPeripheralManager.xml</label>
 				<visible>Window.IsVisible(DialogPeripheralManager.xml)</visible>
 			</control>
@@ -489,16 +479,6 @@
 				<align>left</align>
 				<label>DialogPictureInfo.xml</label>
 				<visible>Window.IsVisible(DialogPictureInfo.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>DialogProgress.xml</label>
-				<visible>Window.IsVisible(DialogProgress.xml)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -659,16 +639,6 @@
 				<align>left</align>
 				<label>DialogVolumeBar.xml</label>
 				<visible>Window.IsVisible(DialogVolumeBar.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>DialogYesNo.xml</label>
-				<visible>Window.IsVisible(DialogYesNo.xml)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>

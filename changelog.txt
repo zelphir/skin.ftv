@@ -1,3 +1,8 @@
+2.4.14
+
+Merge DialogOK, DialogProgress, DialogYesNo.xml into DialogConfirm
+Bump xbmc.gui for Krypton
+
 2.4.13
 
 Updated toolbox script usage

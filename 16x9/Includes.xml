@@ -55,11 +55,30 @@
 		<bordertexture border="32">dialogs/Empty.png</bordertexture>
 		<bordersize>-82</bordersize>
 	</include>
+	<!-- Dialog Heights -->
+	<include name="Height295">
+		<height>295</height>
+	</include>
+	<include name="Height289">
+		<height>289</height>
+	</include>
+	<include name="Height253">
+		<height>253</height>
+	</include>
+	<!-- Button Widths -->
+	<include name="Width242">
+		<width>242</width>
+	</include>
+	<include name="Width358">
+		<width>358</width>
+	</include>
+	<!-- OSD Padding -->
 	<include name="osd_padding">
 		<height>82</height>
 		<width>17.36</width>
 		<texture>-</texture>
 	</include>
+	<!-- Hidden Home List -->
 	<include name="HiddenHomeList">
 		<top>-10</top>
 		<width>10</width>
