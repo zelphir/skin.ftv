@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="XRayCast">
+		<value condition="!Window.IsVisible(1106) + VideoPlayer.Content(episodes)">plugin://script.skin.helper.service/?action=getcast&amp;episode=$INFO[VideoPlayer.Title]&amp;downloadthumbs=true</value>
+		<value condition="!Window.IsVisible(1106) + VideoPlayer.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]&amp;downloadthumbs=true</value>
+	</variable>
 	<variable name="NextAiredNextSeasonNumber">
 		<value condition="Container(999).HasFocus(1200)">$INFO[Container(200).ListItem.Property(NextSeasonNumber),S]</value>
 		<value condition="Container(999).HasFocus(1201)">$INFO[Container(201).ListItem.Property(NextSeasonNumber),S]</value>

@@ -2,6 +2,8 @@
 <includes>
 	<include file="Animations.xml" />
 	<include file="Defaults.xml" />
+	<include file="Includes_ExtendedDialogInfo_Default.xml" />
+	<include file="Includes_ExtendedDialogInfo_XRay.xml" />
 	<include file="Includes_Home_Widgets_Setup.xml" />
 	<include file="Includes_Keyboard.xml" />
 	<include file="Parameters.xml" />

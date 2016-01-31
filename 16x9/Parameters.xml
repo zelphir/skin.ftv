@@ -9,8 +9,8 @@
 			<centertop>50%</centertop>
 			<width>716</width>
 			<include condition="Window.IsVisible(progressdialog)">Height295</include>
-			<include condition="Window.IsVisible(yesnodialog)">Height289</include>
 			<include condition="Window.IsVisible(okdialog)">Height253</include>
+			<include condition="!Window.IsVisible(progressdialog) + !Window.IsVisible(okdialog)">Height289</include>
 			<!-- Background -->
 			<control type="image">
 				<centerleft>50%</centerleft>

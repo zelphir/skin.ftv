@@ -15,6 +15,11 @@
 			<size>30</size>
 		</font>
 		<font>
+			<name>Reg32</name>
+			<filename>HelveticaNeue.ttf</filename>
+			<size>32</size>
+		</font>
+		<font>
 			<name>Reg27</name>
 			<filename>HelveticaNeue.ttf</filename>
 			<size>27</size>
@@ -335,6 +340,11 @@
 			<filename>Roboto-Regular.ttf</filename>
 			<linespacing>1.12</linespacing>
 			<size>30</size>
+		</font>
+		<font>
+			<name>Reg32</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>32</size>
 		</font>
 		<font>
 			<name>Reg27</name>
@@ -659,6 +669,12 @@
 			<aspect>0.9</aspect>
 			<linespacing>1.12</linespacing>
 			<size>30</size>
+		</font>
+		<font>
+			<name>Reg32</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<size>32</size>
 		</font>
 		<font>
 			<name>Reg27</name>

@@ -64,7 +64,7 @@
 			<property name="labelID">1036</property>
 			<property name="defaultID">favourites</property>
 			<property name="widget">favourites</property>
-			<property name="widgetName">Favourites</property>
+			<property name="widgetName">$LOCALIZE[1036]</property>
 			<onclick>ActivateWindow(favourites)</onclick>
 			<property name="path">ActivateWindow(favourites)</property>
 			<property name="list">favourites</property>
@@ -81,8 +81,6 @@
 			<thumb />
 			<property name="labelID">videos</property>
 			<property name="defaultID">videos</property>
-			<property name="widgetName">Widget Group 3</property>
-			<property name="widget">widget3</property>
 			<onclick>ActivateWindow(Videos,root)</onclick>
 			<property name="path">ActivateWindow(Videos,root)</property>
 			<property name="list">root</property>
@@ -99,8 +97,6 @@
 			<thumb />
 			<property name="labelID">music</property>
 			<property name="defaultID">music</property>
-			<property name="widgetName">Widget Group 4</property>
-			<property name="widget">widget4</property>
 			<onclick>ActivateWindow(Music,root)</onclick>
 			<property name="path">ActivateWindow(Music,root)</property>
 			<property name="list">root</property>
@@ -117,8 +113,6 @@
 			<thumb />
 			<property name="labelID">31101</property>
 			<property name="defaultID">programs</property>
-			<property name="widgetName">Widget Group 5</property>
-			<property name="widget">widget5</property>
 			<onclick>ActivateWindow(Programs)</onclick>
 			<property name="path">ActivateWindow(Programs)</property>
 			<property name="list">Programs</property>
@@ -135,8 +129,6 @@
 			<thumb />
 			<property name="labelID">31100</property>
 			<property name="defaultID">pictures</property>
-			<property name="widgetName">Widget Group 6</property>
-			<property name="widget">widget6</property>
 			<onclick>ActivateWindow(Pictures)</onclick>
 			<property name="path">ActivateWindow(Pictures)</property>
 			<property name="list">Pictures</property>
@@ -154,7 +146,7 @@
 			<property name="labelID">weather</property>
 			<property name="defaultID">weather</property>
 			<property name="widget">weather</property>
-			<property name="widgetName">Weather forecast</property>
+			<property name="widgetName">$LOCALIZE[10508]</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
@@ -209,9 +201,9 @@
 			<property name="labelID">31167</property>
 			<property name="defaultID">31167</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/RecentlyAddedMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(99).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -225,9 +217,9 @@
 			<property name="labelID">31169</property>
 			<property name="defaultID">31169</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/InProgressMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(99).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -241,9 +233,9 @@
 			<property name="labelID">31168</property>
 			<property name="defaultID">31168</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/YourMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(99).ListItem.Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -735,9 +727,9 @@
 			<property name="labelID">31167</property>
 			<property name="defaultID">31167</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/RecentlyAddedMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -751,9 +743,9 @@
 			<property name="labelID">31169</property>
 			<property name="defaultID">31169</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/InProgressMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -767,9 +759,9 @@
 			<property name="labelID">31168</property>
 			<property name="defaultID">31168</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/YourMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -817,9 +809,9 @@
 			<property name="labelID">31167</property>
 			<property name="defaultID">31167</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/RecentlyAddedMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/RecentlyAddedMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/RecentlyAddedMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -833,9 +825,9 @@
 			<property name="labelID">31169</property>
 			<property name="defaultID">31169</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/InProgressMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/InProgressMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/InProgressMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>
@@ -849,9 +841,9 @@
 			<property name="labelID">31168</property>
 			<property name="defaultID">31168</property>
 			<property name="translatedPath">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<onclick>ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</onclick>
-			<property name="path">ActivateWindow(Videos,special://skin/extras/video/YourMovies.xsp,return)</property>
-			<property name="list">special://skin/extras/video/YourMovies.xsp</property>
+			<onclick>ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</onclick>
+			<property name="path">ActivateWindow(Videos,C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp,return)</property>
+			<property name="list">C:\Program Files (x86)\Kodi_K\portable_data\addons\skin.ftv\extras/video/YourMovies.xsp</property>
 			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),movies)</visible>
 			<property name="group">movies</property>
 			<property name="isSubmenu">True</property>

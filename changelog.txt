@@ -1,3 +1,7 @@
+2.4.15
+
+Added X-Ray feature
+
 2.4.14
 
 Merge DialogOK, DialogProgress, DialogYesNo.xml into DialogConfirm

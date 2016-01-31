@@ -964,3 +964,11 @@ msgstr ""
 msgctxt "#31231"
 msgid "Please try again later."
 msgstr ""
+
+msgctxt "#31232"
+msgid "Cast and Role"
+msgstr ""
+
+msgctxt "#31233"
+msgid "View all Cast"
+msgstr ""

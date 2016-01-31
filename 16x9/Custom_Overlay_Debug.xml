@@ -5,7 +5,8 @@
 	<controls>
 		<!-- Global debug grid -->
 		<control type="image">
-			<include>FullscreenDimensions</include>
+			<width>$INFO[System.ScreenWidth]</width>
+			<height>$INFO[System.ScreenHeight]</height>
 			<texture>special://skin/extras/debuggrid1080.png</texture>
 			<colordiffuse>88ffffff</colordiffuse>
 			<visible>Skin.HasSetting(DebugGrid)</visible>
