@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<!-- musicinformation -->
-	<defaultcontrol always="true">6</defaultcontrol>
+	<defaultcontrol always="true">9001</defaultcontrol>
 	<onunload>ClearProperty(AlbumDetails,home)</onunload>
 	<onunload>SetFocus(50)</onunload>
 	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
+	<variable name="VolumeIcon">
+		<value condition="!Player.Muted">dialogs/notification_volume.png</value>
+		<value>dialogs/notification_volume_mute.png</value>
+	</variable>
+	<variable name="VolumeDetails">
+		<value condition="!Player.Muted">$INFO[Control.GetLabel(404),,%]</value>
+		<value>$LOCALIZE[31013]</value>
+	</variable>
 	<variable name="XRayCast">
 		<value condition="!Window.IsVisible(1106) + VideoPlayer.Content(episodes)">plugin://script.skin.helper.service/?action=getcast&amp;episode=$INFO[VideoPlayer.Title]&amp;downloadthumbs=true</value>
 		<value condition="!Window.IsVisible(1106) + VideoPlayer.Content(movies)">plugin://script.skin.helper.service/?action=getcast&amp;movie=$INFO[VideoPlayer.Title]&amp;downloadthumbs=true</value>

@@ -1,3 +1,8 @@
+2.4.17
+
+Merge DialogMuteBug into DialogVolumeBar
+Merge DialogAlbumInfo and DialogSongInfo into DialogMusicInfo
+
 2.4.16
 
 Updated X-Ray
@@ -8,7 +13,7 @@ Added X-Ray feature
 
 2.4.14
 
-Merge DialogOK, DialogProgress, DialogYesNo.xml into DialogConfirm
+Merge DialogOK, DialogProgress, DialogYesNo into DialogConfirm
 Bump xbmc.gui for Krypton
 
 2.4.13
