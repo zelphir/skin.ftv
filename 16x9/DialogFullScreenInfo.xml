@@ -3,6 +3,10 @@
 	<!-- fullscreeninfo -->
 	<defaultcontrol always="true">99</defaultcontrol>
 	<onunload>ClearProperty(ShowXRay,home)</onunload>
+	<onunload>ClearProperty(ShowIcon,home)</onunload>
+	<onunload>ClearProperty(XRayRole,home)</onunload>
+	<onload>Control.Move(1000,$INFO[Container(1000).CurrentItem,-])</onload>
+	<onload>Control.Move(1000,1)</onload>
 	<onunload condition="Player.Paused">Play</onunload>
 	<controls>
 		<!-- Hidden controls -->
@@ -58,13 +62,14 @@
 				<top>242</top>
 				<width>2344</width>
 				<height>576</height>
-				<onup>9998</onup>
+				<onup>Back</onup>
 				<ondown>Back</ondown>
-				<onleft>7000</onleft>
+				<onleft>Back</onleft>
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<oninfo>Close</oninfo>
 				<onclick>SetProperty(XRayInfo,true,home)</onclick>
+				<onclick>SetProperty(XRayIcon,$INFO[ListItem.Icon],home)</onclick>
 				<onclick>SetProperty(XRayRole,$INFO[ListItem.Label2],home)</onclick>
 				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[ListItem.Label])</onclick>
 				<preloaditems>2</preloaditems>

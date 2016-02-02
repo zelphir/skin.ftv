@@ -918,7 +918,7 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>right</align>
-				<label>$INFO[System.CurrentControl,[COLOR FF00FF00]Current control - [/COLOR]]<!--$INFO[System.CurrentControlID,ID=,]--></label>
+				<label>$INFO[System.CurrentControl,[COLOR FF00FF00]Current control - [/COLOR]]$INFO[System.CurrentControlID, (ID=,)]</label>
 			</control>
 			<!-- Folder label -->
 			<control type="label">

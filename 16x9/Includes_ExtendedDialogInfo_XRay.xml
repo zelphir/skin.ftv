@@ -4,6 +4,7 @@
 	<include name="ExtendedDialogInfo_XRay">
 		<defaultcontrol always="true">3000</defaultcontrol>
 		<onunload>SetFocus(1000)</onunload>
+		<onunload>ClearProperty(XRayInfo,home)</onunload>
 		<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
 		<controls>
 			<!-- Hidden controls -->
@@ -56,7 +57,7 @@
 					<control type="image">
 						<width>362</width>
 						<height>480</height>
-						<texture fallback="views/cast_fallback.png">$INFO[Window.Property(thumb)]</texture>
+						<texture fallback="views/cast_fallback.png">$INFO[Window(home).Property(XRayIcon)]</texture>
 						<aspectratio aligny="center">scale</aspectratio>
 					</control>
 				</control>
@@ -81,9 +82,7 @@
 						<height>36</height>
 						<itemgap>20</itemgap>
 						<include>DialogVideoInfoAnimation</include>
-						<visible>!IsEmpty(Container(150).ListItem(0).Label) + !IsEmpty(Window(home).Property(XRayRole))</visible>
-						<animation condition="Control.HasFocus(450) | Control.HasFocus(250)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-						<animation condition="!Control.HasFocus(450) + !Control.HasFocus(250)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+						<visible>!IsEmpty(Window(home).Property(XRayRole))</visible>
 						<control type="textbox">
 							<width>1192</width>
 							<height max="158">auto</height>
@@ -101,7 +100,7 @@
 						<height>36</height>
 						<itemgap>20</itemgap>
 						<include>DialogVideoInfoAnimation</include>
-						<visible>!IsEmpty(Container(150).ListItem(0).Label)</visible>
+						<visible>!IsEmpty(Container(150).ListItemAbsolute(0).Label)</visible>
 						<control type="textbox">
 							<width>1192</width>
 							<height max="162">auto</height>
@@ -140,7 +139,7 @@
 							<onleft>Close</onleft>
 							<onright>Close</onright>
 							<oninfo>Close</oninfo>
-							<onclick>RunScript(script.toolbox,info=textviewer,header=,text='$ESCINFO[Window.Property(Biography)]')</onclick>
+							<onclick>RunScript(script.toolbox,info=textviewer,header=,text='$ESCINFO[Window.Property(Biography),$LOCALIZE[21887]: ]')</onclick>
 							<visible>Control.IsVisible(96) + !IsEmpty(Window.Property(Biography))</visible>
 							<include>DialogVideoInfoAnimation</include>
 							<texturefocus>views/more_fo.png</texturefocus>
