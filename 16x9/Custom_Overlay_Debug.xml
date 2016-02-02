@@ -288,16 +288,6 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>DialogAlbumInfo.xml</label>
-				<visible>Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
 				<label>DialogBusy.xml</label>
 				<visible>Window.IsVisible(DialogBusy.xml)</visible>
 			</control>
@@ -388,16 +378,6 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>DialogKaiToast.xml</label>
-				<visible>Window.IsVisible(DialogKaiToast.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
 				<label>DialogKeyboard.xml</label>
 				<visible>Window.IsVisible(DialogKeyboard.xml)</visible>
 			</control>
@@ -428,8 +408,8 @@
 				<shadowcolor>FF000000</shadowcolor>
 				<font>font13</font>
 				<align>left</align>
-				<label>DialogMuteBug.xml</label>
-				<visible>Window.IsVisible(DialogMuteBug.xml)</visible>
+				<label>DialogMusicInfo.xml</label>
+				<visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -440,6 +420,16 @@
 				<align>left</align>
 				<label>DialogNetworkSetup.xml</label>
 				<visible>Window.IsVisible(DialogNetworkSetup.xml)</visible>
+			</control>
+			<control type="label">
+				<width>780</width>
+				<height>21</height>
+				<textcolor>FFFF0000</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<font>font13</font>
+				<align>left</align>
+				<label>DialogNotification.xml</label>
+				<visible>Window.IsVisible(DialogNotification.xml)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>
@@ -590,16 +580,6 @@
 				<align>left</align>
 				<label>DialogSlider.xml</label>
 				<visible>Window.IsVisible(DialogSlider.xml)</visible>
-			</control>
-			<control type="label">
-				<width>780</width>
-				<height>21</height>
-				<textcolor>FFFF0000</textcolor>
-				<shadowcolor>FF000000</shadowcolor>
-				<font>font13</font>
-				<align>left</align>
-				<label>DialogSongInfo.xml</label>
-				<visible>Window.IsVisible(DialogSongInfo.xml)</visible>
 			</control>
 			<control type="label">
 				<width>780</width>

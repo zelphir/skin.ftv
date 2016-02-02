@@ -15,7 +15,7 @@
 			<onup condition="IsEmpty(Window(home).Property(ShowXRay))">SetProperty(ShowXRay,true,home)</onup>
 			<onup condition="!Player.Paused">Pause</onup>
 			<onup>1000</onup>
-			<oninfo>SetFocus(98)</oninfo>
+			<visible>!IsEmpty(Container(1000).ListItem.Label)</visible>
 		</control>
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
@@ -77,7 +77,6 @@
 				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<visible allowhiddenfocus="true">!IsEmpty(Window(home).Property(ShowXRay)) + !Window.IsVisible(videobookmarks)</visible>
 				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -407,7 +406,7 @@
 				<align>center</align>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>System.HasAddon(script.extendedinfo)</visible>
+				<visible>System.HasAddon(script.extendedinfo) + !IsEmpty(Container(1000).ListItem.Label)</visible>
 				<control type="label">
 					<top>6</top>
 					<width>auto</width>
