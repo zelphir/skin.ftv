@@ -4,6 +4,9 @@
 	<backgroundcolor>0xff12161b</backgroundcolor>
 	<defaultcontrol>99</defaultcontrol>
 	<onload>ClearProperty(BounceRight,Home)</onload>
+	<onload>ClearProperty(WindowPrevious,home)</onload>
+	<onunload condition="Window.Next(addonbrowser)">SetProperty(WindowPreviousHome,true,home)</onunload>
+	<onunload condition="!Window.Next(addonbrowser)">ClearProperty(WindowPreviousHome,home)</onunload>
 	<onload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=99&amp;levels=0&amp;group=mainmenu|shutdown)</onload>
 	<controls>
 		<control type="group">

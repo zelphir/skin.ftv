@@ -814,7 +814,7 @@ msgid "Your Video Add-ons"
 msgstr ""
 
 msgctxt "#31194"
-msgid "Personal Rating"
+msgid "Submit"
 msgstr ""
 
 msgctxt "#31195"
@@ -970,5 +970,55 @@ msgid "Cast and Role"
 msgstr ""
 
 msgctxt "#31233"
-msgid "View all Cast"
+msgid "View All Cast"
+msgstr ""
+
+msgctxt "#31234"
+msgid "Categories"
+msgstr ""
+
+msgctxt "#31235"
+msgid "Your Rating"
+msgstr ""
+
+# Must match #31235 without the space
+
+msgctxt "#31236"
+msgid "YourRating"
+msgstr ""
+
+msgctxt "#31237"
+msgid "Select your rating"
+msgstr ""
+
+msgctxt "#31238"
+msgid "This is your own personal rating and is not shared publicly"
+msgstr ""
+
+msgctxt "#31239"
+msgid "Press play to resume"
+msgstr ""
+
+msgctxt "#31240"
+msgid "Not rated"
+msgstr ""
+
+msgctxt "#31241"
+msgid "I hate it"
+msgstr ""
+
+msgctxt "#31242"
+msgid "I don't like it"
+msgstr ""
+
+msgctxt "#31243"
+msgid "It's okay"
+msgstr ""
+
+msgctxt "#31244"
+msgid "I like it"
+msgstr ""
+
+msgctxt "#31245"
+msgid "I love it"
 msgstr ""

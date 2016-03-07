@@ -1,3 +1,8 @@
+3.0.0
+
+Amazon Fire TV Version 2.0 work
+Krypton work
+
 2.4.19
 
 Updated addon info labels for Krypton

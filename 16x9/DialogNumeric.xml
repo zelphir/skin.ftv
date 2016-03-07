@@ -14,7 +14,7 @@
 			<control type="image">
 				<width>1010</width>
 				<height>699</height>
-				<texture border="32">dialogs/DialogMessageBackground.png</texture>
+				<texture border="2">dialogs/DialogMessageBackground.png</texture>
 			</control>
 			<!-- Control group -->
 			<control type="group">

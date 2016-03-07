@@ -13,6 +13,7 @@
 		<control type="button" id="999">
 			<onfocus condition="!IsEmpty(Window.Property(DBID))">SetFocus(8)</onfocus>
 			<onfocus condition="IsEmpty(Window.Property(DBID))">SetFocus(7000)</onfocus>
+			<include>HiddenControl</include>
 		</control>
 		<!-- Hidden Lists -->
 		<control id="250" type="list" />
@@ -31,7 +32,7 @@
 		<control type="textbox">
 			<left>-1200</left>
 			<width>1192</width>
-			<height>126</height>
+			<height>122</height>
 			<align>left</align>
 			<font>Light30Spaced</font>
 			<pagecontrol>96</pagecontrol>
@@ -43,12 +44,16 @@
 		<control id="96" type="scrollbar">
 			<left>-1200</left>
 			<width>1192</width>
-			<height>126</height>
+			<height>122</height>
 			<showonepage>false</showonepage>
 			<orientation>vertical</orientation>
 		</control>
 		<!-- Background -->
-		<include>BackgroundImage</include>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>special://skin/extras/backgrounds/default.png</texture>
+			<visible>IsEmpty(Window(home).Property(ShowXRay))</visible>
+		</control>
 		<!-- Fanart -->
 		<control type="group">
 			<control type="image">
@@ -57,6 +62,7 @@
 				<texture background="true">$INFO[Window.Property(fanart)]</texture>
 			</control>
 			<include>DialogVideoInfoAnimation</include>
+			<visible>IsEmpty(Window(home).Property(ShowXRay))</visible>
 		</control>
 		<control type="group">
 			<left>90</left>
@@ -80,6 +86,7 @@
 				<onleft>Close</onleft>
 				<onright>1000</onright>
 				<onfocus>ClearProperty(Similar,home)</onfocus>
+				<onfocus>ClearProperty(FadeResume,home)</onfocus>
 				<font>Light35</font>
 				<textcolor>ffdadada</textcolor>
 				<focusedcolor>ffffc24b</focusedcolor>
@@ -97,6 +104,7 @@
 				<onright condition="!IsEmpty(Container(150).ListItem.Label)">150</onright>
 				<onright condition="IsEmpty(Container(150).ListItem.Label)">9001</onright>
 				<onfocus>SetProperty(Similar,1,home)</onfocus>
+				<onfocus>ClearProperty(FadeResume,home)</onfocus>
 				<font>Light35</font>
 				<textcolor>ffdadada</textcolor>
 				<focusedcolor>ffffc24b</focusedcolor>
@@ -209,7 +217,7 @@
 				<!-- Plot -->
 				<control type="textbox">
 					<width>1192</width>
-					<height max="124">auto</height>
+					<height max="122">auto</height>
 					<align>left</align>
 					<font>Light30Spaced</font>
 					<autoscroll>false</autoscroll>
@@ -230,6 +238,7 @@
 					<height>23</height>
 					<onleft>7000</onleft>
 					<onright>8</onright>
+					<onfocus>ClearProperty(FadeResume,home)</onfocus>
 					<onclick>RunScript(script.toolbox,info=textviewer,header=,text='$ESCINFO[Window.Property(Plot)]')</onclick>
 					<include>DialogVideoInfoAnimation</include>
 					<texturefocus>views/more_fo.png</texturefocus>
@@ -253,7 +262,7 @@
 					<height>24</height>
 					<font>Med30</font>
 					<aligny>bottom</aligny>
-					<textcolor>ff717171</textcolor>
+					<textcolor>$VAR[ExtendedInfoLabelColor]</textcolor>
 					<label>$LOCALIZE[31071]:</label>
 				</control>
 				<control type="label">
@@ -294,7 +303,7 @@
 					<height>24</height>
 					<font>Med30</font>
 					<aligny>bottom</aligny>
-					<textcolor>ff717171</textcolor>
+					<textcolor>$VAR[ExtendedInfoLabelColor]</textcolor>
 					<label>$LOCALIZE[31072]:</label>
 				</control>
 				<control type="label">
@@ -338,6 +347,7 @@
 					<onup condition="Control.IsVisible(96)">3002</onup>
 					<ondown condition="Control.IsVisible(150)">150</ondown>
 					<ondown condition="Control.IsVisible(1000)">1000</ondown>
+					<onfocus>ClearProperty(FadeResume,home)</onfocus>
 					<font>Med24</font>
 					<label>$LOCALIZE[31109]</label>
 					<textoffsetx>28</textoffsetx>
@@ -359,7 +369,7 @@
 				<width>1000</width>
 				<height>32</height>
 				<font>Med32</font>
-				<textcolor>ff717171</textcolor>
+				<textcolor>$VAR[ExtendedInfoLabelColor]</textcolor>
 				<label>$LOCALIZE[31076]</label>
 				<visible>IsEmpty(Window(home).Property(Similar)) + !IsEmpty(Container(1000).ListItem.Label) + !Control.HasFocus(1000)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -379,6 +389,7 @@
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9001</onback>
+				<onfocus>SetProperty(FadeResume,true,home)</onfocus>
 				<preloaditems>2</preloaditems>
 				<focusposition>2</focusposition>
 				<viewtype label="">list</viewtype>
@@ -401,7 +412,7 @@
 							<width>320</width>
 							<height>480</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture fallback="views/cast_fallback.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -465,7 +476,7 @@
 							<width>320</width>
 							<height>480</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture fallback="views/cast_fallback.png" background="true">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -774,7 +785,7 @@
 				<width>1000</width>
 				<height>32</height>
 				<font>Med32</font>
-				<textcolor>ff717171</textcolor>
+				<textcolor>$VAR[ExtendedInfoLabelColor]</textcolor>
 				<label>$LOCALIZE[31077]</label>
 				<visible>!IsEmpty(Window(home).Property(Similar)) + !IsEmpty(Container(150).ListItem.Label) + !Control.HasFocus(150)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
@@ -806,6 +817,7 @@
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9001</onback>
+				<onfocus>SetProperty(FadeResume,true,home)</onfocus>
 				<preloaditems>2</preloaditems>
 				<focusposition>2</focusposition>
 				<viewtype label="">list</viewtype>

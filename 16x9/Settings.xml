@@ -176,7 +176,7 @@
 					<icon>settings/icon_appearance.png</icon>
 				</item>
 				<item>
-					<onclick>ActivateWindow(addonbrowser)</onclick>
+					<onclick>ActivateWindow(addonbrowser,addons://)</onclick>
 					<label>24001</label>
 					<label2>$LOCALIZE[31116]</label2>
 					<icon>settings/icon_addons.png</icon>

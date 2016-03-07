@@ -2,8 +2,12 @@
 <includes>
 	<include file="Animations.xml" />
 	<include file="Defaults.xml" />
-	<include file="Includes_ExtendedDialogInfo_Default.xml" />
-	<include file="Includes_ExtendedDialogInfo_XRay.xml" />
+	<include file="Includes_AddonBrowser_Default.xml" />
+	<include file="Includes_AddonBrowser_Special.xml" />
+	<include file="Includes_DialogSelect_Default.xml" />
+	<include file="Includes_DialogSelect_Special.xml" />
+	<include file="Include_DialogSettings_Default.xml" />
+	<include file="Include_DialogSettings_OSDSettings.xml" />
 	<include file="Includes_Home_Widgets_Setup.xml" />
 	<include file="Includes_Keyboard.xml" />
 	<include file="Parameters.xml" />
@@ -53,26 +57,44 @@
 	</include>
 	<!-- Message Background image -->
 	<include name="MessageBackground">
-		<texture border="32">dialogs/DialogMessageBackground.png</texture>
-		<bordertexture border="32">dialogs/Empty.png</bordertexture>
-		<bordersize>-82</bordersize>
+		<texture border="2">dialogs/DialogMessageBackground.png</texture>
+		<bordertexture border="2">dialogs/Empty.png</bordertexture>
+		<bordersize>-52</bordersize>
 	</include>
-	<!-- Dialog Heights -->
-	<include name="Height295">
-		<height>295</height>
+	<!-- Heights -->
+	<include name="Height325">
+		<height>325</height>
 	</include>
-	<include name="Height289">
-		<height>289</height>
+	<include name="Height319">
+		<height>319</height>
 	</include>
-	<include name="Height253">
-		<height>253</height>
+	<include name="Height283">
+		<height>283</height>
 	</include>
-	<!-- Button Widths -->
+	<!-- Widths -->
+	<include name="Width195">
+		<width>195</width>
+	</include>
 	<include name="Width242">
 		<width>242</width>
 	</include>
+	<include name="Width292">
+		<width>292</width>
+	</include>
 	<include name="Width358">
 		<width>358</width>
+	</include>
+	<include name="Width673">
+		<width>673</width>
+	</include>
+	<include name="Width770">
+		<width>770</width>
+	</include>
+	<include name="Width715">
+		<width>715</width>
+	</include>
+	<include name="Width812">
+		<width>812</width>
 	</include>
 	<!-- OSD Padding -->
 	<include name="osd_padding">

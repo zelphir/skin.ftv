@@ -35,22 +35,23 @@
 					</control>
 					<control type="label">
 						<left>116</left>
-						<top>27</top>
+						<top>24</top>
 						<width>278</width>
 						<height>40</height>
-						<font>Reg32</font>
-						<textcolor>ffffffff</textcolor>
+						<font>OSD35</font>
+						<scroll>false</scroll>
+						<textcolor>fffafafa</textcolor>
 						<shadowcolor>80000000</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<left>116</left>
-						<top>66</top>
+						<top>68</top>
 						<width>278</width>
 						<height>36</height>
-						<font>Light26</font>
+						<font>OSD31</font>
 						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>ffd2d2d2</textcolor>
 						<shadowcolor>80000000</shadowcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
@@ -75,23 +76,23 @@
 					</control>
 					<control type="label">
 						<left>116</left>
-						<top>27</top>
+						<top>24</top>
 						<width>278</width>
 						<height>40</height>
-						<font>Reg32</font>
+						<font>OSD35</font>
 						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>fffafafa</textcolor>
 						<shadowcolor>80000000</shadowcolor>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 					<control type="label">
 						<left>116</left>
-						<top>66</top>
+						<top>68</top>
 						<width>278</width>
 						<height>36</height>
-						<font>Light26</font>
+						<font>OSD31</font>
 						<scroll>false</scroll>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>ffd2d2d2</textcolor>
 						<shadowcolor>80000000</shadowcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
@@ -121,7 +122,7 @@
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.Title]</label>
@@ -131,7 +132,7 @@
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.TVShowTitle]</label>
@@ -141,7 +142,7 @@
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$VAR[PlayerEpisodeValue]</label>
@@ -150,11 +151,11 @@
 				<!--  Episode title -->
 				<control id="99" type="label">
 					<left>20</left>
-					<top>127</top>
+					<top>130</top>
 					<width>1880</width>
 					<height>40</height>
 					<align>center</align>
-					<font>Light26</font>
+					<font>OSD32</font>
 					<textcolor>fffe8e8e8</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
@@ -196,17 +197,17 @@
 				</control>
 				<control id="99" type="grouplist">
 					<left>92</left>
-					<bottom>38</bottom>
+					<bottom>37</bottom>
 					<width>800</width>
 					<height>40</height>
-					<itemgap>4</itemgap>
+					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<!--  Current position -->
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>fff3f3f3</textcolor>
 						<label>$VAR[PlayerTime]</label>
 					</control>
@@ -214,7 +215,7 @@
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>/</label>
 						<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
@@ -223,7 +224,7 @@
 					<control id="99" type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>$VAR[PlayerDuration]</label>
 					</control>
@@ -233,7 +234,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold28</font>
+						<font>Bold32</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>[B]HD[/B]</label>
 						<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
@@ -244,7 +245,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold29</font>
+						<font>Bold31</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>$VAR[PlayerResolution]</label>
 					</control>
@@ -252,10 +253,10 @@
 				<!--  Current time -->
 				<control id="99" type="label">
 					<right>92</right>
-					<bottom>45</bottom>
+					<bottom>44</bottom>
 					<width>800</width>
 					<height>30</height>
-					<font>Reg27</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$INFO[System.Time]</label>
@@ -819,7 +820,7 @@
 							<height>30</height>
 							<align>center</align>
 							<aligny>top</aligny>
-							<font>Light27</font>
+							<font>OSD32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$VAR[PlayerTime]</label>
 						</control>
@@ -839,23 +840,14 @@
 				</animation>
 			</control>
 			<control type="group" id="99">
-				<visible>Player.Caching</visible>
+				<visible>Player.Caching + !Window.IsVisible(seekbar)</visible>
 				<!-- Busy -->
 				<control type="image" id="99">
 					<centerleft>50%</centerleft>
 					<centertop>50%</centertop>
-					<width>94</width>
-					<height>94</height>
-					<texture>common/spinner_outer.png</texture>
-					<animation effect="rotate" end="-360" center="auto" time="1120" loop="true" reversible="false" condition="true">Conditional</animation>
-				</control>
-				<control type="image" id="99">
-					<centerleft>50%</centerleft>
-					<centertop>50%</centertop>
-					<width>94</width>
-					<height>94</height>
-					<texture>common/spinner_inner.png</texture>
-					<animation effect="rotate" end="360" center="auto" time="1680" loop="true" reversible="false" condition="true">Conditional</animation>
+					<width>122</width>
+					<height>122</height>
+					<texture>common/spinner.gif</texture>
 				</control>
 			</control>
 		</control>

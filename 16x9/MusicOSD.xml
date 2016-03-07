@@ -37,7 +37,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
+					<font>OSD40</font>
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[MusicPlayer.Title]</label>
@@ -46,11 +46,11 @@
 			<!--  Song title -->
 			<control type="label">
 				<left>20</left>
-				<top>127</top>
+				<top>130</top>
 				<width>1880</width>
 				<height>40</height>
 				<align>center</align>
-				<font>Light26</font>
+				<font>OSD32</font>
 				<textcolor>fffe8e8e8</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, / ,]</label>
@@ -71,17 +71,17 @@
 			</control>
 			<control type="grouplist">
 				<left>92</left>
-				<bottom>38</bottom>
+				<bottom>37</bottom>
 				<width>800</width>
 				<height>40</height>
-				<itemgap>4</itemgap>
+				<itemgap>2</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<!--  Current position -->
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$VAR[PlayerTime]</label>
 				</control>
@@ -89,7 +89,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
 					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
@@ -98,7 +98,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>$VAR[PlayerDuration]</label>
 				</control>
@@ -175,10 +175,10 @@
 			<!--  Current time -->
 			<control type="label">
 				<right>92</right>
-				<bottom>45</bottom>
+				<bottom>44</bottom>
 				<width>800</width>
 				<height>30</height>
-				<font>Reg27</font>
+				<font>OSD32</font>
 				<align>right</align>
 				<textcolor>fff3f3f3</textcolor>
 				<label>$INFO[System.Time]</label>
@@ -200,7 +200,7 @@
 				<control type="button" id="9">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<focusedcolor>ffffc04b</focusedcolor>
@@ -215,7 +215,7 @@
 				<control type="button" id="10">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<focusedcolor>ffffc04b</focusedcolor>
@@ -229,7 +229,7 @@
 				<control type="button" id="7">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<focusedcolor>ffffc04b</focusedcolor>
@@ -242,7 +242,7 @@
 				<control type="togglebutton" id="8">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<focusedcolor>ffffc04b</focusedcolor>
@@ -266,10 +266,25 @@
 				<orientation>vertical</orientation>
 				<visible>!Player.Forwarding + !Player.Rewinding</visible>
 				<!-- Visualisation -->
+				<control type="button" id="501">
+					<width>600</width>
+					<height>58</height>
+					<font>OSD32</font>
+					<align>right</align>
+					<textcolor>ffffffff</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<focusedcolor>ffffc04b</focusedcolor>
+					<label>31235</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>SetProperty(SetUserRating,music,home)</onclick>
+					<onclick>setrating</onclick>
+				</control>
+				<!-- Visualisation -->
 				<control type="button" id="500">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
@@ -282,7 +297,7 @@
 				<control type="button" id="12">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
@@ -296,7 +311,7 @@
 				<control type="button" id="11">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>ffffffff</textcolor>
 					<shadowcolor>ff000000</shadowcolor>

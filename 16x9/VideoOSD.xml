@@ -38,7 +38,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
+					<font>OSD40</font>
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
@@ -48,7 +48,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
+					<font>OSD40</font>
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.TVShowTitle]</label>
@@ -58,7 +58,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
+					<font>OSD40</font>
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$VAR[PlayerEpisodeValue]</label>
@@ -67,11 +67,11 @@
 			<!--  Episode title -->
 			<control type="label">
 				<left>20</left>
-				<top>127</top>
+				<top>130</top>
 				<width>1880</width>
 				<height>40</height>
 				<align>center</align>
-				<font>Light26</font>
+				<font>OSD32</font>
 				<textcolor>fffe8e8e8</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>$INFO[VideoPlayer.Title]</label>
@@ -102,17 +102,17 @@
 			</control>
 			<control type="grouplist">
 				<left>92</left>
-				<bottom>38</bottom>
+				<bottom>37</bottom>
 				<width>800</width>
 				<height>40</height>
-				<itemgap>4</itemgap>
+				<itemgap>2</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<!--  Current position -->
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$VAR[PlayerTime]</label>
 				</control>
@@ -120,7 +120,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
 					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
@@ -129,7 +129,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>$VAR[PlayerDuration]</label>
 				</control>
@@ -139,7 +139,7 @@
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
-					<font>Bold28</font>
+					<font>Bold32</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>[B]HD[/B]</label>
 					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
@@ -150,7 +150,7 @@
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
-					<font>Bold29</font>
+					<font>Bold31</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>$VAR[PlayerResolution]</label>
 				</control>
@@ -228,10 +228,10 @@
 			<!--  Current time -->
 			<control type="label">
 				<right>92</right>
-				<bottom>45</bottom>
+				<bottom>44</bottom>
 				<width>800</width>
 				<height>30</height>
-				<font>Reg27</font>
+				<font>OSD32</font>
 				<align>right</align>
 				<textcolor>fff3f3f3</textcolor>
 				<label>$INFO[System.Time]</label>
@@ -253,7 +253,7 @@
 				<control id="10" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>$LOCALIZE[31153]</label>
 					<textcolor>ffffffff</textcolor>
@@ -268,7 +268,7 @@
 				<control id="11" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>$LOCALIZE[31136]</label>
 					<textcolor>ffffffff</textcolor>
@@ -283,7 +283,7 @@
 				<control id="12" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>287</label>
 					<textcolor>ffffffff</textcolor>
@@ -297,7 +297,7 @@
 				<control id="13" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>298</label>
 					<textcolor>ffffffff</textcolor>
@@ -312,7 +312,7 @@
 				<control id="14" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>$LOCALIZE[31137]</label>
 					<textcolor>ffffffff</textcolor>
@@ -326,7 +326,7 @@
 				<control id="15" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>$LOCALIZE[31000]</label>
 					<textcolor>ffffffff</textcolor>
@@ -340,7 +340,7 @@
 				<control id="16" type="button">
 					<width>600</width>
 					<height>58</height>
-					<font>Light32</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<label>$VAR[NextVideo]</label>
 					<textcolor>ffffffff</textcolor>

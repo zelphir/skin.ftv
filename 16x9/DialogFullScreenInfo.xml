@@ -5,6 +5,7 @@
 	<onunload>ClearProperty(ShowXRay,home)</onunload>
 	<onunload>ClearProperty(ShowIcon,home)</onunload>
 	<onunload>ClearProperty(XRayRole,home)</onunload>
+	<onunload>ClearProperty(XRayInfo,home)</onunload>
 	<onload>Control.Move(1000,$INFO[Container(1000).CurrentItem,-])</onload>
 	<onload>Control.Move(1000,1)</onload>
 	<onunload condition="Player.Paused">Play</onunload>
@@ -18,7 +19,51 @@
 			<visible>!IsEmpty(Container(1000).ListItem.Label)</visible>
 		</control>
 		<control type="group">
-			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<right>100</right>
+			<top>56</top>
+			<width>520</width>
+			<height>118</height>
+			<animation condition="!IsEmpty(Window(home).Property(FadeResume))" effect="fade" end="6" start="100" time="200">Conditional</animation>
+			<visible>!IsEmpty(Window(home).Property(ShowXRay))</visible>
+			<control type="image">
+				<width>520</width>
+				<height>118</height>
+				<texture>dialogs/DialogBackground.png</texture>
+			</control>
+			<control type="label">
+				<right>112</right>
+				<top>16</top>
+				<height>40</height>
+				<font>Bold30</font>
+				<align>right</align>
+				<textcolor>ffe7e7e7</textcolor>
+				<label>$INFO[Player.Title]</label>
+			</control>
+			<control type="label">
+				<right>112</right>
+				<top>61</top>
+				<height>40</height>
+				<font>Light32</font>
+				<align>right</align>
+				<textcolor>ff999999</textcolor>
+				<label>31239</label>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<width>79</width>
+				<height>118</height>
+				<texture>$INFO[Player.Art(poster)]</texture>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<width>79</width>
+				<height>118</height>
+				<texture>$INFO[Player.Art(tvshow.poster)]</texture>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+			<animation delay="800" effect="fade" end="100" start="0" time="200">Visible</animation>
 			<animation effect="slide" end="0,-1080" start="0,0" time="0" condition="IsEmpty(Window(home).Property(ShowXRay))">Conditional</animation>
 			<control type="group">
 				<include>VisibleDelayFadeAnimation</include>
@@ -52,7 +97,7 @@
 					<pagecontrol>96</pagecontrol>
 					<autoscroll>false</autoscroll>
 					<textcolor>ffbcbcbc</textcolor>
-					<label>[B]$INFO[Container(1000).ListItem.Label][/B] [LIGHT]$INFO[Container(1000).ListItem.Label2][/LIGHT]</label>
+					<label>[B]$INFO[Container(1000).ListItem.Label][/B]  [LIGHT]$INFO[Container(1000).ListItem.Label2][/LIGHT]</label>
 					<visible>Control.HasFocus(1000)</visible>
 				</control>
 			</control>
@@ -257,8 +302,8 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
-					<textcolor>ffeaeaea</textcolor>
+					<font>OSD40</font>
+					<textcolor>fffafafa</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<visible>IsEmpty(VideoPlayer.TVShowTitle)</visible>
@@ -267,8 +312,8 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
-					<textcolor>ffeaeaea</textcolor>
+					<font>OSD40</font>
+					<textcolor>fffafafa</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.TVShowTitle]</label>
 					<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
@@ -277,8 +322,8 @@
 				<control type="label">
 					<width>auto</width>
 					<height>50</height>
-					<font>Med40</font>
-					<textcolor>ffeaeaea</textcolor>
+					<font>OSD40</font>
+					<textcolor>fffafafa</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$VAR[PlayerEpisodeValue]</label>
 				</control>
@@ -286,12 +331,12 @@
 			<!--  Episode title -->
 			<control type="label">
 				<left>20</left>
-				<top>127</top>
+				<top>130</top>
 				<width>1880</width>
 				<height>40</height>
 				<align>center</align>
-				<font>Light26</font>
-				<textcolor>fffe8e8e8</textcolor>
+				<font>OSD32</font>
+				<textcolor>ffff9f9f9</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>$INFO[VideoPlayer.Title]</label>
 				<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
@@ -344,17 +389,17 @@
 			</control>
 			<control type="grouplist">
 				<left>92</left>
-				<bottom>38</bottom>
+				<bottom>37</bottom>
 				<width>800</width>
 				<height>40</height>
-				<itemgap>4</itemgap>
+				<itemgap>2</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
 				<!--  Current position -->
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$VAR[PlayerTime]</label>
 				</control>
@@ -362,7 +407,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
 					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
@@ -371,7 +416,7 @@
 				<control type="label">
 					<width>auto</width>
 					<height>34</height>
-					<font>Light27</font>
+					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>$VAR[PlayerDuration]</label>
 				</control>
@@ -381,7 +426,7 @@
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
-					<font>Bold28</font>
+					<font>Bold32</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>[B]HD[/B]</label>
 					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
@@ -392,7 +437,7 @@
 					<top>-2</top>
 					<width>auto</width>
 					<height>34</height>
-					<font>Bold29</font>
+					<font>Bold31</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>$VAR[PlayerResolution]</label>
 				</control>
@@ -411,7 +456,7 @@
 					<top>6</top>
 					<width>auto</width>
 					<height>30</height>
-					<font>Reg27</font>
+					<font>OSD32</font>
 					<textcolor>fff3f3f3</textcolor>
 					<label>31233</label>
 				</control>
@@ -424,10 +469,10 @@
 			<!--  Current time -->
 			<control type="label">
 				<right>92</right>
-				<bottom>45</bottom>
+				<bottom>44</bottom>
 				<width>800</width>
 				<height>30</height>
-				<font>Reg27</font>
+				<font>OSD32</font>
 				<align>right</align>
 				<textcolor>fff3f3f3</textcolor>
 				<label>$INFO[System.Time]</label>

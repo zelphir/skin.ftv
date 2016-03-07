@@ -64,6 +64,7 @@
 				<shortcut label="31222" type="program" icon="ftv_icon.png">ActivateWindow(Programs,addons://sources/executable/,return)</shortcut>
 				<shortcut label="31223" type="video" icon="ftv_icon.png">ActivateWindow(Videos,addons://sources/video/,return)</shortcut>
 				<shortcut label="31224" type="picture" icon="ftv_icon.png">ActivateWindow(Pictures,addons://sources/image/,return)</shortcut>
+				<shortcut label="31234" type="addons" icon="ftv_icon.png">ActivateWindow(AddonBrowser,"addons://all/",return)</shortcut>
 			</node>
 		</node>
 		<node label="32029">

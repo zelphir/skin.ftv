@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fonts>
 	<fontset id="Default" unicode="true">
+		<!-- OSD -->
+		<font>
+			<name>OSD40</name>
+			<filename>Amazon-Ember-Regular.ttf</filename>
+			<size>40</size>
+		</font>
+		<font>
+			<name>OSD35</name>
+			<filename>Amazon-Ember-Light.ttf</filename>
+			<size>35</size>
+		</font>
+		<font>
+			<name>OSD32</name>
+			<filename>Amazon-Ember-Light.ttf</filename>
+			<size>32</size>
+		</font>
+		<font>
+			<name>OSD31</name>
+			<filename>Amazon-Ember-Light.ttf</filename>
+			<size>31</size>
+		</font>
+		<font>
+			<name>OSD20</name>
+			<filename>Amazon-Ember-Light.ttf</filename>
+			<size>20</size>
+		</font>
 		<!-- Regular -->
+		<font>
+			<name>Reg37</name>
+			<filename>HelveticaNeue.ttf</filename>
+			<size>37</size>
+		</font>
 		<font>
 			<name>Reg36Spaced</name>
 			<filename>HelveticaNeue.ttf</filename>
@@ -23,6 +54,11 @@
 			<name>Reg27</name>
 			<filename>HelveticaNeue.ttf</filename>
 			<size>27</size>
+		</font>
+		<font>
+			<name>Reg24</name>
+			<filename>HelveticaNeue.ttf</filename>
+			<size>24</size>
 		</font>
 		<font>
 			<name>Reg22</name>
@@ -94,6 +130,12 @@
 			<size>32</size>
 		</font>
 		<font>
+			<name>Light32Spaced</name>
+			<filename>HelveticaNeue_Lt.ttf</filename>
+			<size>32</size>
+			<linespacing>1.26</linespacing>
+		</font>
+		<font>
 			<name>Light31</name>
 			<filename>HelveticaNeue_Lt.ttf</filename>
 			<size>31</size>
@@ -129,6 +171,11 @@
 			<name>Light24</name>
 			<filename>HelveticaNeue_Lt.ttf</filename>
 			<size>24</size>
+		</font>
+		<font>
+			<name>Light23</name>
+			<filename>HelveticaNeue_Lt.ttf</filename>
+			<size>23</size>
 		</font>
 		<!-- Light Capitalised -->
 		<font>
@@ -176,6 +223,11 @@
 			<name>Med40</name>
 			<filename>HelveticaNeue_Med.ttf</filename>
 			<size>40</size>
+		</font>
+		<font>
+			<name>Med34</name>
+			<filename>HelveticaNeue_Med.ttf</filename>
+			<size>34</size>
 		</font>
 		<font>
 			<name>Med32</name>
@@ -328,7 +380,38 @@
 		</font>
 	</fontset>
 	<fontset id="Roboto" unicode="true">
+		<!-- OSD -->
+		<font>
+			<name>OSD40</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>40</size>
+		</font>
+		<font>
+			<name>OSD35</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>35</size>
+		</font>
+		<font>
+			<name>OSD32</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>32</size>
+		</font>
+		<font>
+			<name>OSD31</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>31</size>
+		</font>
+		<font>
+			<name>OSD20</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>20</size>
+		</font>
 		<!-- Regular -->
+		<font>
+			<name>Reg37</name>
+			<filename>Roboto-Regular.ttf</filename>
+			<size>37</size>
+		</font>
 		<font>
 			<name>Reg36Spaced</name>
 			<filename>Roboto-Regular.ttf</filename>
@@ -457,6 +540,11 @@
 			<filename>Roboto-Light.ttf</filename>
 			<size>24</size>
 		</font>
+		<font>
+			<name>Light23</name>
+			<filename>Roboto-Light.ttf</filename>
+			<size>23</size>
+		</font>
 		<!-- Light Capitalised -->
 		<font>
 			<name>LightCap48</name>
@@ -503,6 +591,11 @@
 			<name>Med40</name>
 			<filename>Roboto-Medium.ttf</filename>
 			<size>40</size>
+		</font>
+		<font>
+			<name>Med34</name>
+			<filename>Roboto-Medium.ttf</filename>
+			<size>34</size>
 		</font>
 		<font>
 			<name>Med32</name>
@@ -655,7 +748,48 @@
 		</font>
 	</fontset>
 	<fontset id="Arial" unicode="true">
+		<!-- OSD -->
+		<font>
+			<name>OSD40</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<size>40</size>
+		</font>
+		<font>
+			<name>OSD35</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>lighten</style>
+			<size>35</size>
+		</font>
+		<font>
+			<name>OSD32</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>lighten</style>
+			<size>32</size>
+		</font>
+		<font>
+			<name>OSD31</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>lighten</style>
+			<size>31</size>
+		</font>
+		<font>
+			<name>OSD20</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>lighten</style>
+			<size>20</size>
+		</font>
 		<!-- Regular -->
+		<font>
+			<name>Reg37</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<size>37</size>
+		</font>
 		<font>
 			<name>Reg36Spaced</name>
 			<filename>Arial.ttf</filename>
@@ -825,6 +959,13 @@
 			<style>lighten</style>
 			<size>24</size>
 		</font>
+		<font>
+			<name>Light23</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>lighten</style>
+			<size>23</size>
+		</font>
 		<!-- Light Capitalised -->
 		<font>
 			<name>LightCap48</name>
@@ -884,6 +1025,13 @@
 			<aspect>0.9</aspect>
 			<style>bold</style>
 			<size>40</size>
+		</font>
+		<font>
+			<name>Med34</name>
+			<filename>Arial.ttf</filename>
+			<aspect>0.9</aspect>
+			<style>bold</style>
+			<size>34</size>
 		</font>
 		<font>
 			<name>Med32</name>

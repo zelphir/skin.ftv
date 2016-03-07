@@ -64,7 +64,7 @@
 			<property name="labelID">1036</property>
 			<property name="defaultID">favourites</property>
 			<property name="widget">favourites</property>
-			<property name="widgetName">$LOCALIZE[1036]</property>
+			<property name="widgetName">1036</property>
 			<onclick>ActivateWindow(favourites)</onclick>
 			<property name="path">ActivateWindow(favourites)</property>
 			<property name="list">favourites</property>
@@ -107,17 +107,19 @@
 		</item>
 		<item id="7">
 			<property name="id">$NUM[7]</property>
-			<label>$LOCALIZE[31101]</label>
-			<label2>Custom shortcut</label2>
+			<label>Addons</label>
+			<label2>Custom item</label2>
 			<icon>DefaultProgram.png</icon>
 			<thumb />
-			<property name="labelID">31101</property>
+			<property name="labelID">addons</property>
 			<property name="defaultID">programs</property>
+			<property name="widgetName">Widget Group 5</property>
+			<property name="widget">widget5</property>
 			<onclick>ActivateWindow(Programs)</onclick>
 			<property name="path">ActivateWindow(Programs)</property>
 			<property name="list">Programs</property>
 			<visible>StringCompare(System.ProfileName,Master user)</visible>
-			<property name="submenuVisibility">num-31101</property>
+			<property name="submenuVisibility">addons</property>
 			<property name="group">mainmenu</property>
 			<property name="hasSubmenu">False</property>
 		</item>
@@ -146,7 +148,7 @@
 			<property name="labelID">weather</property>
 			<property name="defaultID">weather</property>
 			<property name="widget">weather</property>
-			<property name="widgetName">$LOCALIZE[10508]</property>
+			<property name="widgetName">10508</property>
 			<visible>!IsEmpty(Weather.Plugin)</visible>
 			<onclick>ActivateWindow(Weather)</onclick>
 			<property name="path">ActivateWindow(Weather)</property>
@@ -416,11 +418,10 @@
 			<thumb />
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
-			<visible>[Library.HasContent(Music)] + StringCompare(Container(99).ListItem.Property(submenuVisibility),music)</visible>
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Container(99).ListItem.Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1157,7 +1158,6 @@
 			<thumb />
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
-			<visible>Library.HasContent(Music)</visible>
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
@@ -1205,11 +1205,10 @@
 			<thumb />
 			<property name="labelID">15100</property>
 			<property name="defaultID">15100</property>
-			<visible>[Library.HasContent(Music)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
 			<onclick>ActivateWindow(Music,MusicLibrary,return)</onclick>
 			<property name="path">ActivateWindow(Music,MusicLibrary,return)</property>
 			<property name="list">MusicLibrary</property>
-			<visible>StringCompare(System.ProfileName,Master user)</visible>
+			<visible>[StringCompare(System.ProfileName,Master user)] + StringCompare(Window(10000).Property(submenuVisibility),music)</visible>
 			<property name="group">music</property>
 			<property name="isSubmenu">True</property>
 		</item>
@@ -1229,8 +1228,8 @@
 			<property name="isSubmenu">True</property>
 		</item>
 	</include>
-	<include name="skinshortcuts-group-31101" />
-	<include name="skinshortcuts-group-alt-31101" />
+	<include name="skinshortcuts-group-addons" />
+	<include name="skinshortcuts-group-alt-addons" />
 	<include name="skinshortcuts-group-31100">
 		<item id="1">
 			<property name="id">$NUM[1]</property>

@@ -53,8 +53,7 @@
 						<control type="fixedlist" id="9000">
 							<left>45</left>
 							<top>438</top>
-							<content>plugin://script.extendedinfo?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).Index(1)]</content>
-							<!--content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).Index(1)]</content-->
+							<content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).Index(1)]</content>
 							<width>848</width>
 							<height>763</height>
 							<onup>300</onup>
@@ -458,19 +457,19 @@
 				<control type="image">
 					<width>1180</width>
 					<height>879</height>
-					<texture border="32">dialogs/DialogMessageBackground.png</texture>
+					<texture border="2">dialogs/DialogMessageBackground.png</texture>
 					<visible>Control.IsVisible(111) | Control.IsVisible(131) | Control.IsVisible(151) | Control.IsVisible(171)</visible>
 				</control>
 				<control type="image">
 					<width>1100</width>
 					<height>879</height>
-					<texture border="32">dialogs/DialogMessageBackground.png</texture>
+					<texture border="2">dialogs/DialogMessageBackground.png</texture>
 					<visible>[Control.IsVisible(110) | Control.IsVisible(130) | Control.IsVisible(150) | Control.IsVisible(170)] + [!Control.IsVisible(111) + !Control.IsVisible(131) + !Control.IsVisible(151) + !Control.IsVisible(171)]</visible>
 				</control>
 				<control type="image">
 					<width>1010</width>
 					<height>879</height>
-					<texture border="32">dialogs/DialogMessageBackground.png</texture>
+					<texture border="2">dialogs/DialogMessageBackground.png</texture>
 					<visible>!Control.IsVisible(110) + !Control.IsVisible(130) + !Control.IsVisible(150) + !Control.IsVisible(170) + !Control.IsVisible(111) + !Control.IsVisible(131) + !Control.IsVisible(151) + !Control.IsVisible(171)</visible>
 				</control>
 				<!-- Control group -->

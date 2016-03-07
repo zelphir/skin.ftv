@@ -28,7 +28,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.Title]</label>
@@ -38,7 +38,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.TVShowTitle]</label>
@@ -48,24 +48,46 @@
 					<control type="label">
 						<width>auto</width>
 						<height>50</height>
-						<font>Med40</font>
+						<font>OSD40</font>
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$VAR[PlayerEpisodeValue]</label>
+					</control>
+					<!--  Song title -->
+					<control type="label">
+						<width>auto</width>
+						<height>50</height>
+						<font>OSD40</font>
+						<textcolor>ffeaeaea</textcolor>
+						<shadowcolor>ff000000</shadowcolor>
+						<label>$INFO[MusicPlayer.Title]</label>
+						<visible>IsEmpty(MusicPlayer.Title)</visible>
 					</control>
 				</control>
 				<!--  Episode title -->
 				<control type="label">
 					<left>20</left>
-					<top>127</top>
+					<top>130</top>
 					<width>1880</width>
 					<height>40</height>
 					<align>center</align>
-					<font>Light26</font>
+					<font>OSD32</font>
 					<textcolor>fffe8e8e8</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
 					<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+				</control>
+				<!--  Artist / Album title -->
+				<control type="label">
+					<left>20</left>
+					<top>130</top>
+					<width>1880</width>
+					<height>40</height>
+					<align>center</align>
+					<font>OSD32</font>
+					<textcolor>fffe8e8e8</textcolor>
+					<shadowcolor>ff000000</shadowcolor>
+					<label>$INFO[MusicPlayer.Artist]$INFO[MusicPlayer.Album, / ,]</label>
 				</control>
 				<!-- Pause -->
 				<control type="image">
@@ -85,18 +107,9 @@
 					<control type="image">
 						<centerleft>50%</centerleft>
 						<centertop>50%</centertop>
-						<width>94</width>
-						<height>94</height>
-						<texture>common/spinner_outer.png</texture>
-						<animation effect="rotate" end="-360" center="auto" time="1120" loop="true" reversible="false" condition="true">Conditional</animation>
-					</control>
-					<control type="image">
-						<centerleft>50%</centerleft>
-						<centertop>50%</centertop>
-						<width>94</width>
-						<height>94</height>
-						<texture>common/spinner_inner.png</texture>
-						<animation effect="rotate" end="360" center="auto" time="1680" loop="true" reversible="false" condition="true">Conditional</animation>
+						<width>122</width>
+						<height>122</height>
+						<texture>common/spinner.gif</texture>
 					</control>
 				</control>
 				<control type="image">
@@ -135,17 +148,17 @@
 				</control>
 				<control type="grouplist">
 					<left>92</left>
-					<bottom>38</bottom>
+					<bottom>37</bottom>
 					<width>800</width>
 					<height>40</height>
-					<itemgap>4</itemgap>
+					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<!--  Current position -->
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>fff3f3f3</textcolor>
 						<label>$VAR[PlayerTime]</label>
 					</control>
@@ -153,7 +166,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>/</label>
 						<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
@@ -162,7 +175,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>$VAR[PlayerDuration]</label>
 					</control>
@@ -172,7 +185,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold28</font>
+						<font>Bold32</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>[B]HD[/B]</label>
 						<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
@@ -183,7 +196,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold29</font>
+						<font>Bold31</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>$VAR[PlayerResolution]</label>
 					</control>
@@ -191,10 +204,10 @@
 				<!--  Current time -->
 				<control type="label">
 					<right>92</right>
-					<bottom>45</bottom>
+					<bottom>44</bottom>
 					<width>800</width>
 					<height>30</height>
-					<font>Reg27</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$INFO[System.Time]</label>
@@ -243,17 +256,17 @@
 				</control>
 				<control type="grouplist">
 					<left>92</left>
-					<bottom>38</bottom>
+					<bottom>37</bottom>
 					<width>800</width>
 					<height>40</height>
-					<itemgap>4</itemgap>
+					<itemgap>2</itemgap>
 					<orientation>horizontal</orientation>
 					<usecontrolcoords>true</usecontrolcoords>
 					<!--  Current position -->
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>fff3f3f3</textcolor>
 						<label>$VAR[PlayerTime]</label>
 					</control>
@@ -261,7 +274,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
 						<label>/</label>
@@ -270,7 +283,7 @@
 					<control type="label">
 						<width>auto</width>
 						<height>34</height>
-						<font>Light27</font>
+						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>$VAR[PlayerDuration]</label>
 					</control>
@@ -280,7 +293,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold28</font>
+						<font>Bold32</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>[B]HD[/B]</label>
 						<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
@@ -291,7 +304,7 @@
 						<top>-2</top>
 						<width>auto</width>
 						<height>34</height>
-						<font>Bold29</font>
+						<font>Bold31</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>$VAR[PlayerResolution]</label>
 					</control>
@@ -299,10 +312,10 @@
 				<!--  Current time -->
 				<control id="99" type="label">
 					<right>92</right>
-					<bottom>45</bottom>
+					<bottom>44</bottom>
 					<width>800</width>
 					<height>30</height>
-					<font>Reg27</font>
+					<font>OSD32</font>
 					<align>right</align>
 					<textcolor>fff3f3f3</textcolor>
 					<label>$INFO[System.Time]</label>
@@ -333,7 +346,7 @@
 					<width>50</width>
 					<height>40</height>
 					<align>center</align>
-					<font>Reg20</font>
+					<font>OSD20</font>
 					<textcolor>ffe5e4e5</textcolor>
 					<label>$VAR[SeekOffset]</label>
 				</control>
