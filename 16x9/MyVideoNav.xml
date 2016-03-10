@@ -376,9 +376,9 @@
 						<visible>!IsEmpty(ListItem.Year)</visible>
 					</control>
 					<include>Rating_TV</include>
-					<include condition="IsEmpty(Skin.String(RatingCountry)) | Stringcompare(Skin.String(RatingCountry),US)">Rating_MPAA</include>
-					<include condition="Stringcompare(Skin.String(RatingCountry),UK)">Rating_BBFC</include>
-					<include condition="Stringcompare(Skin.String(RatingCountry),Germany)">Rating_FSK</include>
+					<include condition="!Skin.HasSetting(UK) + !Skin.HasSetting(Germany)">Rating_MPAA</include>
+					<include condition="Skin.HasSetting(UK)">Rating_BBFC</include>
+					<include condition="Skin.HasSetting(Germany)">Rating_FSK</include>
 					<control type="image">
 						<top>3</top>
 						<width>55</width>

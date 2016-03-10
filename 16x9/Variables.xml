@@ -801,9 +801,9 @@
 		<value>osd/nextup/countdown/60.png</value>
 	</variable>
 	<variable name="RatingCountry">
-		<value condition="Stringcompare(Skin.String(RatingCountry),US)">$LOCALIZE[31001]</value>
-		<value condition="Stringcompare(Skin.String(RatingCountry),UK)">$LOCALIZE[31002]</value>
-		<value condition="Stringcompare(Skin.String(RatingCountry),Germany)">$LOCALIZE[31003]</value>
+		<value condition="Skin.HasSetting(US)">$LOCALIZE[31001]</value>
+		<value condition="Skin.HasSetting(UK)">$LOCALIZE[31002]</value>
+		<value condition="Skin.HasSetting(Germany)">$LOCALIZE[31003]</value>
 		<value>$LOCALIZE[31001]</value>
 	</variable>
 	<variable name="SearchLabel">

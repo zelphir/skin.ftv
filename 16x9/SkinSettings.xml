@@ -280,51 +280,6 @@
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=shutdown)</onclick>
 				</control>
-				<control id="19" type="radiobutton">
-					<width>958</width>
-					<height>84</height>
-					<font>Light32</font>
-					<label>$LOCALIZE[31142]</label>
-					<textoffsetx>40</textoffsetx>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<radiowidth>125</radiowidth>
-					<radioheight>53</radioheight>
-					<radioposx>813</radioposx>
-					<textureradioonfocus>settings/radio_on_focus.png</textureradioonfocus>
-					<textureradioonnofocus>settings/radio_on_no_focus.png</textureradioonnofocus>
-					<textureradioondisabled>settings/radio_on_disabled.png</textureradioondisabled>
-					<textureradioofffocus>settings/radio_off_focus.png</textureradioofffocus>
-					<textureradiooffnofocus>settings/radio_off_no_focus.png</textureradiooffnofocus>
-					<textureradiooffdisabled>settings/radio_off_disabled.png</textureradiooffdisabled>
-					<texturefocus border="3">settings/button_focus.png</texturefocus>
-					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
-					<onclick>Skin.ToggleSetting(fTVSearch)</onclick>
-					<onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
-					<!--onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick-->
-					<selected>Skin.HasSetting(fTVSearch)</selected>
-				</control>
-				<control id="20" type="button">
-					<width>958</width>
-					<height>84</height>
-					<font>Light32</font>
-					<label> - $LOCALIZE[31225]</label>
-					<label2>$VAR[KeyboardLayout]</label2>
-					<textoffsetx>40</textoffsetx>
-					<textcolor>ff505153</textcolor>
-					<focusedcolor>ffffaf37</focusedcolor>
-					<texturefocus border="3">settings/button_focus.png</texturefocus>
-					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
-					<onclick>SetProperty(Dialog.NumItems,3)</onclick>
-					<onclick>SetProperty(Dialog.1.Label,English QWERTY)</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(KeyboardLayout,English QWERTY))</onclick>
-					<onclick>SetProperty(Dialog.2.Label,English AZERTY)</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(KeyboardLayout,English AZERTY))</onclick>
-					<onclick>SetProperty(Dialog.3.Label,English ABC)</onclick>
-					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(KeyboardLayout,English ABC))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31225])</onclick>
-					<visible>Skin.HasSetting(fTVSearch)</visible>
-				</control>
 				<control id="12" type="radiobutton">
 					<width>958</width>
 					<height>84</height>
@@ -437,14 +392,7 @@
 					<focusedcolor>ffffaf37</focusedcolor>
 					<texturefocus border="3">settings/button_focus.png</texturefocus>
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
-					<onclick>SetProperty(Dialog.NumItems,3)</onclick>
-					<onclick>SetProperty(Dialog.1.Label,US)</onclick>
-					<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(RatingCountry,US))</onclick>
-					<onclick>SetProperty(Dialog.2.Label,UK)</onclick>
-					<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(RatingCountry,UK))</onclick>
-					<onclick>SetProperty(Dialog.3.Label,Germany)</onclick>
-					<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(RatingCountry,Germany))</onclick>
-					<onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31135])</onclick>
+					<onclick>Skin.SelectBool(31001|UK, 31002|UK, 31003|Germany)</onclick>
 				</control>
 				<control id="18" type="radiobutton">
 					<width>958</width>
