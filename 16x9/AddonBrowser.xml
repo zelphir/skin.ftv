@@ -9,7 +9,7 @@
 	<onunload condition="Window.Next(home) + !system.getbool(filelists.showparentdiritems)">Control.Move(50,1)</onunload>
 	<views>50,51</views>
 	<controls>
-		<include condition="IsEmpty(Window(home).Property(WindowPreviousHome))">Includes_AddonBrowser_Default</include>
-		<include condition="!IsEmpty(Window(home).Property(WindowPreviousHome))">Includes_AddonBrowser_Special</include>
+		<include condition="String.IsEmpty(Window(home).Property(WindowPreviousHome))">Includes_AddonBrowser_Default</include>
+		<include condition="!String.IsEmpty(Window(home).Property(WindowPreviousHome))">Includes_AddonBrowser_Special</include>
 	</controls>
 </window>

@@ -58,7 +58,7 @@
 				<viewtype label="535">list</viewtype>
 				<scrolltime>0</scrolltime>
 				<visible>Container.Content(songs)</visible>
-				<animation condition="[!system.getbool(filelists.showparentdiritems) + StringCompare(Container(54).CurrentItem,1)] | [system.getbool(filelists.showparentdiritems) + StringCompare(Container(54).CurrentItem,0)]" effect="slide" end="0,-101" start="0,0">Conditional</animation>
+				<animation condition="[!system.getbool(filelists.showparentdiritems) + String.IsEqual(Container(54).CurrentItem,1)] | [system.getbool(filelists.showparentdiritems) + String.IsEqual(Container(54).CurrentItem,0)]" effect="slide" end="0,-101" start="0,0">Conditional</animation>
 				<itemlayout height="101" width="1000">
 					<control type="label">
 						<width>68</width>
@@ -75,7 +75,7 @@
 						<font>Light32</font>
 						<textcolor>ffd8d8d8</textcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -84,7 +84,7 @@
 						<font>Light32</font>
 						<textcolor>ffd8d8d8</textcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.IsParentFolder | IsEmpty(ListItem.Title)</visible>
+						<visible>ListItem.IsParentFolder | String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -103,7 +103,7 @@
 						<font>Light28</font>
 						<textcolor>ff636466</textcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.AlbumArtist,ListItem.Artist)</visible>
+						<visible>!String.IsEqual(ListItem.AlbumArtist,ListItem.Artist)</visible>
 					</control>
 				</itemlayout>
 				<focusedlayout height="101" width="1000">
@@ -124,7 +124,7 @@
 						<textcolor>ffe9a01e</textcolor>
 						<selectedcolor>ffe9a01e</selectedcolor>
 						<label>$INFO[ListItem.Title]</label>
-						<visible>!ListItem.IsParentFolder + !IsEmpty(ListItem.Title)</visible>
+						<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -134,7 +134,7 @@
 						<textcolor>ffe9a01e</textcolor>
 						<selectedcolor>ffe9a01e</selectedcolor>
 						<label>$INFO[ListItem.Label]</label>
-						<visible>ListItem.IsParentFolder | IsEmpty(ListItem.Title)</visible>
+						<visible>ListItem.IsParentFolder | String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<left>89</left>
@@ -155,7 +155,7 @@
 						<textcolor>ffe9a01e</textcolor>
 						<selectedcolor>ffe9a01e</selectedcolor>
 						<label>$INFO[ListItem.Artist]</label>
-						<visible>!StringCompare(ListItem.AlbumArtist,ListItem.Artist)</visible>
+						<visible>!String.IsEqual(ListItem.AlbumArtist,ListItem.Artist)</visible>
 					</control>
 				</focusedlayout>
 			</control>
@@ -239,14 +239,14 @@
 						<onright>50</onright>
 						<onup>2003</onup>
 						<ondown>noop</ondown>
-						<onclick condition="!StringCompare(Playlist.Length(music),0)">ActivateWindow(musicplaylist)</onclick>
+						<onclick condition="!String.IsEqual(Playlist.Length(music),0)">ActivateWindow(musicplaylist)</onclick>
 						<font>Med24</font>
 						<wrapmultiline>true</wrapmultiline>
 						<label>$LOCALIZE[31088]</label>
 						<textoffsetx>28</textoffsetx>
 						<textcolor>ffdadada</textcolor>
 						<focusedcolor>ff222222</focusedcolor>
-						<visible>!StringCompare(Playlist.Length(music),0)</visible>
+						<visible>!String.IsEqual(Playlist.Length(music),0)</visible>
 						<texturefocus border="13,5,6,8">views/button_fo.png</texturefocus>
 						<texturenofocus border="13,3,6,6">views/button_nf.png</texturenofocus>
 					</control>

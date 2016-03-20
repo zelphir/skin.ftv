@@ -392,7 +392,7 @@
 					<focusedcolor>ffffaf37</focusedcolor>
 					<texturefocus border="3">settings/button_focus.png</texturefocus>
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
-					<onclick>Skin.SelectBool(31001|UK, 31002|UK, 31003|Germany)</onclick>
+					<onclick>Skin.SelectBool(31135, 31001|UK, 31002|UK, 31003|Germany)</onclick>
 				</control>
 				<control id="18" type="radiobutton">
 					<width>958</width>

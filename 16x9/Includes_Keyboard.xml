@@ -12,7 +12,7 @@
 				<animation easing="inout" effect="slide" end="0,-329" start="0,0" time="120" tween="sine">WindowClose</animation>
 				<control type="group">
 					<animation effect="slide" end="0,0" start="0,-1000" time="0" delay="800">WindowOpen</animation>
-					<visible>!IsEmpty(Control.GetLabel(312).Index(1))</visible>
+					<visible>!String.IsEmpty(Control.GetLabel(312).Index(1))</visible>
 					<!-- Background -->
 					<control type="image">
 						<top>329</top>
@@ -22,8 +22,8 @@
 						<visible/>
 					</control>
 					<control type="group">
-						<animation effect="slide" end="0,-109" start="0,0" time="0" condition="IntegerGreaterThan(Container(9000).NumItems,3) + [Control.HasFocus(9000) + [Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5) | Container(9000).Row(6)]]">Conditional</animation>
-						<animation effect="slide" end="0,-109" start="0,0" time="0" condition="IntegerGreaterThan(Container(9000).NumItems,3) + Container(9000).Row(6)">Conditional</animation>
+						<animation effect="slide" end="0,-109" start="0,0" time="0" condition="Integer.IsGreater(Container(9000).NumItems,3) + [Control.HasFocus(9000) + [Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5) | Container(9000).Row(6)]]">Conditional</animation>
+						<animation effect="slide" end="0,-109" start="0,0" time="0" condition="Integer.IsGreater(Container(9000).NumItems,3) + Container(9000).Row(6)">Conditional</animation>
 						<!-- Done -->
 						<control id="300" type="button">
 							<left>45</left>
@@ -34,7 +34,7 @@
 							<ondown>Control.SetFocus(9000,0)</ondown>
 							<onleft>noop</onleft>
 							<onright>noop</onright>
-							<onfocus condition="IsEmpty(Control.GetLabel(312).Index(1))">SetFocus(1000)</onfocus>
+							<onfocus condition="String.IsEmpty(Control.GetLabel(312).Index(1))">SetFocus(1000)</onfocus>
 							<font>-</font>
 							<texturefocus>-</texturefocus>
 							<texturenofocus>-</texturenofocus>
@@ -65,7 +65,7 @@
 							<focusposition>3</focusposition>
 							<orientation>vertical</orientation>
 							<scrolltime>0</scrolltime>
-							<animation effect="slide" end="0,-327" start="0,0" time="0" condition="StringCompare(Container(9000).NumItems,1)">Conditional</animation>
+							<animation effect="slide" end="0,-327" start="0,0" time="0" condition="String.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
 							<itemlayout height="109" width="848">
 								<control type="label">
 									<width>848</width>
@@ -133,7 +133,7 @@
 					<width>936</width>
 					<height>54</height>
 					<onup>Close</onup>
-					<ondown condition="!IsEmpty(Control.GetLabel(312).Index(1))">300</ondown>
+					<ondown condition="!String.IsEmpty(Control.GetLabel(312).Index(1))">300</ondown>
 					<onleft>999</onleft>
 					<onright>999</onright>
 					<focusposition>1</focusposition>
@@ -195,9 +195,9 @@
 							<visible>!Control.HasFocus(999)</visible>
 						</control>
 					</focusedlayout>
-					<include condition="StringCompare(Skin.String(KeyboardLayout),English QWERTY)">SearchKeyboardQWERTY</include>
-					<include condition="StringCompare(Skin.String(KeyboardLayout),English AZERTY)">SearchKeyboardAZERTY</include>
-					<include condition="StringCompare(Skin.String(KeyboardLayout),English ABC)">SearchKeyboardABC</include>
+					<include condition="String.IsEqual(Skin.String(KeyboardLayout),English QWERTY)">SearchKeyboardQWERTY</include>
+					<include condition="String.IsEqual(Skin.String(KeyboardLayout),English AZERTY)">SearchKeyboardAZERTY</include>
+					<include condition="String.IsEqual(Skin.String(KeyboardLayout),English ABC)">SearchKeyboardABC</include>
 				</control>
 				<!-- List mask -->
 				<control type="image">
@@ -875,42 +875,42 @@
 								<width>348</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOn.png</texture>
-								<visible>SubString(Control.GetLabel(302),*)</visible>
+								<visible>String.Contains(Control.GetLabel(302),*)</visible>
 							</control>
 							<!-- Shift off -->
 							<control type="image">
 								<width>348</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOff.png</texture>
-								<visible>!SubString(Control.GetLabel(302),*)</visible>
+								<visible>!String.Contains(Control.GetLabel(302),*)</visible>
 							</control>
 							<!-- Caps lock on-->
 							<control type="image">
 								<width>348</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOn.png</texture>
-								<visible>SubString(Control.GetLabel(303),*)</visible>
+								<visible>String.Contains(Control.GetLabel(303),*)</visible>
 							</control>
 							<!-- Caps lock off-->
 							<control type="image">
 								<width>348</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOff.png</texture>
-								<visible>!SubString(Control.GetLabel(303),*)</visible>
+								<visible>!String.Contains(Control.GetLabel(303),*)</visible>
 							</control>
 							<!-- Symbols on -->
 							<control type="image">
 								<width>78</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOn.png</texture>
-								<visible>SubString(Control.GetLabel(304),*)</visible>
+								<visible>String.Contains(Control.GetLabel(304),*)</visible>
 							</control>
 							<!-- Symbols off -->
 							<control type="image">
 								<width>78</width>
 								<height>78</height>
 								<texture border="3">dialogs/KeyboardButtonToggleOff.png</texture>
-								<visible>!SubString(Control.GetLabel(304),*)</visible>
+								<visible>!String.Contains(Control.GetLabel(304),*)</visible>
 							</control>
 						</control>
 						<!-- Sixth row -->

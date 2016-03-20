@@ -126,9 +126,9 @@
 			</control>
 			<!-- Default seperator -->
 			<control id="6" type="image">
-				<top>-1</top>
-				<height>1</height>
-				<texture>-</texture>
+				<top>-120</top>
+				<height>120</height>
+				<texture border="3">settings/button_no_focus.png</texture>
 			</control>
 			<!-- Default slider -->
 			<control id="8" type="sliderex">

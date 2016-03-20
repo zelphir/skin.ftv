@@ -178,14 +178,14 @@
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayHD.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(VideoResolution),719)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayWatched.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0)</visible>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -222,14 +222,14 @@
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayHD.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(VideoResolution),719)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayWatched.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0)</visible>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -309,14 +309,14 @@
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayHD.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(VideoResolution),719)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayWatched.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -369,14 +369,14 @@
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayHD.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(VideoResolution),719)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(VideoResolution),719)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
 							<width>90</width>
 							<height>90</height>
 							<texture>views/OverlayWatched.png</texture>
-							<visible>IntegerGreaterThan(ListItem.Property(PlayCount),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(PlayCount),0)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -480,7 +480,7 @@
 							<width>62</width>
 							<height>62</height>
 							<texture>views/equaliser.gif</texture>
-							<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Album)</visible>
+							<visible>Player.Playing + String.IsEqual(MusicPlayer.Album,ListItem.Album)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -529,7 +529,7 @@
 							<width>62</width>
 							<height>62</height>
 							<texture>views/equaliser.gif</texture>
-							<visible>Player.Playing + StringCompare(MusicPlayer.Album,ListItem.Album)</visible>
+							<visible>Player.Playing + String.IsEqual(MusicPlayer.Album,ListItem.Album)</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -550,7 +550,7 @@
 			<onclick>SetFocus($PARAM[ItemID])</onclick>
 			<label>$INFO[Window(home).Property(NextAired.$PARAM[ItemID].Weekday)]</label>
 			<property name="OnDown">SetFocus($PARAM[ItemID])</property>
-			<visible>!StringCompare(Window(Home).Property(NextAired.$PARAM[ItemID].Weekday),) + !IsEmpty(Container($PARAM[ItemID]).ListItem.Label)</visible>
+			<visible>!String.IsEqual(Window(Home).Property(NextAired.$PARAM[ItemID].Weekday),) + !String.IsEmpty(Container($PARAM[ItemID]).ListItem.Label)</visible>
 		</item>
 	</include>
 	<include name="NextAiredLists">
@@ -709,11 +709,11 @@
 			<scrolltime easing="inout" tween="sine">300</scrolltime>
 			<include>HomeWidgetsAnimation</include>
 			<include>WindowHomeFadeAnimation</include>
-			<visible>StringCompare(Container(99).ListItem.Property(widget),$PARAM[widget])</visible>
-			<animation condition="StringCompare(Container($PARAM[ID]).NumItems,1)" effect="slide" end="-304,-114">Conditional</animation>
-			<animation condition="StringCompare(Container($PARAM[ID]).NumItems,2)" effect="slide" end="0,-299">Conditional</animation>
-			<animation condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + !Container($PARAM[ID]).Row(1)" easing="inout" effect="slide" end="0,-114" time="220" tween="sine">Conditional</animation>
-			<animation condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3) + Control.HasFocus($PARAM[ID])" easing="inout" effect="slide" end="0,-212" time="220" tween="sine">Conditional</animation>
+			<visible>String.IsEqual(Container(99).ListItem.Property(widget),$PARAM[widget])</visible>
+			<animation condition="String.IsEqual(Container($PARAM[ID]).NumItems,1)" effect="slide" end="-304,-114">Conditional</animation>
+			<animation condition="String.IsEqual(Container($PARAM[ID]).NumItems,2)" effect="slide" end="0,-299">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,2) + !Container($PARAM[ID]).Row(1)" easing="inout" effect="slide" end="0,-114" time="220" tween="sine">Conditional</animation>
+			<animation condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3) + Control.HasFocus($PARAM[ID])" easing="inout" effect="slide" end="0,-212" time="220" tween="sine">Conditional</animation>
 			<itemlayout height="370" width="2000">
 				<control type="group">
 					<left>33</left>
@@ -738,17 +738,17 @@
 				<include>HomeSquareItemlayout</include>
 				<include>HomeSquareInfoItemlayout</include>
 			</itemlayout>
-			<focusedlayout height="370" width="2000" condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,1)">
+			<focusedlayout height="370" width="2000" condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,1)">
 				<control type="button">
 					<include>HiddenControl</include>
-					<onfocus condition="StringCompare(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
-					<onfocus condition="StringCompare(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3)">SetProperty(FocusRow,2_2)</onfocus>
-					<onfocus condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(1)">SetProperty(FocusRow,1_3)</onfocus>
-					<onfocus condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(2)">SetProperty(FocusRow,2_3)</onfocus>
-					<onfocus condition="IntegerGreaterThan(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
-					<onfocus condition="StringCompare(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31159])">SetProperty(ForceViewType,wide,Home)</onfocus>
-					<onfocus condition="StringCompare(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31160])">SetProperty(ForceViewType,poster,Home)</onfocus>
-					<onfocus condition="!StringCompare(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31159]) + !StringCompare(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31160])">ClearProperty(ForceViewType,Home)</onfocus>
+					<onfocus condition="String.IsEqual(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(2)">SetProperty(FocusRow,1_2)</onfocus>
+					<onfocus condition="String.IsEqual(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3)">SetProperty(FocusRow,2_2)</onfocus>
+					<onfocus condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(1)">SetProperty(FocusRow,1_3)</onfocus>
+					<onfocus condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(2)">SetProperty(FocusRow,2_3)</onfocus>
+					<onfocus condition="Integer.IsGreater(Container($PARAM[ID]).NumItems,2) + Container($PARAM[ID]).Row(3)">SetProperty(FocusRow,3_3)</onfocus>
+					<onfocus condition="String.IsEqual(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31159])">SetProperty(ForceViewType,wide,Home)</onfocus>
+					<onfocus condition="String.IsEqual(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31160])">SetProperty(ForceViewType,poster,Home)</onfocus>
+					<onfocus condition="!String.IsEqual(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31159]) + !String.IsEqual(Container($PARAM[ID]).ListItem.Property(WidgetStyle),$LOCALIZE[31160])">ClearProperty(ForceViewType,Home)</onfocus>
 				</control>
 				<control type="group">
 					<animation center="142,167" easing="inout" effect="zoom" end="132" start="100" time="220" tween="sine">Focus</animation>
@@ -776,9 +776,9 @@
 							<width>227</width>
 							<height>334</height>
 							<texture border="0,14,11,14">home/home_button_fo.png</texture>
-							<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
-							<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
-							<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+							<visible>!String.IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+							<animation effect="fade" end="100" start="0" time="0" condition="!String.IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+							<animation effect="fade" end="0" start="100" time="0" condition="String.IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 							<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 							<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 						</control>
@@ -790,9 +790,9 @@
 							<align>left</align>
 							<textcolor>ff453a18</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
-							<animation effect="fade" end="100" start="0" time="0" condition="!IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
-							<animation effect="fade" end="0" start="100" time="0" condition="IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+							<visible>!String.IsEmpty(Window(Home).Property(WidgetHasFocus))</visible>
+							<animation effect="fade" end="100" start="0" time="0" condition="!String.IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
+							<animation effect="fade" end="0" start="100" time="0" condition="String.IsEmpty(Window(Home).Property(WidgetHasFocus))">Conditional</animation>
 							<animation effect="fade" end="100" start="0" time="0">Focus</animation>
 							<animation effect="fade" end="0" start="100" time="0">UnFocus</animation>
 							<animation condition="true" effect="slide" end="-18,-26" time="0">Conditional</animation>
@@ -805,7 +805,7 @@
 					<include>HomeSquareInfoFocusedlayout</include>
 				</control>
 			</focusedlayout>
-			<focusedlayout height="370" width="2000" condition="!IntegerGreaterThan(Container($PARAM[ID]).NumItems,1)">
+			<focusedlayout height="370" width="2000" condition="!Integer.IsGreater(Container($PARAM[ID]).NumItems,1)">
 				<control type="group">
 					<animation center="142,167" condition="true" effect="zoom" end="132" start="100" time="0">Conditional</animation>
 					<include>HomePosterFocusedlayout</include>

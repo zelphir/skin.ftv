@@ -44,7 +44,7 @@
 					<textcolor>ffffffff</textcolor>
 				</control>
 				<control type="group">
-					<animation condition="IsEmpty(Window(Weather).Property(Current.Temperature))" effect="fade" end="0" start="100">Conditional</animation>
+					<animation condition="String.IsEmpty(Window(Weather).Property(Current.Temperature))" effect="fade" end="0" start="100">Conditional</animation>
 					<control type="image">
 						<top>129</top>
 						<width>128</width>
@@ -218,42 +218,42 @@
 								<label>$VAR[Day0]</label>
 								<label2>$INFO[Window(Weather).Property(Day0.LowTemp),,°]  $INFO[Window(Weather).Property(Day0.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day0.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day0.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day0.Outlook))</visible>
 							</item>
 							<item>
 								<onclick>noop</onclick>
 								<label>$VAR[Day1]</label>
 								<label2>$INFO[Window(Weather).Property(Day1.LowTemp),,°]  $INFO[Window(Weather).Property(Day1.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day1.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day1.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day1.Outlook))</visible>
 							</item>
 							<item>
 								<onclick>noop</onclick>
 								<label>$VAR[Day2]</label>
 								<label2>$INFO[Window(Weather).Property(Day2.LowTemp),,°]  $INFO[Window(Weather).Property(Day2.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day2.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day2.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day2.Outlook))</visible>
 							</item>
 							<item>
 								<onclick>noop</onclick>
 								<label>$VAR[Day3]</label>
 								<label2>$INFO[Window(Weather).Property(Day3.LowTemp),,°]  $INFO[Window(Weather).Property(Day3.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day3.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day3.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day3.Outlook))</visible>
 							</item>
 							<item>
 								<onclick>noop</onclick>
 								<label>$VAR[Day4]</label>
 								<label2>$INFO[Window(Weather).Property(Day4.LowTemp),,°]  $INFO[Window(Weather).Property(Day4.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day4.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day4.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day4.Outlook))</visible>
 							</item>
 							<item>
 								<onclick>noop</onclick>
 								<label>$VAR[Day5]</label>
 								<label2>$INFO[Window(Weather).Property(Day5.LowTemp),,°]  $INFO[Window(Weather).Property(Day5.HighTemp),,°]</label2>
 								<icon>$INFO[Window(Weather).Property(Day5.FanartCode),weather/icons/,.png]</icon>
-								<visible>!IsEmpty(Window(Weather).Property(Day5.Outlook))</visible>
+								<visible>!String.IsEmpty(Window(Weather).Property(Day5.Outlook))</visible>
 							</item>
 						</content>
 					</control>
@@ -297,7 +297,7 @@
 			<height>84</height>
 			<texture>common/busy.png</texture>
 			<animation center="auto" condition="true" effect="rotate" end="-360" loop="true" reversible="false" time="1120">Conditional</animation>
-			<visible>StringCompare(Weather.Location,$LOCALIZE[503])</visible>
+			<visible>String.IsEqual(Weather.Location,$LOCALIZE[503])</visible>
 		</control>
 	</controls>
 </window>

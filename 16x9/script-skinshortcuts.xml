@@ -8,18 +8,18 @@
 			<include>HiddenControl</include>
 			<onleft>noop</onleft>
 			<onright>303</onright>
-			<onup condition="!IsEmpty(Container(211).ListItemNoWrap(-1).Label)">Control.Move(211,-1)</onup>
-			<ondown condition="!IsEmpty(Container(211).ListItemNoWrap(1).Label)">Control.Move(211,1)</ondown>
-			<ondown condition="IsEmpty(Container(211).ListItemNoWrap(1).Label)">9001</ondown>
+			<onup condition="!String.IsEmpty(Container(211).ListItemNoWrap(-1).Label)">Control.Move(211,-1)</onup>
+			<ondown condition="!String.IsEmpty(Container(211).ListItemNoWrap(1).Label)">Control.Move(211,1)</ondown>
+			<ondown condition="String.IsEmpty(Container(211).ListItemNoWrap(1).Label)">9001</ondown>
 		</control>
 		<!-- Move up -->
 		<control type="button" id="303">
 			<include>HiddenControl</include>
 			<onleft>304</onleft>
 			<onright>9000</onright>
-			<onup condition="!IsEmpty(Container(211).ListItemNoWrap(-1).Label)">Control.Move(211,-1)</onup>
-			<ondown condition="!IsEmpty(Container(211).ListItemNoWrap(1).Label)">Control.Move(211,1)</ondown>
-			<ondown condition="IsEmpty(Container(211).ListItemNoWrap(1).Label)">9001</ondown>
+			<onup condition="!String.IsEmpty(Container(211).ListItemNoWrap(-1).Label)">Control.Move(211,-1)</onup>
+			<ondown condition="!String.IsEmpty(Container(211).ListItemNoWrap(1).Label)">Control.Move(211,1)</ondown>
+			<ondown condition="String.IsEmpty(Container(211).ListItemNoWrap(1).Label)">9001</ondown>
 		</control>
 		<include>DialogBackgroundImage</include>
 		<!-- Main group -->
@@ -44,7 +44,7 @@
 				<font>Bold30</font>
 				<label>21432</label>
 				<textcolor>ffdadada</textcolor>
-				<visible>StringCompare(Window.Property(groupname), mainmenu)</visible>
+				<visible>String.IsEqual(Window.Property(groupname), mainmenu)</visible>
 			</control>
 			<control type="label">
 				<left>40</left>
@@ -55,7 +55,7 @@
 				<font>Bold30</font>
 				<label>$LOCALIZE[31114]</label>
 				<textcolor>ffdadada</textcolor>
-				<visible>StringCompare(Window.Property(groupname), shutdown)</visible>
+				<visible>String.IsEqual(Window.Property(groupname), shutdown)</visible>
 			</control>
 			<!-- Left list -->
 			<control type="list" id="211">
@@ -217,7 +217,7 @@
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
 					<label>31218</label>
 					<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-					<visible>!StringCompare(Container(211).ListItem.Property(defaultID),settings)</visible>
+					<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),settings)</visible>
 				</control>
 				<control id="997" type="button">
 					<width>870</width>
@@ -230,9 +230,9 @@
 					<texturefocus border="3">settings/button_focus.png</texturefocus>
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
 					<label>31218</label>
-					<visible>StringCompare(Container(211).ListItem.Property(defaultID),settings)</visible>
+					<visible>String.IsEqual(Container(211).ListItem.Property(defaultID),settings)</visible>
 				</control>
-				<!-- Customise widget grouop -->
+				<!-- Customise widget group -->
 				<control id="998" type="button">
 					<width>870</width>
 					<height>84</height>
@@ -245,15 +245,15 @@
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
 					<label>$LOCALIZE[31219]</label>
 					<label2>$INFO[Container(211).ListItem.Property(widgetName)]</label2>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget1)">SetProperty(SubMenu,1000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget2)">SetProperty(SubMenu,2000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget3)">SetProperty(SubMenu,3000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget4)">SetProperty(SubMenu,4000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget5)">SetProperty(SubMenu,5000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget6)">SetProperty(SubMenu,6000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget7)">SetProperty(SubMenu,7000,home)</onclick>
-					<onclick condition="StringCompare(Container(211).ListItem.Property(widget),widget8)">SetProperty(SubMenu,8000,home)</onclick>
-					<visible>SubString(Container(211).ListItem.Property(widget),widget,left)</visible>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget1)">SetProperty(SubMenu,1000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget2)">SetProperty(SubMenu,2000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget3)">SetProperty(SubMenu,3000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget4)">SetProperty(SubMenu,4000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget5)">SetProperty(SubMenu,5000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget6)">SetProperty(SubMenu,6000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget7)">SetProperty(SubMenu,7000,home)</onclick>
+					<onclick condition="String.IsEqual(Container(211).ListItem.Property(widget),widget8)">SetProperty(SubMenu,8000,home)</onclick>
+					<visible>String.StartsWith(Container(211).ListItem.Property(widget),widget)</visible>
 					<onclick>ActivateWindow(1105)</onclick>
 				</control>
 				<control id="996" type="button">
@@ -267,7 +267,7 @@
 					<texturefocus border="3">settings/button_focus.png</texturefocus>
 					<texturenofocus border="3">settings/button_no_focus.png</texturenofocus>
 					<label>$LOCALIZE[31219]</label>
-					<visible>!SubString(Container(211).ListItem.Property(widget),widget,left)</visible>
+					<visible>!String.StartsWith(Container(211).ListItem.Property(widget),widget)</visible>
 				</control>
 				<!-- Remove -->
 				<control type="button" id="302">

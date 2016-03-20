@@ -50,17 +50,17 @@
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<visible>StringCompare(Container.FolderPath,addons://all/) | SubString(Container.FolderPath,addons://all/category)</visible>
+				<visible>String.IsEqual(Container.FolderPath,addons://all/) | String.Contains(Container.FolderPath,addons://all/category)</visible>
 				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
 				</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + IsEmpty(Window(home).Property(FocusRow))" easing="inout" effect="slide" end="0,0" start="193,10" time="540" tween="sine">WindowOpen</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + StringCompare(Window(home).Property(FocusRow),1_2)" easing="inout" effect="slide" end="0,0" start="497,-175" time="540" tween="sine">WindowOpen</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + StringCompare(Window(home).Property(FocusRow),2_2)" easing="inout" effect="slide" end="0,0" start="497,195" time="540" tween="sine">WindowOpen</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + StringCompare(Window(home).Property(FocusRow),1_3)" easing="inout" effect="slide" end="0,0" start="497,-246" time="540" tween="sine">WindowOpen</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + StringCompare(Window(home).Property(FocusRow),2_3)" easing="inout" effect="slide" end="0,0" start="497,10" time="540" tween="sine">WindowOpen</animation>
-				<animation condition="IsEmpty(Window(home).Property(MainMenuFocus)) + StringCompare(Window(home).Property(FocusRow),3_3)" easing="inout" effect="slide" end="0,0" start="497,168" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEmpty(Window(home).Property(FocusRow))" easing="inout" effect="slide" end="0,0" start="193,10" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEqual(Window(home).Property(FocusRow),1_2)" easing="inout" effect="slide" end="0,0" start="497,-175" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEqual(Window(home).Property(FocusRow),2_2)" easing="inout" effect="slide" end="0,0" start="497,195" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEqual(Window(home).Property(FocusRow),1_3)" easing="inout" effect="slide" end="0,0" start="497,-246" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEqual(Window(home).Property(FocusRow),2_3)" easing="inout" effect="slide" end="0,0" start="497,10" time="540" tween="sine">WindowOpen</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(MainMenuFocus)) + String.IsEqual(Window(home).Property(FocusRow),3_3)" easing="inout" effect="slide" end="0,0" start="497,168" time="540" tween="sine">WindowOpen</animation>
 				<itemlayout height="576" width="436">
 					<control type="group">
 						<animation center="250,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
@@ -83,7 +83,7 @@
 							<width>480</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
+							<visible>!ListItem.IsParentFolder + !String.Contains(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -145,7 +145,7 @@
 							<width>480</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>!ListItem.IsParentFolder + !SubString(ListItem.Icon,Default)</visible>
+							<visible>!ListItem.IsParentFolder + !String.Contains(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -196,7 +196,7 @@
 						<aligny>bottom</aligny>
 						<textcolor>ffdadada</textcolor>
 						<label>$INFO[Container.CurrentItem]</label>
-						<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+						<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 					</control>
 					<control type="label">
 						<top>14</top>
@@ -206,7 +206,7 @@
 						<aligny>bottom</aligny>
 						<textcolor>ff505050</textcolor>
 						<label>|</label>
-						<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+						<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 					</control>
 					<control type="label">
 						<top>15</top>
@@ -216,7 +216,7 @@
 						<aligny>bottom</aligny>
 						<textcolor>ff505050</textcolor>
 						<label>$INFO[Container.NumItems]</label>
-						<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+						<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 					</control>
 				</control>
 			</control>
@@ -231,14 +231,14 @@
 				<height>882</height>
 				<onup>noop</onup>
 				<ondown>noop</ondown>
-				<onleft condition="!IsEmpty(Container(51).ListItemNoWrap(-1).Label)">SetFocus(98)</onleft>
+				<onleft condition="!String.IsEmpty(Container(51).ListItemNoWrap(-1).Label)">SetFocus(98)</onleft>
 				<onleft>noop</onleft>
-				<onright condition="!IsEmpty(Container(51).ListItemNoWrap(1).Label)">SetFocus(99)</onright>
+				<onright condition="!String.IsEmpty(Container(51).ListItemNoWrap(1).Label)">SetFocus(99)</onright>
 				<onright>noop</onright>
 				<orientation>vertical</orientation>
 				<viewtype label="">panel</viewtype>
 				<scrolltime easing="inout" tween="sine">200</scrolltime>
-				<visible>SubString(Container.FolderPath,addons://all/) + !StringCompare(Container.FolderPath,addons://all/) + !SubString(Container.FolderPath,addons://all/category)</visible>
+				<visible>String.Contains(Container.FolderPath,addons://all/) + !String.IsEqual(Container.FolderPath,addons://all/) + !String.Contains(Container.FolderPath,addons://all/category)</visible>
 				<itemlayout height="240" width="240">
 					<control type="image">
 						<left>20</left>
@@ -249,7 +249,7 @@
 						<texture fallback="views/DefaultAddon.png" background="true">$INFO[Listitem.Icon]</texture>
 					</control>
 					<control type="group">
-						<visible>SubString(ListItem.Label2,$LOCALIZE[13413])</visible>
+						<visible>String.Contains(ListItem.Label2,$LOCALIZE[13413])</visible>
 						<control type="image">
 							<left>20</left>
 							<top>213</top>
@@ -279,7 +279,7 @@
 							<texture fallback="views/DefaultAddon.png" background="true">$INFO[Listitem.Icon]</texture>
 						</control>
 						<control type="group">
-							<visible>SubString(ListItem.Label2,$LOCALIZE[13413])</visible>
+							<visible>String.Contains(ListItem.Label2,$LOCALIZE[13413])</visible>
 							<control type="image">
 								<top>232</top>
 								<width>240</width>
@@ -320,7 +320,7 @@
 					<aligny>bottom</aligny>
 					<textcolor>ffdadada</textcolor>
 					<label>$INFO[Container.CurrentItem]</label>
-					<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+					<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 				</control>
 				<control type="label">
 					<top>14</top>
@@ -330,7 +330,7 @@
 					<aligny>bottom</aligny>
 					<textcolor>ff505050</textcolor>
 					<label>|</label>
-					<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+					<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 				</control>
 				<control type="label">
 					<top>15</top>
@@ -340,7 +340,7 @@
 					<aligny>bottom</aligny>
 					<textcolor>ff505050</textcolor>
 					<label>$INFO[Container.NumItems]</label>
-					<visible>IntegerGreaterThan(Container.NumItems,0)</visible>
+					<visible>Integer.IsGreater(Container.NumItems,0)</visible>
 				</control>
 			</control>
 			<!-- Separator -->

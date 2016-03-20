@@ -9,18 +9,18 @@
 			<include>HiddenControl</include>
 			<onleft>noop</onleft>
 			<onright>30</onright>
-			<onup condition="StringCompare(Container(100).CurrentItem,1)">noop</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">SetFocus(21)</onup>
-			<ondown condition="StringCompare(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">SetFocus(21)</ondown>
+			<onup condition="String.IsEqual(Container(100).CurrentItem,1)">noop</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">SetFocus(21)</onup>
+			<ondown condition="String.IsEqual(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">SetFocus(21)</ondown>
 			<onclick>SetFocus(200)</onclick>
 			<onclick>Select</onclick>
 			<onclick>SetFocus(20)</onclick>
@@ -30,18 +30,18 @@
 			<include>HiddenControl</include>
 			<onleft>20</onleft>
 			<onright>40</onright>
-			<onup condition="StringCompare(Container(100).CurrentItem,1)">noop</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">SetFocus(31)</onup>
-			<ondown condition="StringCompare(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">SetFocus(31)</ondown>
+			<onup condition="String.IsEqual(Container(100).CurrentItem,1)">noop</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">SetFocus(31)</onup>
+			<ondown condition="String.IsEqual(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">SetFocus(31)</ondown>
 			<onclick>SetFocus(300)</onclick>
 			<onclick>Select</onclick>
 			<onclick>SetFocus(30)</onclick>
@@ -51,18 +51,18 @@
 			<include>HiddenControl</include>
 			<onleft>30</onleft>
 			<onright>noop</onright>
-			<onup condition="StringCompare(Container(100).CurrentItem,1)">noop</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
-			<onup condition="!StringCompare(Container(100).CurrentItem,1)">SetFocus(41)</onup>
-			<ondown condition="StringCompare(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
-			<ondown condition="!StringCompare(Container(100).CurrentItem,8)">SetFocus(41)</ondown>
+			<onup condition="String.IsEqual(Container(100).CurrentItem,1)">noop</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(100,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(200,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(300,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">Control.Move(400,-1)</onup>
+			<onup condition="!String.IsEqual(Container(100).CurrentItem,1)">SetFocus(41)</onup>
+			<ondown condition="String.IsEqual(Container(100).CurrentItem,8)">SetFocus(9001)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(100,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(200,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(300,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">Control.Move(400,1)</ondown>
+			<ondown condition="!String.IsEqual(Container(100).CurrentItem,8)">SetFocus(41)</ondown>
 			<onclick>SetFocus(400)</onclick>
 			<onclick>Select</onclick>
 			<onclick>SetFocus(40)</onclick>
@@ -244,7 +244,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!IsEmpty(ListItem.Label)</visible>
+							<visible>!String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>180</left>
@@ -253,7 +253,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>IsEmpty(ListItem.Label)</visible>
+							<visible>String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="84" width="1740">
@@ -264,7 +264,7 @@
 							<font>Light32</font>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>Control.HasFocus(20) + !IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(20) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>180</left>
@@ -273,7 +273,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(20) + !IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(20) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>180</left>
@@ -282,7 +282,7 @@
 							<font>Light32</font>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>Control.HasFocus(20) + IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(20) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>180</left>
@@ -291,7 +291,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>!Control.HasFocus(20) + IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(20) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</focusedlayout>
 					<content>
@@ -351,7 +351,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!IsEmpty(ListItem.Label)</visible>
+							<visible>!String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>650</left>
@@ -360,7 +360,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>IsEmpty(ListItem.Label)</visible>
+							<visible>String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="84" width="1720">
@@ -372,7 +372,7 @@
 							<scroll>true</scroll>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>Control.HasFocus(30) + !IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(30) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>650</left>
@@ -381,7 +381,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(30) + !IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(30) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>650</left>
@@ -390,7 +390,7 @@
 							<font>Light32</font>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>Control.HasFocus(30) + IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(30) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>650</left>
@@ -399,7 +399,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>!Control.HasFocus(30) + IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(30) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</focusedlayout>
 					<content>
@@ -459,7 +459,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!IsEmpty(ListItem.Label)</visible>
+							<visible>!String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>1500</left>
@@ -468,7 +468,7 @@
 							<font>Light32</font>
 							<textcolor>ff505153</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>IsEmpty(ListItem.Label)</visible>
+							<visible>String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout height="84" width="1690">
@@ -480,7 +480,7 @@
 							<scroll>true</scroll>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>Control.HasFocus(40) + !IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(40) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>1500</left>
@@ -489,7 +489,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>!Control.HasFocus(40) + !IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(40) + !String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>1500</left>
@@ -498,7 +498,7 @@
 							<font>Light32</font>
 							<textcolor>ffffaf37</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>Control.HasFocus(40) + IsEmpty(ListItem.Label)</visible>
+							<visible>Control.HasFocus(40) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 						<control type="label">
 							<left>1500</left>
@@ -507,7 +507,7 @@
 							<font>Light32</font>
 							<textcolor>ffffffff</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
-							<visible>!Control.HasFocus(40) + IsEmpty(ListItem.Label)</visible>
+							<visible>!Control.HasFocus(40) + String.IsEmpty(ListItem.Label)</visible>
 						</control>
 					</focusedlayout>
 					<content>

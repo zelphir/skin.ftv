@@ -42,7 +42,7 @@
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<visible>IsEmpty(VideoPlayer.TVShowTitle)</visible>
+					<visible>String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 				</control>
 				<!--  TV Show title -->
 				<control type="label">
@@ -52,7 +52,7 @@
 					<textcolor>ffeaeaea</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.TVShowTitle]</label>
-					<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+					<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 				</control>
 				<!-- Season/Episode number -->
 				<control type="label">
@@ -75,7 +75,7 @@
 				<textcolor>fffe8e8e8</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>$INFO[VideoPlayer.Title]</label>
-				<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+				<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 			</control>
 			<!-- Pause -->
 			<control type="image">
@@ -123,7 +123,7 @@
 					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
-					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+					<visible>!String.IsEmpty(Player.Time) + !String.IsEmpty(Player.Duration)</visible>
 				</control>
 				<!--  Total length -->
 				<control type="label">
@@ -142,7 +142,7 @@
 					<font>Bold32</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>[B]HD[/B]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+					<visible>Integer.IsGreater(VideoPlayer.VideoResolution,719)</visible>
 				</control>
 				<!--  Resolution label -->
 				<control type="label">

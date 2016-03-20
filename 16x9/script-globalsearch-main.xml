@@ -93,7 +93,7 @@
 					</control>
 				</control>
 				<control type="group">
-					<visible>IsEmpty(Control.GetLabel(190))</visible>
+					<visible>String.IsEmpty(Control.GetLabel(190))</visible>
 					<animation delay="800" effect="fade" end="100" start="0" time="200">WindowOpen</animation>
 					<!-- Search Result -->
 					<control type="grouplist">
@@ -264,7 +264,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffbebebe</textcolor>
 									<label>$INFO[Container(111).ListItem.Property(Year),,[COLOR 00ffffff]/[/COLOR]]</label>
-									<visible>Control.IsVisible(111) + !IsEmpty(Container(111).ListItem.Property(Year))</visible>
+									<visible>Control.IsVisible(111) + !String.IsEmpty(Container(111).ListItem.Property(Year))</visible>
 								</control>
 								<control type="label">
 									<width>auto</width>
@@ -273,7 +273,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffbebebe</textcolor>
 									<label>$INFO[Container(121).ListItem.Property(Year),,[COLOR 00ffffff]/[/COLOR]]</label>
-									<visible>Control.IsVisible(121) + !IsEmpty(Container(121).ListItem.Property(Year))</visible>
+									<visible>Control.IsVisible(121) + !String.IsEmpty(Container(121).ListItem.Property(Year))</visible>
 								</control>
 								<control type="label">
 									<width>auto</width>
@@ -282,7 +282,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffbebebe</textcolor>
 									<label>$INFO[Container(211).ListItem.Property(Year),,[COLOR 00ffffff]/[/COLOR]]</label>
-									<visible>Control.IsVisible(211) + !IsEmpty(Container(211).ListItem.Property(Year))</visible>
+									<visible>Control.IsVisible(211) + !String.IsEmpty(Container(211).ListItem.Property(Year))</visible>
 								</control>
 								<control type="image">
 									<top>2</top>
@@ -290,7 +290,7 @@
 									<height>24</height>
 									<texture>$INFO[Container(111).ListItem.Property(UserRating),rating/rating,.png]</texture>
 									<aspectratio align="left">keep</aspectratio>
-									<visible>Control.IsVisible(111) + !IsEmpty(Container(111).ListItem.Property(UserRating))</visible>
+									<visible>Control.IsVisible(111) + !String.IsEmpty(Container(111).ListItem.Property(UserRating))</visible>
 								</control>
 								<control type="image">
 									<top>2</top>
@@ -298,7 +298,7 @@
 									<height>24</height>
 									<texture>$INFO[Container(121).ListItem.Property(UserRating),rating/rating,.png]</texture>
 									<aspectratio align="left">keep</aspectratio>
-									<visible>Control.IsVisible(121) + !IsEmpty(Container(121).ListItem.Property(UserRating))</visible>
+									<visible>Control.IsVisible(121) + !String.IsEmpty(Container(121).ListItem.Property(UserRating))</visible>
 								</control>
 								<control type="image">
 									<top>2</top>
@@ -306,21 +306,21 @@
 									<height>24</height>
 									<texture>$INFO[Container(211).ListItem.Property(UserRating),rating/rating,.png]</texture>
 									<aspectratio align="left">keep</aspectratio>
-									<visible>Control.IsVisible(211) + !IsEmpty(Container(211).ListItem.Property(UserRating))</visible>
+									<visible>Control.IsVisible(211) + !String.IsEmpty(Container(211).ListItem.Property(UserRating))</visible>
 								</control>
 								<control type="image">
 									<top>3</top>
 									<width>48</width>
 									<height>23</height>
 									<texture>views/imdb.png</texture>
-									<visible>[Control.IsVisible(111) + !IsEmpty(Container(111).ListItem.Property(Rating))] | [Control.IsVisible(211) + !IsEmpty(Container(211).ListItem.Property(Rating))]</visible>
+									<visible>[Control.IsVisible(111) + !String.IsEmpty(Container(111).ListItem.Property(Rating))] | [Control.IsVisible(211) + !String.IsEmpty(Container(211).ListItem.Property(Rating))]</visible>
 								</control>
 								<control type="image">
 									<top>3</top>
 									<width>47</width>
 									<height>23</height>
 									<texture>views/tvdb.png</texture>
-									<visible>Control.IsVisible(121) + !IsEmpty(Container(121).ListItem.Property(Rating))</visible>
+									<visible>Control.IsVisible(121) + !String.IsEmpty(Container(121).ListItem.Property(Rating))</visible>
 								</control>
 								<control type="label">
 									<top>-8</top>
@@ -330,7 +330,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffdadada</textcolor>
 									<label>$INFO[Container(111).ListItem.Property(Rating),,/10]</label>
-									<visible>Control.IsVisible(111) + !IsEmpty(Container(111).ListItem.Property(Rating))</visible>
+									<visible>Control.IsVisible(111) + !String.IsEmpty(Container(111).ListItem.Property(Rating))</visible>
 								</control>
 								<control type="label">
 									<top>-8</top>
@@ -340,7 +340,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffdadada</textcolor>
 									<label>$INFO[Container(121).ListItem.Property(Rating),,/10]</label>
-									<visible>Control.IsVisible(121) + !IsEmpty(Container(121).ListItem.Property(Rating))</visible>
+									<visible>Control.IsVisible(121) + !String.IsEmpty(Container(121).ListItem.Property(Rating))</visible>
 								</control>
 								<control type="label">
 									<top>-8</top>
@@ -350,7 +350,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffdadada</textcolor>
 									<label>$INFO[Container(211).ListItem.Property(Rating),,/10]</label>
-									<visible>Control.IsVisible(211) + !IsEmpty(Container(211).ListItem.Property(Rating))</visible>
+									<visible>Control.IsVisible(211) + !String.IsEmpty(Container(211).ListItem.Property(Rating))</visible>
 								</control>
 								<control type="label">
 									<width>auto</width>
@@ -359,7 +359,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffbebebe</textcolor>
 									<label>$INFO[Container(141).ListItem.Property(Duration),, $LOCALIZE[31147]]</label>
-									<visible>Control.IsVisible(141) + !IsEmpty(Container(141).ListItem.Property(Duration)) + IntegerGreaterThan(Container(141).ListItem.Property(Duration),1)</visible>
+									<visible>Control.IsVisible(141) + !String.IsEmpty(Container(141).ListItem.Property(Duration)) + Integer.IsGreater(Container(141).ListItem.Property(Duration),1)</visible>
 								</control>
 								<control type="label">
 									<width>auto</width>
@@ -368,7 +368,7 @@
 									<aligny>bottom</aligny>
 									<textcolor>ffbebebe</textcolor>
 									<label>[COLOR ff707070]$LOCALIZE[31152]: [/COLOR]$INFO[Container(141).ListItem.Property(Premiered)]</label>
-									<visible>Control.IsVisible(141) + !IsEmpty(Container(141).ListItem.Property(Premiered))</visible>
+									<visible>Control.IsVisible(141) + !String.IsEmpty(Container(141).ListItem.Property(Premiered))</visible>
 								</control>
 							</control>
 							<control type="group">
@@ -491,7 +491,7 @@
 		</control>
 		<!-- busydialog -->
 		<control type="group">
-			<visible>!IsEmpty(Control.GetLabel(190))</visible>
+			<visible>!String.IsEmpty(Control.GetLabel(190))</visible>
 			<!-- Background -->
 			<include>BackgroundImage</include>
 			<!-- Busy -->

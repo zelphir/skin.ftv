@@ -5,7 +5,7 @@
 	<visible>[Window.IsVisible(visualisation) | VideoPlayer.IsFullscreen] + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>
 	<controls>
 		<control type="group">
-			<visible>IsEmpty(Window(home).Property(ShowXRay)) + !Window.IsActive(videoosd) + !Window.IsActive(musicosd) + !Window.IsActive(subtitlesearch) + !Window.IsVisible(script-nextup-notification-NextUpInfo.xml)</visible>
+			<visible>String.IsEmpty(Window(home).Property(ShowXRay)) + !Window.IsActive(videoosd) + !Window.IsActive(musicosd) + !Window.IsActive(subtitlesearch) + !Window.IsVisible(script-nextup-notification-NextUpInfo.xml)</visible>
 			<control type="group">
 				<visible>Player.Paused + !Player.Forwarding + !Player.Rewinding</visible>
 				<animation condition="System.IdleTime(4) + !Player.Caching" reversible="true" type="Conditional">
@@ -32,7 +32,7 @@
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.Title]</label>
-						<visible>IsEmpty(VideoPlayer.TVShowTitle)</visible>
+						<visible>String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 					</control>
 					<!--  TV Show title -->
 					<control type="label">
@@ -42,7 +42,7 @@
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[VideoPlayer.TVShowTitle]</label>
-						<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+						<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 					</control>
 					<!-- Season/Episode number -->
 					<control type="label">
@@ -61,7 +61,7 @@
 						<textcolor>ffeaeaea</textcolor>
 						<shadowcolor>ff000000</shadowcolor>
 						<label>$INFO[MusicPlayer.Title]</label>
-						<visible>IsEmpty(MusicPlayer.Title)</visible>
+						<visible>String.IsEmpty(MusicPlayer.Title)</visible>
 					</control>
 				</control>
 				<!--  Episode title -->
@@ -75,7 +75,7 @@
 					<textcolor>fffe8e8e8</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+					<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 				</control>
 				<!--  Artist / Album title -->
 				<control type="label">
@@ -169,7 +169,7 @@
 						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
 						<label>/</label>
-						<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+						<visible>!String.IsEmpty(Player.Time) + !String.IsEmpty(Player.Duration)</visible>
 					</control>
 					<!--  Total length -->
 					<control type="label">
@@ -188,7 +188,7 @@
 						<font>Bold32</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>[B]HD[/B]</label>
-						<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+						<visible>Integer.IsGreater(VideoPlayer.VideoResolution,719)</visible>
 					</control>
 					<!--  Resolution label -->
 					<control type="label">
@@ -276,7 +276,7 @@
 						<height>34</height>
 						<font>OSD32</font>
 						<textcolor>ff696969</textcolor>
-						<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+						<visible>!String.IsEmpty(Player.Time) + !String.IsEmpty(Player.Duration)</visible>
 						<label>/</label>
 					</control>
 					<!--  Total length -->
@@ -296,7 +296,7 @@
 						<font>Bold32</font>
 						<textcolor>ffebebeb</textcolor>
 						<label>[B]HD[/B]</label>
-						<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+						<visible>Integer.IsGreater(VideoPlayer.VideoResolution,719)</visible>
 					</control>
 					<!--  Resolution label -->
 					<control type="label">
@@ -330,7 +330,7 @@
 					<width>80</width>
 					<height>80</height>
 					<texture>osd/step_forward.png</texture>
-					<visible>[!IsEmpty(Player.SeekOffset) + !SubString(Player.SeekOffset,-)] | [!IsEmpty(Player.SeekStepSize) + !SubString(Player.SeekStepSize,-)]</visible>
+					<visible>[!String.IsEmpty(Player.SeekOffset) + !String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + !String.Contains(Player.SeekStepSize,-)]</visible>
 				</control>
 				<control type="image">
 					<left>97</left>
@@ -338,7 +338,7 @@
 					<width>80</width>
 					<height>80</height>
 					<texture>osd/step_back.png</texture>
-					<visible>[!IsEmpty(Player.SeekOffset) + SubString(Player.SeekOffset,-)] | [!IsEmpty(Player.SeekStepSize) + SubString(Player.SeekStepSize,-)]</visible>
+					<visible>[!String.IsEmpty(Player.SeekOffset) + String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + String.Contains(Player.SeekStepSize,-)]</visible>
 				</control>
 				<control type="label">
 					<centerleft>136</centerleft>

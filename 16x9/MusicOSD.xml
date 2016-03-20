@@ -92,7 +92,7 @@
 					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
-					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+					<visible>!String.IsEmpty(Player.Time) + !String.IsEmpty(Player.Duration)</visible>
 				</control>
 				<!--  Total length -->
 				<control type="label">
@@ -208,8 +208,8 @@
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<onclick>Close</onclick>
-					<onclick condition="IsEmpty(Skin.String(LyricAddon))">Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
-					<onclick condition="!IsEmpty(Skin.String(LyricAddon))">XBMC.RunScript($INFO[Skin.String(LyricAddon)])</onclick>
+					<onclick condition="String.IsEmpty(Skin.String(LyricAddon))">Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(LyricAddon))">XBMC.RunScript($INFO[Skin.String(LyricAddon)])</onclick>
 				</control>
 				<!-- Playlist -->
 				<control type="button" id="10">

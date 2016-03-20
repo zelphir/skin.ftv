@@ -13,18 +13,18 @@
 		<!-- Hidden controls -->
 		<control type="button" id="99">
 			<include>HiddenControl</include>
-			<onup condition="IsEmpty(Window(home).Property(ShowXRay))">SetProperty(ShowXRay,true,home)</onup>
+			<onup condition="String.IsEmpty(Window(home).Property(ShowXRay))">SetProperty(ShowXRay,true,home)</onup>
 			<onup condition="!Player.Paused">Pause</onup>
 			<onup>1000</onup>
-			<visible>!IsEmpty(Container(1000).ListItem.Label)</visible>
+			<visible>!String.IsEmpty(Container(1000).ListItem.Label)</visible>
 		</control>
 		<control type="group">
 			<right>100</right>
 			<top>56</top>
 			<width>520</width>
 			<height>118</height>
-			<animation condition="!IsEmpty(Window(home).Property(FadeResume))" effect="fade" end="6" start="100" time="200">Conditional</animation>
-			<visible>!IsEmpty(Window(home).Property(ShowXRay))</visible>
+			<animation condition="!String.IsEmpty(Window(home).Property(FadeResume))" effect="fade" end="6" start="100" time="200">Conditional</animation>
+			<visible>!String.IsEmpty(Window(home).Property(ShowXRay))</visible>
 			<control type="image">
 				<width>520</width>
 				<height>118</height>
@@ -64,10 +64,10 @@
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<animation delay="800" effect="fade" end="100" start="0" time="200">Visible</animation>
-			<animation effect="slide" end="0,-1080" start="0,0" time="0" condition="IsEmpty(Window(home).Property(ShowXRay))">Conditional</animation>
+			<animation effect="slide" end="0,-1080" start="0,0" time="0" condition="String.IsEmpty(Window(home).Property(ShowXRay))">Conditional</animation>
 			<control type="group">
 				<include>VisibleDelayFadeAnimation</include>
-				<visible>!IsEmpty(Window(home).Property(ShowXRay))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(ShowXRay))</visible>
 				<animation delay="800" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<!-- Heading -->
 				<control type="grouplist">
@@ -163,7 +163,7 @@
 							<width>320</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
+							<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -238,7 +238,7 @@
 							<width>320</width>
 							<height>480</height>
 							<texture border="2">views/season_overlay.png</texture>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
+							<visible>!String.Contains(ListItem.Icon,Default)</visible>
 							<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(1000)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
 						</control>
@@ -306,7 +306,7 @@
 					<textcolor>fffafafa</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.Title]</label>
-					<visible>IsEmpty(VideoPlayer.TVShowTitle)</visible>
+					<visible>String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 				</control>
 				<!--  TV Show title -->
 				<control type="label">
@@ -316,7 +316,7 @@
 					<textcolor>fffafafa</textcolor>
 					<shadowcolor>ff000000</shadowcolor>
 					<label>$INFO[VideoPlayer.TVShowTitle]</label>
-					<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+					<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 				</control>
 				<!-- Season/Episode number -->
 				<control type="label">
@@ -339,7 +339,7 @@
 				<textcolor>ffff9f9f9</textcolor>
 				<shadowcolor>ff000000</shadowcolor>
 				<label>$INFO[VideoPlayer.Title]</label>
-				<visible>!IsEmpty(VideoPlayer.TVShowTitle)</visible>
+				<visible>!String.IsEmpty(VideoPlayer.TVShowTitle)</visible>
 			</control>
 			<!-- Pause -->
 			<control type="image">
@@ -410,7 +410,7 @@
 					<font>OSD32</font>
 					<textcolor>ff696969</textcolor>
 					<label>/</label>
-					<visible>!IsEmpty(Player.Time) + !IsEmpty(Player.Duration)</visible>
+					<visible>!String.IsEmpty(Player.Time) + !String.IsEmpty(Player.Duration)</visible>
 				</control>
 				<!--  Total length -->
 				<control type="label">
@@ -429,7 +429,7 @@
 					<font>Bold32</font>
 					<textcolor>ffebebeb</textcolor>
 					<label>[B]HD[/B]</label>
-					<visible>IntegerGreaterThan(VideoPlayer.VideoResolution,719)</visible>
+					<visible>Integer.IsGreater(VideoPlayer.VideoResolution,719)</visible>
 				</control>
 				<!--  Resolution label -->
 				<control type="label">
@@ -451,7 +451,7 @@
 				<align>center</align>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>System.HasAddon(script.extendedinfo) + !IsEmpty(Container(1000).ListItem.Label)</visible>
+				<visible>System.HasAddon(script.extendedinfo) + !String.IsEmpty(Container(1000).ListItem.Label)</visible>
 				<control type="label">
 					<top>6</top>
 					<width>auto</width>

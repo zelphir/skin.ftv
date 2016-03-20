@@ -71,19 +71,19 @@
 	</include>
 	<!-- Home menu slide animations -->
 	<include name="HomeMenuSlideAnimation">
-		<animation condition="IntegerGreaterThan(Container(99).NumItems,12)" effect="slide" end="0,50" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,12)" effect="slide" end="0,18" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,11)" effect="slide" end="0,50" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,10)" effect="slide" end="0,82" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,9)" effect="slide" end="0,114" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,8)" effect="slide" end="0,146" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,7)" effect="slide" end="0,178" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,6)" effect="slide" end="0,210" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,5)" effect="slide" end="0,242" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,4)" effect="slide" end="0,274" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,3)" effect="slide" end="0,306" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,2)" effect="slide" end="0,338" time="0">Conditional</animation>
-		<animation condition="StringCompare(Container(99).NumItems,1)" effect="slide" end="0,370" time="0">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(99).NumItems,12)" effect="slide" end="0,50" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,12)" effect="slide" end="0,18" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,11)" effect="slide" end="0,50" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,10)" effect="slide" end="0,82" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,9)" effect="slide" end="0,114" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,8)" effect="slide" end="0,146" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,7)" effect="slide" end="0,178" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,6)" effect="slide" end="0,210" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,5)" effect="slide" end="0,242" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,4)" effect="slide" end="0,274" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,3)" effect="slide" end="0,306" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,2)" effect="slide" end="0,338" time="0">Conditional</animation>
+		<animation condition="String.IsEqual(Container(99).NumItems,1)" effect="slide" end="0,370" time="0">Conditional</animation>
 		<animation condition="Container(99).Row(0)" effect="slide" end="0,0" time="200">Conditional</animation>
 		<animation condition="Container(99).Row(1)" effect="slide" end="0,-11" time="200">Conditional</animation>
 		<animation condition="Container(99).Row(2)" effect="slide" end="0,-22" time="200">Conditional</animation>
