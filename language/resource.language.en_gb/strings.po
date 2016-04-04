@@ -1022,3 +1022,7 @@ msgstr ""
 msgctxt "#31245"
 msgid "I love it"
 msgstr ""
+
+msgctxt "#31246"
+msgid "Location"
+msgstr ""

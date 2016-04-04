@@ -542,13 +542,13 @@
 	</variable>
 	<variable name="NextUpThumb">
 		<value condition="!String.IsEmpty(Control.GetLabel(3008)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + Integer.IsGreater(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3008)]</value>
-		<value condition="!String.IsEmpty(Control.GetLabel(3005)) + [String.IsEmpty(Control.GetLabel(3008)) | [Skin.HasSetting(HideUnwatchedThumbs) + !Integer.IsGreater(Control.GetLabel(3018),0)]]">$INFO[Control.GetLabel(3005)]</value>
+		<value condition="!String.IsEmpty(Control.GetLabel(3005)) + [String.IsEmpty(Control.GetLabel(3008)) | [Skin.HasSetting(HideUnwatchedThumbs) + Integer.IsEqual(Control.GetLabel(3018),0)]]">$INFO[Player.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Control.GetLabel(3005))">$INFO[Control.GetLabel(3005)]</value>
 		<value>views/episode_fallback.png</value>
 	</variable>
 	<variable name="StillWatchingThumb">
 		<value condition="!String.IsEmpty(Control.GetLabel(4002)) + [!Skin.HasSetting(HideUnwatchedThumbs) | [Skin.HasSetting(HideUnwatchedThumbs) + Integer.IsGreater(Control.GetLabel(4018),0)]]">$INFO[Control.GetLabel(4002)]</value>
-		<value condition="!String.IsEmpty(Control.GetLabel(4007)) + [String.IsEmpty(Control.GetLabel(4002)) | [Skin.HasSetting(HideUnwatchedThumbs) + !Integer.IsGreater(Control.GetLabel(4018),0)]]">$INFO[Control.GetLabel(4007)]</value>
+		<value condition="!String.IsEmpty(Control.GetLabel(4007)) + [String.IsEmpty(Control.GetLabel(4002)) | [Skin.HasSetting(HideUnwatchedThumbs) + Integer.IsEqual(Control.GetLabel(4018),0)]]">$INFO[Control.GetLabel(4007)]</value>
 		<value condition="!String.IsEmpty(Control.GetLabel(4007))">$INFO[Control.GetLabel(4007)]</value>
 		<value>views/episode_fallback.png</value>
 	</variable>

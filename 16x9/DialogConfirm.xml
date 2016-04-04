@@ -2,6 +2,6 @@
 <window>
 	<!-- progressdialog -->
 	<controls>
-		<include name="DialogConfirm"/>
+		<include content="DialogConfirm"/>
 	</controls>
 </window>

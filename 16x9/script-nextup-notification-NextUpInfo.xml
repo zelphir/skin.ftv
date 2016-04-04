@@ -87,7 +87,7 @@
 				<height>245</height>
 				<aspectratio align="center">scale</aspectratio>
 				<texture>views/episode_fallback.png</texture>
-				<visible>Skin.HasSetting(HideUnwatchedThumbs) + !Integer.IsGreater(Control.GetLabel(3018),0)</visible>
+				<visible>Skin.HasSetting(HideUnwatchedThumbs) + Integer.IsEqual(Control.GetLabel(3018),0)</visible>
 			</control>
 			<!-- Next episode countdown -->
 			<control type="image">

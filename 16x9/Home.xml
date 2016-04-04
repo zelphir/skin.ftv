@@ -226,49 +226,49 @@
 				<animation condition="String.IsEqual(Container(99).NumItems,1)" effect="slide" end="0,330" time="0">Conditional</animation>
 			</control>
 			<!-- List Item #1 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">100</param>
 				<param name="widget">widget1</param>
 				<param name="content">ListItem1Content</param>
 			</include>
 			<!-- List Item #2 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">200</param>
 				<param name="widget">widget2</param>
 				<param name="content">ListItem2Content</param>
 			</include>
 			<!-- List Item #3 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">300</param>
 				<param name="widget">widget3</param>
 				<param name="content">ListItem3Content</param>
 			</include>
 			<!-- List Item #4 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">400</param>
 				<param name="widget">widget4</param>
 				<param name="content">ListItem4Content</param>
 			</include>
 			<!-- List Item #5 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">500</param>
 				<param name="widget">widget5</param>
 				<param name="content">ListItem5Content</param>
 			</include>
 			<!-- List Item #6 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">600</param>
 				<param name="widget">widget6</param>
 				<param name="content">ListItem6Content</param>
 			</include>
 			<!-- List Item #7 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">700</param>
 				<param name="widget">widget7</param>
 				<param name="content">ListItem7Content</param>
 			</include>
 			<!-- List Item #8 sub menu -->
-			<include name="ParamWidgetInclude">
+			<include content="ParamWidgetInclude">
 				<param name="ID">800</param>
 				<param name="widget">widget8</param>
 				<param name="content">ListItem8Content</param>

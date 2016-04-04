@@ -169,47 +169,47 @@
 								</control>
 							</focusedlayout>
 							<content>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="111" />
 									<param name="LabelID" value="$LOCALIZE[342]" />
 									<param name="VisibleID" value="119" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="121" />
 									<param name="LabelID" value="$LOCALIZE[20343]" />
 									<param name="VisibleID" value="129" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="131" />
 									<param name="LabelID" value="$LOCALIZE[33054]" />
 									<param name="VisibleID" value="139" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="141" />
 									<param name="LabelID" value="$LOCALIZE[20360]" />
 									<param name="VisibleID" value="149" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="151" />
 									<param name="LabelID" value="$LOCALIZE[20389]" />
 									<param name="VisibleID" value="159" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="161" />
 									<param name="LabelID" value="$LOCALIZE[133]" />
 									<param name="VisibleID" value="169" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="171" />
 									<param name="LabelID" value="$LOCALIZE[132]" />
 									<param name="VisibleID" value="179" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="181" />
 									<param name="LabelID" value="$LOCALIZE[134]" />
 									<param name="VisibleID" value="189" />
 								</include>
-								<include name="SearchItems">
+								<include content="SearchItems">
 									<param name="ItemID" value="211" />
 									<param name="LabelID" value="$LOCALIZE[344]" />
 									<param name="VisibleID" value="219" />
@@ -450,39 +450,39 @@
 				</control>
 				<!-- Lists group -->
 				<control type="group" id="9999">
-					<include name="SearchPosterList">
+					<include content="SearchPosterList">
 						<param name="GroupID" value="119" />
 						<param name="ListID" value="111" />
 					</include>
-					<include name="SearchPosterList">
+					<include content="SearchPosterList">
 						<param name="GroupID" value="129" />
 						<param name="ListID" value="121" />
 					</include>
-					<include name="SearchPosterList">
+					<include content="SearchPosterList">
 						<param name="GroupID" value="139" />
 						<param name="ListID" value="131" />
 					</include>
-					<include name="SearchWideList">
+					<include content="SearchWideList">
 						<param name="GroupID" value="149" />
 						<param name="ListID" value="141" />
 					</include>
-					<include name="SearchWideList">
+					<include content="SearchWideList">
 						<param name="GroupID" value="159" />
 						<param name="ListID" value="151" />
 					</include>
-					<include name="SearchSquareList">
+					<include content="SearchSquareList">
 						<param name="GroupID" value="169" />
 						<param name="ListID" value="161" />
 					</include>
-					<include name="SearchSquareList">
+					<include content="SearchSquareList">
 						<param name="GroupID" value="179" />
 						<param name="ListID" value="171" />
 					</include>
-					<include name="SearchSquareList">
+					<include content="SearchSquareList">
 						<param name="GroupID" value="189" />
 						<param name="ListID" value="181" />
 					</include>
-					<include name="SearchPosterList">
+					<include content="SearchPosterList">
 						<param name="GroupID" value="219" />
 						<param name="ListID" value="211" />
 					</include>
